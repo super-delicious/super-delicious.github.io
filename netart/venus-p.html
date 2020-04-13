@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>VENUS ENTERS PISCES | Rubys Readings</title>
+		<link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="pingback" href="https://rubysreadings.com/xmlrpc.php">
+		<meta name="p:domain_verify" content="a271edd72579df4346dfe3bbb09cdfac" />
+
+<!-- Async WordPress.com Remote Login -->
+<script id="wpcom_remote_login_js">
+var wpcom_remote_login_extra_auth = '';
+function wpcom_remote_login_remove_dom_node_id( element_id ) {
+	var dom_node = document.getElementById( element_id );
+	if ( dom_node ) { dom_node.remove(); }
+}
+function wpcom_remote_login_remove_dom_node_classes( class_name ) {
+	var dom_nodes = document.querySelectorAll( '.' + class_name );
+	for ( var i = 0; i < dom_nodes.length; i++ ) {
+		dom_nodes[i].remove();
+	}
+}
+function wpcom_remote_login_final_cleanup() {
+	wpcom_remote_login_remove_dom_node_classes( "wpcom_remote_login_msg" );
+	wpcom_remote_login_remove_dom_node_id( "wpcom_remote_login_key" );
+	wpcom_remote_login_remove_dom_node_id( "wpcom_remote_login_validate" );
+	wpcom_remote_login_remove_dom_node_id( "wpcom_remote_login_js" );
+	wpcom_remote_login_remove_dom_node_id( "wpcom_request_access_iframe" );
+	wpcom_remote_login_remove_dom_node_id( "wpcom_request_access_styles" );
+}
+
+// Watch for messages back from the remote login
+window.addEventListener( "message", function( e ) {
+	if ( e.origin === "https://r-login.wordpress.com" ) {
+		var data = {};
+		try {
+			data = JSON.parse( e.data );
+		} catch( e ) {
+			wpcom_remote_login_final_cleanup();
+			return;
+		}
+
+		if ( data.msg === 'LOGIN' ) {
+			// Clean up the login check iframe
+			wpcom_remote_login_remove_dom_node_id( "wpcom_remote_login_key" );
+
+			var id_regex = new RegExp( /^[0-9]+$/ );
+			var token_regex = new RegExp( /^.*|.*|.*$/ );
+			if (
+				token_regex.test( data.token )
+				&& id_regex.test( data.wpcomid )
+			) {
+				// We have everything we need to ask for a login
+				var script = document.createElement( "script" );
+				script.setAttribute( "id", "wpcom_remote_login_validate" );
+				script.src = '/remote-login.php?wpcom_remote_login=validate'
+					+ '&wpcomid=' + data.wpcomid
+					+ '&token=' + encodeURIComponent( data.token )
+					+ '&host=' + window.location.protocol
+						+ '//' + window.location.hostname;
+				document.body.appendChild( script );
+			}
+
+			return;
+		}
+
+		// Safari ITP, not logged in, so redirect
+		if ( data.msg === 'LOGIN-REDIRECT' ) {
+			window.location = 'https://wordpress.com/log-in?redirect_to=' + window.location.href;
+			return;
+		}
+
+		// Safari ITP, storage access failed, remove the request
+		if ( data.msg === 'LOGIN-REMOVE' ) {
+			var css_zap = 'html { -webkit-transition: margin-top 1s; transition: margin-top 1s; } /* 9001 */ html { margin-top: 0 !important; } * html body { margin-top: 0 !important; } @media screen and ( max-width: 782px ) { html { margin-top: 0 !important; } * html body { margin-top: 0 !important; } }';
+			var style_zap = document.createElement( 'style' );
+			style_zap.type = 'text/css';
+			style_zap.appendChild( document.createTextNode( css_zap ) );
+			document.body.appendChild( style_zap );
+
+			var e = document.getElementById( 'wpcom_request_access_iframe' );
+			e.parentNode.removeChild( e );
+
+			document.cookie = 'wordpress_com_login_access=denied; path=/; max-age=31536000';
+
+			return;
+		}
+
+		// Safari ITP
+		if ( data.msg === 'REQUEST_ACCESS' ) {
+			console.log( 'request access: safari' );
+
+			// Check ITP iframe enable/disable knob
+			if ( wpcom_remote_login_extra_auth !== 'safari_itp_iframe' ) {
+				return;
+			}
+
+			// If we are in a "private window" there is no ITP.
+			var private_window = false;
+			try {
+				var opendb = window.openDatabase( null, null, null, null );
+			} catch( e ) {
+				private_window = true;
+			}
+
+			if ( private_window ) {
+				console.log( 'private window' );
+				return;
+			}
+
+			var iframe = document.createElement( 'iframe' );
+			iframe.id = 'wpcom_request_access_iframe';
+			iframe.setAttribute( 'scrolling', 'no' );
+			iframe.setAttribute( 'sandbox', 'allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-top-navigation-by-user-activation' );
+			iframe.src = 'https://r-login.wordpress.com/remote-login.php?wpcom_remote_login=request_access&origin=' + encodeURIComponent( data.origin ) + '&wpcomid=' + encodeURIComponent( data.wpcomid );
+
+			var css = 'html { -webkit-transition: margin-top 1s; transition: margin-top 1s; } /* 9001 */ html { margin-top: 46px !important; } * html body { margin-top: 46px !important; } @media screen and ( max-width: 660px ) { html { margin-top: 71px !important; } * html body { margin-top: 71px !important; } #wpcom_request_access_iframe { display: block; height: 71px !important; } } #wpcom_request_access_iframe { border: 0px; height: 46px; position: fixed; top: 0; left: 0; width: 100%; min-width: 100%; z-index: 99999; background: #23282d; } ';
+
+			var style = document.createElement( 'style' );
+			style.type = 'text/css';
+			style.id = 'wpcom_request_access_styles';
+			style.appendChild( document.createTextNode( css ) );
+			document.body.appendChild( style );
+
+			document.body.appendChild( iframe );
+		}
+
+		if ( data.msg === 'DONE' ) {
+			wpcom_remote_login_final_cleanup();
+		}
+	}
+}, false );
+
+// Inject the remote login iframe after the page has had a chance to load
+// more critical resources
+window.addEventListener( "DOMContentLoaded", function( e ) {
+	var iframe = document.createElement( "iframe" );
+	iframe.style.display = "none";
+	iframe.setAttribute( "scrolling", "no" );
+	iframe.setAttribute( "id", "wpcom_remote_login_key" );
+	iframe.src = "https://r-login.wordpress.com/remote-login.php"
+		+ "?wpcom_remote_login=key"
+		+ "&origin=aHR0cHM6Ly9ydWJ5c3JlYWRpbmdzLmNvbQ%3D%3D"
+		+ "&wpcomid=32879796"
+		+ "&time=1584324412";
+	document.body.appendChild( iframe );
+}, false );
+</script>
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//rubysreadings.wordpress.com' />
+<link rel='dns-prefetch' href='//wordpress.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" type="application/rss+xml" title="Rubys Readings &raquo; Feed" href="https://rubysreadings.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Rubys Readings &raquo; Comments Feed" href="https://rubysreadings.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Rubys Readings &raquo; VENUS ENTERS PISCES Comments Feed" href="https://rubysreadings.com/2018/02/10/venus-enters-pisces/feed/" />
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		function addLoadEvent(func) {
+			var oldonload = window.onload;
+			if (typeof window.onload != 'function') {
+				window.onload = func;
+			} else {
+				window.onload = function () {
+					oldonload();
+					func();
+				}
+			}
+		}
+		/* ]]> */
+	</script>
+			<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/s0.wp.com\/wp-includes\/js\/wp-emoji-release.min.js?m=1582709031h&ver=5.4-RC1-47425"}};
+			/*! This file is auto-generated */
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='all-css-0-1' href='https://s0.wp.com/_static/??-eJylk9tugzAMhl9owWUDdb2Y9iwBXJY2JyVOEW8/Q+jUtRs79AZhx9/vX4kNgxets4SWwCThdeqVjTD41hkRjdI4XkVFG+MDfI0F1JKwE95FuorWMK2OGOGA5GV7FHN0U36u7ROHDYaeTwLCtngqNtAkpTtotJvxJsgwQqRR4y9kZuqiuxxdItEH1f1XIkhSto8/4PuktYiKUGCnJmC5DqirXfVY1zvAE9czlyx1brC5zd2qZ5ekDGpl8W5BttXnN14cdioSnBQO34q2brmysnjcFKWYByxz+aDIpuZ3vcNadqVZ99LadXZtNKch47zxkqYKw50kajRctobljWkaHzBGwV+jkhH0xuDqJjA1SecdAC78nMmoAutIMR0/fm40cytYOoORI4ZZj9cDGucoUpD+b9iei4QcMDozz8ureSnr56rclNuqPrwD1zOYug==?cssminify=yes' type='text/css' media='all' />
+<style id='wp-block-library-inline-css'>
+.has-text-align-justify {
+	text-align:justify;
+}
+</style>
+<link crossorigin="anonymous" rel='stylesheet' id='mayer-nunito-css'  href='https://fonts.googleapis.com/css?family=Nunito%3A100%2C300%2C400%2C700%2C400italic%2C700italic%2C900&#038;subset=latin%2Clatin-ext&#038;ver=1.10.0' media='all' />
+<link crossorigin="anonymous" rel='stylesheet' id='mayer-muli-css'  href='https://fonts.googleapis.com/css?family=Muli%3A300%2C400&#038;subset=latin%2Clatin-ext&#038;ver=1.10.0' media='all' />
+<link crossorigin="anonymous" rel='stylesheet' id='mayer-source-sans-pro-css'  href='https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C600%2C700%2C900&#038;subset=latin%2Clatin-ext&#038;ver=1.10.0' media='all' />
+<link rel='stylesheet' id='all-css-6-1' href='https://s0.wp.com/_static/??-eJyVkd1OwzAMRl+IYIoSwS4Qz+JmXmpwfhSnmvr2S6GITZMquIotnc/yceBcjM+pUWrQJoqkUCpFniNEXKiCtkXo0as+wBUaZ1NkDpwUznwM1BSUYxEyBZfYCf1HMHtGMZGOjIY7+IdsoGwke2yc001jToJc96KVRsmhlwE6ddXuhdCvw0esv9Ud/sOeZhGj3Mh0o9YHb1PA2YN9du4AQfLYjb8sV9m+uYdRMH3u7VCytm890AnrKrC9e6ntut0x3zZ3oe37J7vttwLv8W1wr3Z4Gl6s+7gAR1HQNQ==?cssminify=yes' type='text/css' media='all' />
+<style id='jetpack-global-styles-frontend-style-inline-css'>
+:root { --font-headings: unset; --font-base: unset; --font-headings-default: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif; --font-base-default: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;}
+</style>
+<script>
+var related_posts_js_options = {"post_heading":"h4"};
+</script>
+<script type='text/javascript' src='https://s0.wp.com/_static/??-eJyVj9EKwjAMRX/IWvfgpg/it3RbVjOatqbpZH9vJ/oyURQCIZdzcxN9iwp953IPSY+lrhl4frbtmDb6G6AILRuBLaF/wV3wAl4WlkKLDlROwMYWrSwawpqjrKLLFn3SDK4s61UMSVbT2iUXoHJQZCDMpMnMwEukw1a3IUgSNvEf04AyYf9zjjcTWiMY3v7+5HjoBT7Tqdo31XHX1PVhvANb64+7'></script>
+<link rel='stylesheet' id='all-css-0-2' href='https://s0.wp.com/wp-content/mu-plugins/highlander-comments/style.css?m=1530132353h&cssminify=yes' type='text/css' media='all' />
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='highlander-comments-ie7-css'  href='https://s0.wp.com/wp-content/mu-plugins/highlander-comments/style-ie7.css?m=1351637563h&#038;ver=20110606' media='all' />
+<![endif]-->
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://rubysreadings.wordpress.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://s0.wp.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='February 2018 &#8211; Monthly Astro Forecast ' href='https://rubysreadings.com/2018/02/03/february-2018-monthly-astro-forecast/' />
+<link rel='next' title='&#8220;A Look Ahead&#8221;' href='https://rubysreadings.com/2018/02/11/a-look-ahead/' />
+<meta name="generator" content="WordPress.com" />
+<link rel="canonical" href="https://rubysreadings.com/2018/02/10/venus-enters-pisces/" />
+<link rel='shortlink' href='https://wp.me/p2dXxi-15I' />
+<link rel="alternate" type="application/json+oembed" href="https://public-api.wordpress.com/oembed/?format=json&amp;url=https%3A%2F%2Frubysreadings.com%2F2018%2F02%2F10%2Fvenus-enters-pisces%2F&amp;for=wpcom-auto-discovery" /><link rel="alternate" type="application/xml+oembed" href="https://public-api.wordpress.com/oembed/?format=xml&amp;url=https%3A%2F%2Frubysreadings.com%2F2018%2F02%2F10%2Fvenus-enters-pisces%2F&amp;for=wpcom-auto-discovery" />
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="VENUS ENTERS PISCES" />
+<meta property="og:url" content="https://rubysreadings.com/2018/02/10/venus-enters-pisces/" />
+<meta property="og:description" content="&nbsp; VENUS ENTERS PISCES February 10 &#8211; March 6, 2018 Are you ready for some romance in your life? VENUS the planet of LOVE rules over our love life and our personal values, including money,…" />
+<meta property="article:published_time" content="2018-02-10T16:57:16+00:00" />
+<meta property="article:modified_time" content="2018-02-10T16:57:16+00:00" />
+<meta property="og:site_name" content="Rubys Readings" />
+<meta property="og:image" content="https://rubysreadings.files.wordpress.com/2018/02/picture.jpg" />
+<meta property="og:image:width" content="600" />
+<meta property="og:image:height" content="621" />
+<meta property="og:image:alt" content="Picture" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:creator" content="@Rubynks" />
+<meta name="twitter:site" content="@Rubynks" />
+<meta name="twitter:text:title" content="VENUS ENTERS PISCES" />
+<meta name="twitter:card" content="summary" />
+<meta property="article:publisher" content="https://www.facebook.com/WordPresscom" />
+
+<!-- End Jetpack Open Graph Tags -->
+<link rel='openid.server' href='https://rubysreadings.com/?openidserver=1' />
+<link rel='openid.delegate' href='https://rubysreadings.com/' />
+<link rel="search" type="application/opensearchdescription+xml" href="https://rubysreadings.com/osd.xml" title="Rubys Readings" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://s1.wp.com/opensearch.xml" title="WordPress.com" />
+<meta name="application-name" content="Rubys Readings" /><meta name="msapplication-window" content="width=device-width;height=device-height" /><meta name="msapplication-tooltip" content="Psychic, Astrologer, Healer, &amp; Blogger" /><meta name="msapplication-task" content="name=Subscribe;action-uri=https://rubysreadings.com/feed/;icon-uri=https://rubysreadings.files.wordpress.com/2018/01/cropped-cropped-4e7279488156d5a911325aaf8546cae7.jpeg?w=16" /><meta name="msapplication-task" content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=https://s0.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=https://s0.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=WordPress.com Forums;action-uri=http://forums.wordpress.com/;icon-uri=https://s0.wp.com/i/favicon.ico" /><meta name="description" content="&nbsp; VENUS ENTERS PISCES February 10 - March 6, 2018 Are you ready for some romance in your life? VENUS the planet of LOVE rules over our love life and our personal values, including money, is shifting gears from detached Aquarius and into more feeling, compassionate Pisces today. Our perspective changes in our relationships with&hellip;" />
+<link rel="amphtml" href="https://rubysreadings.com/2018/02/10/venus-enters-pisces/amp/"><style type="text/css" id="custom-colors-css">::selection{background:0 0}.navigation,#primary{background-color:#fff}#credit .container .row div p,#credit .container .row div p a,#masthead #title #site-description,#masthead #title #site-title{color:#000}#masthead #title #site-title:hover{color:#000}#credit .container .row div a:hover{color:#000}#top-navigation-wrapper,#primary-wrapper{background-color:#b60808}#masthead,#credit{background-color:#80949c}a,a>code:hover{color:#80949c}</style>
+<link rel="icon" href="https://rubysreadings.files.wordpress.com/2018/01/cropped-cropped-4e7279488156d5a911325aaf8546cae7.jpeg?w=32" sizes="32x32" />
+<link rel="icon" href="https://rubysreadings.files.wordpress.com/2018/01/cropped-cropped-4e7279488156d5a911325aaf8546cae7.jpeg?w=192" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://rubysreadings.files.wordpress.com/2018/01/cropped-cropped-4e7279488156d5a911325aaf8546cae7.jpeg?w=180" />
+<meta name="msapplication-TileImage" content="https://rubysreadings.files.wordpress.com/2018/01/cropped-cropped-4e7279488156d5a911325aaf8546cae7.jpeg?w=270" />
+		<link rel="stylesheet" id="custom-css-css" type="text/css" href="https://s0.wp.com/?custom-css=1&#038;csblog=2dXxi&#038;cscache=6&#038;csrev=13" />
+			</head>
+
+	<body class="post-template-default single single-post postid-4198 single-format-standard customizer-styles-applied highlander-enabled highlander-light custom-colors">
+
+		
+		<div id="top-navigation-wrapper">
+			<div class="container navigation">
+				<div class="col-lg-8 col-md-8">
+					<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+						<span class="sr-only">Toggle Navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button><!-- .navbar-toggle -->
+					<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+	<ul id="menu-readings" class="nav nav-pills"><li class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://rubysreadings.wordpress.com" title="Home"  >Home</a></li><li class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://rubysreadings.com/readinginfo/" title="Psychic Readings"  >Psychic Readings</a></li><li class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://rubysreadings.com/payments/" title="Payments"  >Payments</a></li><li class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://rubysreadings.com/testimonials/" title="Testimonials"  >Testimonials</a></li><li class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://rubysreadings.com/aboutruby/" title="About Ruby"  >About Ruby</a></li></ul></nav><!-- #navigation -->				</div><!-- .col-lg-12 -->
+				<div class="col-lg-4 col-md-4 hidden-sm hidden-xs pull-right">
+					<div class="container pull-right">
+						<ul id="social-icons" class="list-inline nav nav-pills pull-right">
+
+		<li id="twitter" class="">
+		<a href="http://twitter.com/rubynks/" title="Twitter">
+			<i class="fa fa-twitter fa-stack-1x"></i>
+		</a>
+	</li><!-- #twitter -->
+
+		<li id="facebook" class="">
+		<a href="https://www.facebook.com/rubysreadings" title="Facebook">
+			<i class="fa fa-facebook fa-stack-1x"></i>
+		</a>
+	</li><!-- #facebook -->
+
+		<li id="pinterest" class="">
+		<a href="https://www.pinterest.com/Rubynks/" title="Pinterest">
+			<i class="fa fa-pinterest fa-stack-1x"></i>
+		</a>
+	</li><!-- #google-plus -->
+
+		<li id="google-plus" class="hidden">
+		<a href="?rel=author" title="Google Plus">
+			<i class="fa fa-google-plus fa-stack-1x"></i>
+		</a>
+	</li><!-- #google-plus -->
+
+		<li id="linkedin" class="hidden">
+		<a href="" title="LinkedIn">
+			<i class="fa fa-linkedin fa-stack-1x"></i>
+		</a>
+	</li><!-- #linkedin -->
+
+		<li id="email-address" class="">
+					<a href="mailto:healingruby@gmail.com" title="Email">
+				<i class="fa fa-envelope fa-stack-1x"></i>
+			</a>
+			</li><!-- #email-address -->
+
+</ul><!-- #social-icons -->					</div><!-- .container -->
+				</div><!-- .col-lg-3 -->
+			</div><!-- .navigation -->
+		</div><!-- /#top-navigation-wrapper -->
+
+		<header id="masthead" role="banner">
+			<div class="container">
+									<div id="avatar" class="col-lg-2 col-md-2 col-sm-12 col-xs-12 hidden">
+	<a href="https://rubysreadings.com" title="Rubys Readings">
+		<img src="https://secure.gravatar.com/avatar/4e7279488156d5a911325aaf8546cae7/?s=140&d=retro" alt="Rubys Readings" height="140" width="140" />	</a>
+</div><!-- #avatar -->					<div id="title" class="col-lg-10 col-md-10 col-sm-12">
+
+	
+		<a href="https://rubysreadings.com">
+			<p id="site-title">Rubys Readings</p>
+		</a>
+
+	
+</div><!-- #title -->
+<div id="description" class="col-lg-10 col-md-10 col-sm-12">
+	<p id="site-description">Psychic, Astrologer, Healer, &amp; Blogger</p>
+</div><!-- #description -->							</div><!-- .container -->
+		</header><!-- #masthead -->
+	<div id="primary-wrapper">
+		<div id="primary" class="container">
+
+			
+			<main id="main" class="site-main col-lg-8 col-md-8" role="main">
+
+				
+														<div class="post-4198 post type-post status-publish format-standard hentry category-astrology-astrology tag-astrology tag-metaphysical tag-pisces tag-psychic-reading tag-relationships tag-spirituality tag-tarot-reader tag-venus tag-venus-in-picses single-post">
+
+						<h1 class="post-title entry-title">
+							VENUS ENTERS PISCES						</h1><!-- .post-title -->
+
+						
+<p class="post-meta">
+
+	<span class="post-author-meta">
+		<a href="https://rubysreadings.com/author/rubynks/" class="post-author" rel="author">
+			Rubys Readings		</a>
+	</span><!-- .post-author-meta -->
+
+	<span class="post-updated-meta">
+		&middot;
+		<a href="https://rubysreadings.com/2018/02/10/venus-enters-pisces/" class="updated">02/10/2018</a>
+	</span><!-- .updated-meta -->
+
+	
+		<span class="post-category-meta">
+			&middot;
+			<a href="https://rubysreadings.com/category/astrology-astrology/" rel="category tag">Astrology</a>		</span><!-- .category-meta -->
+
+					<span class="post-tag-meta">
+				&middot;
+				<a href="https://rubysreadings.com/tag/astrology/" rel="tag">Astrology</a>, <a href="https://rubysreadings.com/tag/metaphysical/" rel="tag">Metaphysical</a>, <a href="https://rubysreadings.com/tag/pisces/" rel="tag">Pisces</a>, <a href="https://rubysreadings.com/tag/psychic-reading/" rel="tag">Psychic Reading</a>, <a href="https://rubysreadings.com/tag/relationships/" rel="tag">Relationships</a>, <a href="https://rubysreadings.com/tag/spirituality/" rel="tag">Spirituality</a>, <a href="https://rubysreadings.com/tag/tarot-reader/" rel="tag">Tarot reader</a>, <a href="https://rubysreadings.com/tag/venus/" rel="tag">Venus</a>, <a href="https://rubysreadings.com/tag/venus-in-picses/" rel="tag">Venus in Picses</a>			</span><!-- tag-meta -->
+		
+					<span class="post-comment-link-meta">
+				&middot;
+				<a href="https://rubysreadings.com/2018/02/10/venus-enters-pisces/#respond">
+					No Comments				</a>
+			</span><!-- .comment-link-meta -->
+		
+		
+	
+</p><!-- .post-meta -->
+						<div class="post-content">
+							<div class="cs-rating pd-rating" id="pd_rating_holder_5573119_post_4198"></div><br/><p><img data-attachment-id="4197" data-permalink="https://rubysreadings.com/picture-8/" data-orig-file="https://rubysreadings.files.wordpress.com/2018/02/picture.jpg" data-orig-size="600,621" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;43687922&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;1&quot;}" data-image-title="Picture" data-image-description="" data-medium-file="https://rubysreadings.files.wordpress.com/2018/02/picture.jpg?w=290" data-large-file="https://rubysreadings.files.wordpress.com/2018/02/picture.jpg?w=600" class="alignnone size-full wp-image-4197" src="https://rubysreadings.files.wordpress.com/2018/02/picture.jpg?w=740" alt="Picture" srcset="https://rubysreadings.files.wordpress.com/2018/02/picture.jpg 600w, https://rubysreadings.files.wordpress.com/2018/02/picture.jpg?w=145 145w, https://rubysreadings.files.wordpress.com/2018/02/picture.jpg?w=290 290w" sizes="(max-width: 600px) 100vw, 600px"   /></p>
+<p>&nbsp;</p>
+<p><strong>VENUS ENTERS PISCES</strong><br />
+February 10 &#8211; March 6, 2018</p>
+<p>Are you ready for some romance in your life?<br />
+VENUS the planet of LOVE rules over our love life and our personal values, including money, is shifting gears from detached Aquarius and into more feeling, compassionate Pisces today.</p>
+<p>Our perspective changes in our relationships with other folks as we don&#8217;t see things in black and white, but instead live and in color. The Goddess of Love in Pisces means we tend to express our love in a more embracing way, so we are better at forgiving and understanding others, and we can show more compassion to our partners and close friends. We also are more vulnerable and more easily seduced, but can be seductive ourselves. Pisces is a very sexual sign and energy for all of us.</p>
+<p>Our hearts are more open as we see the beauty in others, which makes this a perfect time to meet someone new or to strengthen the spiritual bonds of an existing relationship. It&#8217;s a good time to spend time with those you love. Love doesn&#8217;t need to be expressed with words as much as we can intuitively just know what others are feeling!</p>
+<p>With Venus in poetic Pisces, we tend to feel more tender and affectionate, but we still may be hard to reach on some levels, because there&#8217;s a stronger desire for something that we have a hard time understanding ourselves or defining for others, and therefore we are more difficult to satisfy.</p>
+<p>Borders and boundaries slowly dissolve under the Venus in Pisces transit, and unfortunately, this allows the more shady characters to take advantage. Some folks may be victimized or deluded in some way, so we must watch for those who are more evasive, persuasive, and manipulative.</p>
+<p>Pay attention to this influence, everything isn&#8217;t what it seems in love and around our finances.</p>
+<p><em>~Ruby</em></p>
+<div id="jp-post-flair" class="sharedaddy sd-rating-enabled sd-like-enabled sd-sharing-enabled"><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-4198" class="share-facebook sd-button share-icon no-text" href="https://rubysreadings.com/2018/02/10/venus-enters-pisces/?share=facebook" target="_blank" title="Click to share on Facebook"><span></span><span class="sharing-screen-reader-text">Click to share on Facebook (Opens in new window)</span></a></li><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-4198" class="share-twitter sd-button share-icon no-text" href="https://rubysreadings.com/2018/02/10/venus-enters-pisces/?share=twitter" target="_blank" title="Click to share on Twitter"><span></span><span class="sharing-screen-reader-text">Click to share on Twitter (Opens in new window)</span></a></li><li class="share-pinterest"><a rel="nofollow noopener noreferrer" data-shared="sharing-pinterest-4198" class="share-pinterest sd-button share-icon no-text" href="https://rubysreadings.com/2018/02/10/venus-enters-pisces/?share=pinterest" target="_blank" title="Click to share on Pinterest"><span></span><span class="sharing-screen-reader-text">Click to share on Pinterest (Opens in new window)</span></a></li><li><a href="#" class="sharing-anchor sd-button share-more"><span>More</span></a></li><li class="share-end"></li></ul><div class="sharing-hidden"><div class="inner" style="display: none;"><ul><li class="share-reddit"><a rel="nofollow noopener noreferrer" data-shared="" class="share-reddit sd-button share-icon no-text" href="https://rubysreadings.com/2018/02/10/venus-enters-pisces/?share=reddit" target="_blank" title="Click to share on Reddit"><span></span><span class="sharing-screen-reader-text">Click to share on Reddit (Opens in new window)</span></a></li><li class="share-telegram"><a rel="nofollow noopener noreferrer" data-shared="" class="share-telegram sd-button share-icon no-text" href="https://rubysreadings.com/2018/02/10/venus-enters-pisces/?share=telegram" target="_blank" title="Click to share on Telegram"><span></span><span class="sharing-screen-reader-text">Click to share on Telegram (Opens in new window)</span></a></li><li class="share-end"></li><li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon no-text" href="https://rubysreadings.com/2018/02/10/venus-enters-pisces/?share=pocket" target="_blank" title="Click to share on Pocket"><span></span><span class="sharing-screen-reader-text">Click to share on Pocket (Opens in new window)</span></a></li><li class="share-end"></li></ul></div></div></div></div></div><div class='sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-unloaded' id='like-post-wrapper-32879796-4198-5e6edf3c569a8' data-src='//widgets.wp.com/likes/index.html?ver=20190321#blog_id=32879796&amp;post_id=4198&amp;origin=rubysreadings.wordpress.com&amp;obj_id=32879796-4198-5e6edf3c569a8&amp;domain=rubysreadings.com' data-name='like-post-frame-32879796-4198-5e6edf3c569a8'><h3 class='sd-title'>Like this:</h3><div class='likes-widget-placeholder post-likes-widget-placeholder' style='height: 55px;'><span class='button'><span>Like</span></span> <span class="loading">Loading...</span></div><span class='sd-text-color'></span><a class='sd-link-color'></a></div>
+<div id='jp-relatedposts' class='jp-relatedposts' >
+	
+</div></div>						</div><!-- .post-content -->
+
+						
+						
+
+	<div id="comments">
+
+		
+		
+		
+			<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2018/02/10/venus-enters-pisces/#respond" style="display:none;">Cancel reply</a></small></h3><p class="must-log-in">You must be <a href="https://rubysreadings.wordpress.com/wp-login.php?redirect_to=https%3A%2F%2Frubysreadings.com%2F2018%2F02%2F10%2Fvenus-enters-pisces%2F">logged in</a> to post a comment.</p>		<form action="https://rubysreadings.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+														
+
+
+						<input type="hidden" id="highlander_comment_nonce" name="highlander_comment_nonce" value="27d2dc1060" /><input type="hidden" name="_wp_http_referer" value="/2018/02/10/venus-enters-pisces/" />
+<input type="hidden" name="hc_post_as" id="hc_post_as" value="guest" />
+
+<div class="comment-form-field comment-textarea">
+	<label for="comment">Enter your comment here...</label>
+	<div id="comment-form-comment"><textarea id="comment" name="comment" title="Enter your comment here..."></textarea></div>
+</div>
+
+<div id="comment-form-identity" class="comment_registration">
+	<div id="comment-form-nascar">
+		<p>Please log in using one of these methods to post your comment:</p>
+		<ul>
+			<li>
+				<a href="#comment-form-load-service:WordPress.com" id="postas-wordpress" class="nascar-signin-link"
+                   title="Login via WordPress.com">
+					<svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24" ><rect x="0" fill="none" width="24" height="24"/><g><path fill="#0087be" d="M12.158 12.786l-2.698 7.84c.806.236 1.657.365 2.54.365 1.047 0 2.05-.18 2.986-.51-.024-.037-.046-.078-.065-.123l-2.762-7.57zM3.008 12c0 3.56 2.07 6.634 5.068 8.092L3.788 8.342c-.5 1.117-.78 2.354-.78 3.658zm15.06-.454c0-1.112-.398-1.88-.74-2.48-.456-.74-.883-1.368-.883-2.11 0-.825.627-1.595 1.51-1.595.04 0 .078.006.116.008-1.598-1.464-3.73-2.36-6.07-2.36-3.14 0-5.904 1.613-7.512 4.053.21.008.41.012.58.012.94 0 2.395-.114 2.395-.114.484-.028.54.684.057.74 0 0-.487.058-1.03.086l3.275 9.74 1.968-5.902-1.4-3.838c-.485-.028-.944-.085-.944-.085-.486-.03-.43-.77.056-.742 0 0 1.484.114 2.368.114.94 0 2.397-.114 2.397-.114.486-.028.543.684.058.74 0 0-.488.058-1.03.086l3.25 9.665.897-2.997c.456-1.17.684-2.137.684-2.907zm1.82-3.86c.04.286.06.593.06.924 0 .912-.17 1.938-.683 3.22l-2.746 7.94c2.672-1.558 4.47-4.454 4.47-7.77 0-1.564-.4-3.033-1.1-4.314zM12 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></g></svg>				</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:Twitter" id="postas-twitter" class="nascar-signin-link"
+                   title="Login via Twitter">
+					<svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24" ><rect x="0" fill="none" width="24" height="24"/><g><path fill="#1DA1F2" d="M22.23 5.924c-.736.326-1.527.547-2.357.646.847-.508 1.498-1.312 1.804-2.27-.793.47-1.67.812-2.606.996C18.325 4.498 17.258 4 16.078 4c-2.266 0-4.103 1.837-4.103 4.103 0 .322.036.635.106.935-3.41-.17-6.433-1.804-8.457-4.287-.353.607-.556 1.312-.556 2.064 0 1.424.724 2.68 1.825 3.415-.673-.022-1.305-.207-1.86-.514v.052c0 1.988 1.415 3.647 3.293 4.023-.344.095-.707.145-1.08.145-.265 0-.522-.026-.773-.074.522 1.63 2.038 2.817 3.833 2.85-1.404 1.1-3.174 1.757-5.096 1.757-.332 0-.66-.02-.98-.057 1.816 1.164 3.973 1.843 6.29 1.843 7.547 0 11.675-6.252 11.675-11.675 0-.178-.004-.355-.012-.53.802-.578 1.497-1.3 2.047-2.124z"/></g></svg>				</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:Facebook" id="postas-facebook" class="nascar-signin-link"
+                   title="Login via Facebook">
+					<svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24" ><rect x="0" fill="none" width="24" height="24"/><g><path fill="#3B5998" d="M20.007 3H3.993C3.445 3 3 3.445 3 3.993v16.013c0 .55.445.994.993.994h8.62v-6.97H10.27V11.31h2.346V9.31c0-2.325 1.42-3.59 3.494-3.59.993 0 1.847.073 2.096.106v2.43h-1.438c-1.128 0-1.346.537-1.346 1.324v1.734h2.69l-.35 2.717h-2.34V21h4.587c.548 0 .993-.445.993-.993V3.993c0-.548-.445-.993-.993-.993z"/></g></svg>				</a>
+			</li>
+		</ul>
+	</div>
+
+	<div id="comment-form-guest" class="comment-form-service selected">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+<a href="https://gravatar.com/site/signup/" target="_blank">				<img src="https://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=25&amp;d=retro&amp;forcedefault=y&amp;r=R" alt="Gravatar" width="25" class="no-grav" />
+</a>			</div>
+
+				<div class="comment-form-fields">
+				<div class="comment-form-field comment-form-email">
+					<label for="email">Email <span class="nopublish">(Address never made public)</span></label>
+					<div class="comment-form-input"><input id="email" name="email" type="email" value="" /></div>
+				</div>
+				<div class="comment-form-field comment-form-author">
+					<label for="author">Name</label>
+					<div class="comment-form-input"><input id="author" name="author" type="text" value="" /></div>
+				</div>
+				<div class="comment-form-field comment-form-url">
+					<label for="url">Website</label>
+					<div class="comment-form-input"><input id="url" name="url" type="url" value="" /></div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+	<div id="comment-form-wordpress" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="https://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=25&amp;d=retro&amp;forcedefault=y&amp;r=R" alt="WordPress.com Logo" width="25" class="no-grav" />
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="wp_avatar" id="wordpress-avatar" class="comment-meta-wordpress" value="" />
+				<input type="hidden" name="wp_user_id" id="wordpress-user_id" class="comment-meta-wordpress" value="" />
+				<input type="hidden" name="wp_access_token" id="wordpress-access_token" class="comment-meta-wordpress" value="" />
+						<p class="comment-form-posting-as pa-wordpress">
+			<strong></strong>
+			You are commenting using your WordPress.com account.			<span class="comment-form-log-out">
+				(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'wordpress' );">Log&nbsp;Out</a>&nbsp;/&nbsp;
+				<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)
+			</span>
+			<span class="pa-icon"><svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24" ><rect x="0" fill="none" width="24" height="24"/><g><path fill="#0087be" d="M12.158 12.786l-2.698 7.84c.806.236 1.657.365 2.54.365 1.047 0 2.05-.18 2.986-.51-.024-.037-.046-.078-.065-.123l-2.762-7.57zM3.008 12c0 3.56 2.07 6.634 5.068 8.092L3.788 8.342c-.5 1.117-.78 2.354-.78 3.658zm15.06-.454c0-1.112-.398-1.88-.74-2.48-.456-.74-.883-1.368-.883-2.11 0-.825.627-1.595 1.51-1.595.04 0 .078.006.116.008-1.598-1.464-3.73-2.36-6.07-2.36-3.14 0-5.904 1.613-7.512 4.053.21.008.41.012.58.012.94 0 2.395-.114 2.395-.114.484-.028.54.684.057.74 0 0-.487.058-1.03.086l3.275 9.74 1.968-5.902-1.4-3.838c-.485-.028-.944-.085-.944-.085-.486-.03-.43-.77.056-.742 0 0 1.484.114 2.368.114.94 0 2.397-.114 2.397-.114.486-.028.543.684.058.74 0 0-.488.058-1.03.086l3.25 9.665.897-2.997c.456-1.17.684-2.137.684-2.907zm1.82-3.86c.04.286.06.593.06.924 0 .912-.17 1.938-.683 3.22l-2.746 7.94c2.672-1.558 4.47-4.454 4.47-7.77 0-1.564-.4-3.033-1.1-4.314zM12 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></g></svg></span>
+		</p>
+					</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-googleplus" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="https://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=25&amp;d=retro&amp;forcedefault=y&amp;r=R" alt="Google photo" width="25" class="no-grav" />
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="googleplus_avatar" id="googleplus-avatar" class="comment-meta-googleplus" value="" />
+				<input type="hidden" name="googleplus_user_id" id="googleplus-user_id" class="comment-meta-googleplus" value="" />
+				<input type="hidden" name="googleplus_access_token" id="googleplus-access_token" class="comment-meta-googleplus" value="" />
+						<p class="comment-form-posting-as pa-googleplus">
+			<strong></strong>
+			You are commenting using your Google account.			<span class="comment-form-log-out">
+				(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'googleplus' );">Log&nbsp;Out</a>&nbsp;/&nbsp;
+				<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)
+			</span>
+			<span class="pa-icon"><svg xmlns="http://www.w3.org/2000/svg" role="presentation" x="0px" y="0px" viewBox="0 0 60 60" ><path fill="#519bf7" d="M56.3,30c0,-1.6 -0.2,-3.4 -0.6,-5h-3.1H42.2H30v10.6h14.8C44,39.3 42,42 39.1,43.9l8.8,6.8C53,46 56.3,39 56.3,30z" /><path fill="#3db366" d="M30,57.5c6.7,0 13.1,-2.4 17.9,-6.8l-8.8,-6.8c-2.5,1.6 -5.6,2.4 -9.1,2.4c-7.2,0 -13.3,-4.7 -15.4,-11.2l-9.3,7.1C9.8,51.3 19.1,57.5 30,57.5z" /><path fill="#fdc600" d="M5.3,42.2l9.3,-7.1c-0.5,-1.6 -0.8,-3.3 -0.8,-5.1s0.3,-3.5 0.8,-5.1l-9.3,-7.1C3.5,21.5 2.5,25.6 2.5,30S3.5,38.5 5.3,42.2z" /><path fill="#f15b44" d="M40.1,17.4l8,-8C43.3,5.1 37,2.5 30,2.5C19.1,2.5 9.8,8.7 5.3,17.8l9.3,7.1c2.1,-6.5 8.2,-11.1 15.4,-11.1C33.9,13.7 37.4,15.1 40.1,17.4z" /></svg></span>
+		</p>
+					</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-twitter" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="https://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=25&amp;d=retro&amp;forcedefault=y&amp;r=R" alt="Twitter picture" width="25" class="no-grav" />
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="twitter_avatar" id="twitter-avatar" class="comment-meta-twitter" value="" />
+				<input type="hidden" name="twitter_user_id" id="twitter-user_id" class="comment-meta-twitter" value="" />
+				<input type="hidden" name="twitter_access_token" id="twitter-access_token" class="comment-meta-twitter" value="" />
+						<p class="comment-form-posting-as pa-twitter">
+			<strong></strong>
+			You are commenting using your Twitter account.			<span class="comment-form-log-out">
+				(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'twitter' );">Log&nbsp;Out</a>&nbsp;/&nbsp;
+				<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)
+			</span>
+			<span class="pa-icon"><svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24" ><rect x="0" fill="none" width="24" height="24"/><g><path fill="#1DA1F2" d="M22.23 5.924c-.736.326-1.527.547-2.357.646.847-.508 1.498-1.312 1.804-2.27-.793.47-1.67.812-2.606.996C18.325 4.498 17.258 4 16.078 4c-2.266 0-4.103 1.837-4.103 4.103 0 .322.036.635.106.935-3.41-.17-6.433-1.804-8.457-4.287-.353.607-.556 1.312-.556 2.064 0 1.424.724 2.68 1.825 3.415-.673-.022-1.305-.207-1.86-.514v.052c0 1.988 1.415 3.647 3.293 4.023-.344.095-.707.145-1.08.145-.265 0-.522-.026-.773-.074.522 1.63 2.038 2.817 3.833 2.85-1.404 1.1-3.174 1.757-5.096 1.757-.332 0-.66-.02-.98-.057 1.816 1.164 3.973 1.843 6.29 1.843 7.547 0 11.675-6.252 11.675-11.675 0-.178-.004-.355-.012-.53.802-.578 1.497-1.3 2.047-2.124z"/></g></svg></span>
+		</p>
+					</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-facebook" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="https://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=25&amp;d=retro&amp;forcedefault=y&amp;r=R" alt="Facebook photo" width="25" class="no-grav" />
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="fb_avatar" id="facebook-avatar" class="comment-meta-facebook" value="" />
+				<input type="hidden" name="fb_user_id" id="facebook-user_id" class="comment-meta-facebook" value="" />
+				<input type="hidden" name="fb_access_token" id="facebook-access_token" class="comment-meta-facebook" value="" />
+						<p class="comment-form-posting-as pa-facebook">
+			<strong></strong>
+			You are commenting using your Facebook account.			<span class="comment-form-log-out">
+				(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'facebook' );">Log&nbsp;Out</a>&nbsp;/&nbsp;
+				<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)
+			</span>
+			<span class="pa-icon"><svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24" ><rect x="0" fill="none" width="24" height="24"/><g><path fill="#3B5998" d="M20.007 3H3.993C3.445 3 3 3.445 3 3.993v16.013c0 .55.445.994.993.994h8.62v-6.97H10.27V11.31h2.346V9.31c0-2.325 1.42-3.59 3.494-3.59.993 0 1.847.073 2.096.106v2.43h-1.438c-1.128 0-1.346.537-1.346 1.324v1.734h2.69l-.35 2.717h-2.34V21h4.587c.548 0 .993-.445.993-.993V3.993c0-.548-.445-.993-.993-.993z"/></g></svg></span>
+		</p>
+					</div>
+	
+		</div>
+	</div>
+
+
+	<div id="comment-form-load-service" class="comment-form-service">
+		<div class="comment-form-posting-as-cancel"><a href="javascript:HighlanderComments.cancelExternalWindow();">Cancel</a></div>
+		<p>Connecting to %s</p>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+var highlander_expando_javascript = function(){
+	var input = document.createElement( 'input' ),
+	    comment = jQuery( '#comment' );
+
+	if ( 'placeholder' in input ) {
+		comment.attr( 'placeholder', jQuery( '.comment-textarea label' ).remove().text() );
+	}
+
+	// Expando Mode: start small, then auto-resize on first click + text length
+	jQuery( '#comment-form-identity' ).hide();
+	jQuery( '#comment-form-subscribe' ).hide();
+	jQuery( '#commentform .form-submit' ).hide();
+
+	comment.css( { 'height':'10px' } ).one( 'focus', function() {
+		var timer = setInterval( HighlanderComments.resizeCallback, 10 )
+		jQuery( this ).animate( { 'height': HighlanderComments.initialHeight } ).delay( 100 ).queue( function(n) { clearInterval( timer ); HighlanderComments.resizeCallback(); n(); } );
+		jQuery( '#comment-form-identity' ).slideDown();
+		jQuery( '#comment-form-subscribe' ).slideDown();
+		jQuery( '#commentform .form-submit' ).slideDown();
+	});
+}
+jQuery(document).ready( highlander_expando_javascript );
+</script>
+
+<div id="comment-form-subscribe">
+	<p class="comment-subscription-form"><input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;"/> <label class="subscribe-label" id="subscribe-label" for="subscribe" style="display: inline;">Notify me of new comments via email.</label></p><p class="post-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto;"/> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog"  style="display: inline;">Notify me of new posts via email.</label></p></div>
+
+						<p class="form-submit">
+				<input name="submit" type="submit" id="comment-submit" value="Post Comment" />
+				<input type='hidden' name='comment_post_ID' value='4198' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+			</p>
+			<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="034d98cd67" /></p>
+<input type="hidden" name="genseq" value="1584324412" />
+<p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="90"/></p>		</form>
+	</div><!-- #respond -->
+	<div style="clear: both"></div><p class="akismet_comment_form_privacy_notice">This site uses Akismet to reduce spam. <a href="https://akismet.com/privacy/" target="_blank" rel="nofollow noopener">Learn how your comment data is processed</a>.</p>
+	</div><!-- #comments -->
+
+
+						
+<div id="pagination" class="col-lg-12">
+	<ul class="pager">
+
+	
+					<li class="previous single-previous">
+				<a href="https://rubysreadings.com/2018/02/03/february-2018-monthly-astro-forecast/" rel="prev"><span class="nav-previous"><i class="fa fa-chevron-left"></i>&nbsp;February 2018 &#8211; Monthly Astro Forecast </span></a>			</li><!-- .previous -->
+		
+					<li class="next single-next">
+				<a href="https://rubysreadings.com/2018/02/11/a-look-ahead/" rel="next"><span class="nav-next">&#8220;A Look Ahead&#8221;&nbsp;<i class="fa fa-chevron-right"></i></span></a>			</li><!-- .next -->
+		
+	
+	</ul><!-- .pager -->
+</div><!-- #pagination -->
+					</div><!-- .single -->
+							</main><!-- #main -->
+
+							
+
+	
+	<div id="sidebar" class="col-lg-4 col-md-4">
+		<div id="follow_button_widget-5" class="widget widget_follow_button_widget">
+		<a class="wordpress-follow-button" href="https://rubysreadings.com" data-blog="https://rubysreadings.com" data-lang="en" >Follow Rubys Readings on WordPress.com</a>
+		<script type="text/javascript">(function(d){var f = d.getElementsByTagName('SCRIPT')[0], p = d.createElement('SCRIPT');p.type = 'text/javascript';p.async = true;p.src = '//widgets.wp.com/platform.js';f.parentNode.insertBefore(p,f);}(document));</script>
+
+		</div><!-- .widget --><div id="wpcom_social_media_icons_widget-5" class="widget widget_wpcom_social_media_icons_widget"><h4 class="widget-title">Social</h4><ul><li><a href="https://www.facebook.com/rubysreadings/" class="genericon genericon-facebook" target="_blank"><span class="screen-reader-text">View rubysreadings&#8217;s profile on Facebook</span></a></li><li><a href="https://twitter.com/Rubynks/" class="genericon genericon-twitter" target="_blank"><span class="screen-reader-text">View Rubynks&#8217;s profile on Twitter</span></a></li><li><a href="https://www.instagram.com/rubynks/" class="genericon genericon-instagram" target="_blank"><span class="screen-reader-text">View rubynks&#8217;s profile on Instagram</span></a></li><li><a href="https://www.pinterest.com/Rubynks/" class="genericon genericon-pinterest" target="_blank"><span class="screen-reader-text">View Rubynks&#8217;s profile on Pinterest</span></a></li><li><a href="https://profiles.wordpress.org/rubysreadings/" class="genericon genericon-wordpress" target="_blank"><span class="screen-reader-text">View rubysreadings&#8217;s profile on WordPress.org</span></a></li><li><a href="https://www.twitch.tv/Rubynks/" class="genericon genericon-twitch" target="_blank"><span class="screen-reader-text">View Rubynks&#8217;s profile on Twitch</span></a></li><li><a href="https://rubysreadings.tumblr.com" class="genericon genericon-tumblr" target="_blank"><span class="screen-reader-text">View rubysreadings&#8217;s profile on Tumblr</span></a></li></ul></div><!-- .widget --><div id="archives-10" class="widget widget_archive"><h4 class="widget-title">Blog Posts</h4>		<label class="screen-reader-text" for="archives-dropdown-10">Blog Posts</label>
+		<select id="archives-dropdown-10" name="archive-dropdown">
+			
+			<option value="">Select Month</option>
+				<option value='https://rubysreadings.com/2020/03/'> March 2020 </option>
+	<option value='https://rubysreadings.com/2020/02/'> February 2020 </option>
+	<option value='https://rubysreadings.com/2020/01/'> January 2020 </option>
+	<option value='https://rubysreadings.com/2019/12/'> December 2019 </option>
+	<option value='https://rubysreadings.com/2019/11/'> November 2019 </option>
+	<option value='https://rubysreadings.com/2019/10/'> October 2019 </option>
+	<option value='https://rubysreadings.com/2019/09/'> September 2019 </option>
+	<option value='https://rubysreadings.com/2019/08/'> August 2019 </option>
+	<option value='https://rubysreadings.com/2019/07/'> July 2019 </option>
+	<option value='https://rubysreadings.com/2019/06/'> June 2019 </option>
+	<option value='https://rubysreadings.com/2019/05/'> May 2019 </option>
+	<option value='https://rubysreadings.com/2019/04/'> April 2019 </option>
+	<option value='https://rubysreadings.com/2019/03/'> March 2019 </option>
+	<option value='https://rubysreadings.com/2019/02/'> February 2019 </option>
+	<option value='https://rubysreadings.com/2019/01/'> January 2019 </option>
+	<option value='https://rubysreadings.com/2018/12/'> December 2018 </option>
+	<option value='https://rubysreadings.com/2018/11/'> November 2018 </option>
+	<option value='https://rubysreadings.com/2018/10/'> October 2018 </option>
+	<option value='https://rubysreadings.com/2018/09/'> September 2018 </option>
+	<option value='https://rubysreadings.com/2018/08/'> August 2018 </option>
+	<option value='https://rubysreadings.com/2018/07/'> July 2018 </option>
+	<option value='https://rubysreadings.com/2018/06/'> June 2018 </option>
+	<option value='https://rubysreadings.com/2018/05/'> May 2018 </option>
+	<option value='https://rubysreadings.com/2018/04/'> April 2018 </option>
+	<option value='https://rubysreadings.com/2018/03/'> March 2018 </option>
+	<option value='https://rubysreadings.com/2018/02/'> February 2018 </option>
+	<option value='https://rubysreadings.com/2018/01/'> January 2018 </option>
+	<option value='https://rubysreadings.com/2017/12/'> December 2017 </option>
+	<option value='https://rubysreadings.com/2017/11/'> November 2017 </option>
+	<option value='https://rubysreadings.com/2017/10/'> October 2017 </option>
+	<option value='https://rubysreadings.com/2017/09/'> September 2017 </option>
+	<option value='https://rubysreadings.com/2017/08/'> August 2017 </option>
+	<option value='https://rubysreadings.com/2017/07/'> July 2017 </option>
+	<option value='https://rubysreadings.com/2017/06/'> June 2017 </option>
+	<option value='https://rubysreadings.com/2017/05/'> May 2017 </option>
+	<option value='https://rubysreadings.com/2017/04/'> April 2017 </option>
+	<option value='https://rubysreadings.com/2017/03/'> March 2017 </option>
+	<option value='https://rubysreadings.com/2017/02/'> February 2017 </option>
+	<option value='https://rubysreadings.com/2017/01/'> January 2017 </option>
+	<option value='https://rubysreadings.com/2016/12/'> December 2016 </option>
+	<option value='https://rubysreadings.com/2016/11/'> November 2016 </option>
+	<option value='https://rubysreadings.com/2016/10/'> October 2016 </option>
+	<option value='https://rubysreadings.com/2016/09/'> September 2016 </option>
+	<option value='https://rubysreadings.com/2016/08/'> August 2016 </option>
+	<option value='https://rubysreadings.com/2016/07/'> July 2016 </option>
+	<option value='https://rubysreadings.com/2016/06/'> June 2016 </option>
+	<option value='https://rubysreadings.com/2016/05/'> May 2016 </option>
+	<option value='https://rubysreadings.com/2016/04/'> April 2016 </option>
+	<option value='https://rubysreadings.com/2016/03/'> March 2016 </option>
+	<option value='https://rubysreadings.com/2016/02/'> February 2016 </option>
+	<option value='https://rubysreadings.com/2016/01/'> January 2016 </option>
+	<option value='https://rubysreadings.com/2015/12/'> December 2015 </option>
+	<option value='https://rubysreadings.com/2015/11/'> November 2015 </option>
+	<option value='https://rubysreadings.com/2015/10/'> October 2015 </option>
+	<option value='https://rubysreadings.com/2015/09/'> September 2015 </option>
+	<option value='https://rubysreadings.com/2015/08/'> August 2015 </option>
+	<option value='https://rubysreadings.com/2015/07/'> July 2015 </option>
+	<option value='https://rubysreadings.com/2015/06/'> June 2015 </option>
+	<option value='https://rubysreadings.com/2015/05/'> May 2015 </option>
+	<option value='https://rubysreadings.com/2015/04/'> April 2015 </option>
+	<option value='https://rubysreadings.com/2015/03/'> March 2015 </option>
+	<option value='https://rubysreadings.com/2015/02/'> February 2015 </option>
+	<option value='https://rubysreadings.com/2015/01/'> January 2015 </option>
+	<option value='https://rubysreadings.com/2014/12/'> December 2014 </option>
+	<option value='https://rubysreadings.com/2014/11/'> November 2014 </option>
+	<option value='https://rubysreadings.com/2014/10/'> October 2014 </option>
+	<option value='https://rubysreadings.com/2014/09/'> September 2014 </option>
+	<option value='https://rubysreadings.com/2014/08/'> August 2014 </option>
+	<option value='https://rubysreadings.com/2014/07/'> July 2014 </option>
+	<option value='https://rubysreadings.com/2014/06/'> June 2014 </option>
+	<option value='https://rubysreadings.com/2014/05/'> May 2014 </option>
+	<option value='https://rubysreadings.com/2014/04/'> April 2014 </option>
+	<option value='https://rubysreadings.com/2014/03/'> March 2014 </option>
+	<option value='https://rubysreadings.com/2014/02/'> February 2014 </option>
+	<option value='https://rubysreadings.com/2014/01/'> January 2014 </option>
+	<option value='https://rubysreadings.com/2013/12/'> December 2013 </option>
+	<option value='https://rubysreadings.com/2013/11/'> November 2013 </option>
+	<option value='https://rubysreadings.com/2013/10/'> October 2013 </option>
+	<option value='https://rubysreadings.com/2013/09/'> September 2013 </option>
+	<option value='https://rubysreadings.com/2013/08/'> August 2013 </option>
+	<option value='https://rubysreadings.com/2013/07/'> July 2013 </option>
+	<option value='https://rubysreadings.com/2013/06/'> June 2013 </option>
+	<option value='https://rubysreadings.com/2013/05/'> May 2013 </option>
+	<option value='https://rubysreadings.com/2013/04/'> April 2013 </option>
+	<option value='https://rubysreadings.com/2012/04/'> April 2012 </option>
+	<option value='https://rubysreadings.com/2012/03/'> March 2012 </option>
+	<option value='https://rubysreadings.com/2012/02/'> February 2012 </option>
+
+		</select>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+(function() {
+	var dropdown = document.getElementById( "archives-dropdown-10" );
+	function onSelectChange() {
+		if ( dropdown.options[ dropdown.selectedIndex ].value !== '' ) {
+			document.location.href = this.options[ this.selectedIndex ].value;
+		}
+	}
+	dropdown.onchange = onSelectChange;
+})();
+/* ]]> */
+</script>
+
+		</div><!-- .widget --><div id="tag_cloud-8" class="widget widget_tag_cloud"><h4 class="widget-title">Category Cloud</h4><div style="overflow: hidden;"><a href="https://rubysreadings.com/category/astrology-astrology/" style="font-size: 275%; padding: 1px; margin: 1px;"  title="Astrology (700)">Astrology</a> <a href="https://rubysreadings.com/tag/cancer/" style="font-size: 100.50287356322%; padding: 1px; margin: 1px;"  title="Cancer (6)">Cancer</a> <a href="https://rubysreadings.com/tag/full-moon/" style="font-size: 104.27442528736%; padding: 1px; margin: 1px;"  title="Full Moon (21)">Full Moon</a> <a href="https://rubysreadings.com/category/leo/" style="font-size: 100.50287356322%; padding: 1px; margin: 1px;"  title="Leo (6)">Leo</a> <a href="https://rubysreadings.com/category/mercury-in-retrograde/" style="font-size: 104.02298850575%; padding: 1px; margin: 1px;"  title="Mercury in Retrograde (20)">Mercury in Retrograde</a> <a href="https://rubysreadings.com/category/moon-signs/" style="font-size: 100%; padding: 1px; margin: 1px;"  title="Moon Signs (4)">Moon Signs</a> <a href="https://rubysreadings.com/category/neptune/" style="font-size: 100%; padding: 1px; margin: 1px;"  title="Neptune (4)">Neptune</a> <a href="https://rubysreadings.com/category/new-moon/" style="font-size: 103.26867816092%; padding: 1px; margin: 1px;"  title="New Moon (17)">New Moon</a> <a href="https://rubysreadings.com/category/sun/" style="font-size: 103.26867816092%; padding: 1px; margin: 1px;"  title="Sun (17)">Sun</a> <a href="https://rubysreadings.com/tag/venus/" style="font-size: 102.26293103448%; padding: 1px; margin: 1px;"  title="Venus (13)">Venus</a> </div></div><!-- .widget --><div id="blog-stats-4" class="widget widget_blog-stats"><h4 class="widget-title">Blog Stats</h4>		<ul>
+			<li>138,266 Visitors</li>
+		</ul>
+		</div><!-- .widget --><div id="blog_subscription-7" class="widget widget_blog_subscription jetpack_subscription_widget"><h4 class="widget-title"><label for="subscribe-field">Follow Me Here</label></h4>
+            <form action="https://subscribe.wordpress.com" method="post" accept-charset="utf-8"
+                  id="subscribe-blog">
+									<p>Enter your email address to follow this blog and receive notifications of new posts by email.</p>
+<p>Join 3,324 other followers</p>
+                    <p><input type="text" name="email" style="width: 95%; padding: 1px 2px"
+                              placeholder="Enter your email address" value=""
+                              id="subscribe-field"/></p>
+				
+                <p>
+                    <input type="hidden" name="action" value="subscribe"/>
+                    <input type="hidden" name="blog_id" value="32879796"/>
+                    <input type="hidden" name="source" value="https://rubysreadings.com/2018/02/10/venus-enters-pisces/"/>
+                    <input type="hidden" name="sub-type" value="widget"/>
+                    <input type="hidden" name="redirect_fragment" value="blog_subscription-7"/>
+					<input type="hidden" id="_wpnonce" name="_wpnonce" value="0ed5060e7e" />                    <button type="submit"
+	                    		                	                >
+	                    Follow                    </button>
+                </p>
+            </form>
+			
+</div><!-- .widget --><div id="media_image-7" class="widget widget_media_image"><h4 class="widget-title">Donate to Rubys Readings</h4><style>.widget.widget_media_image { overflow: hidden; }.widget.widget_media_image img { height: auto; max-width: 100%; }</style><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&#038;hosted_button_id=33GTPK737LBYA"><img width="147" height="47" src="https://rubysreadings.files.wordpress.com/2018/06/btn_donatecc_lg.gif" class="image wp-image-4471  attachment-full size-full" alt="" style="max-width: 100%; height: auto;" data-attachment-id="4471" data-permalink="https://rubysreadings.com/btn_donatecc_lg-2/" data-orig-file="https://rubysreadings.files.wordpress.com/2018/06/btn_donatecc_lg.gif" data-orig-size="147,47" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="btn_donateCC_LG" data-image-description="" data-medium-file="https://rubysreadings.files.wordpress.com/2018/06/btn_donatecc_lg.gif?w=147" data-large-file="https://rubysreadings.files.wordpress.com/2018/06/btn_donatecc_lg.gif?w=147" /></a></div><!-- .widget --><div id="jetpack_simple_payments_widget-3" class="widget jetpack-simple-payments"><h4 class="widget-title">Order Here</h4><div class="jetpack-simple-payments-content">
+<div class="jetpack-simple-payments-5708 jetpack-simple-payments-wrapper">
+	<div class="jetpack-simple-payments-product">
+		
+		<div class="jetpack-simple-payments-details">
+			<div class="jetpack-simple-payments-title"><p>Readings</p></div>
+			<div class="jetpack-simple-payments-description"><p>Order a 30 Min Reading Here</p></div>
+			<div class="jetpack-simple-payments-price"><p>$45.00</p></div>
+			<div class="jetpack-simple-payments-purchase-message" id="jetpack-simple-payments-5708_5e6edf3c5a8f01.74553812-message-container"></div>
+			<div class="jetpack-simple-payments-purchase-box">
+				
+				<div class="jetpack-simple-payments-items">
+					<input class="jetpack-simple-payments-items-number" type="number" value="1" min="1" id="jetpack-simple-payments-5708_5e6edf3c5a8f01.74553812_number" />
+				</div>
+				
+				<div class="jetpack-simple-payments-button" id="jetpack-simple-payments-5708_5e6edf3c5a8f01.74553812_button"></div>
+			</div>
+		</div>
+	</div>
+</div>
+</div><!--simple-payments--></div><!-- .widget -->	</div><!-- #sidebar -->
+
+			
+		</div><!-- #primary -->
+	</div><!-- /#primary-wrapper -->
+
+
+	<div id="footer-wrapper">
+			<div class="container">
+				<div class="navigation row">
+					<div id="mayer-back-to-top" class="col-lg-12">
+						<a href="#top">Back To Top</a>
+					</div><!-- #mayer-back-to-top -->
+				</div><!-- .navigation -->
+			</div><!-- .container -->
+		</div><!-- #footer-wrapper -->
+
+		<div id="credit">
+			<div class="container">
+									<div class="row">
+						<div id="social-icons-footer">
+							<ul id="social-icons" class="list-inline nav nav-pills pull-right">
+
+		<li id="twitter" class="">
+		<a href="http://twitter.com/rubynks/" title="Twitter">
+			<i class="fa fa-twitter fa-stack-1x"></i>
+		</a>
+	</li><!-- #twitter -->
+
+		<li id="facebook" class="">
+		<a href="https://www.facebook.com/rubysreadings" title="Facebook">
+			<i class="fa fa-facebook fa-stack-1x"></i>
+		</a>
+	</li><!-- #facebook -->
+
+		<li id="pinterest" class="">
+		<a href="https://www.pinterest.com/Rubynks/" title="Pinterest">
+			<i class="fa fa-pinterest fa-stack-1x"></i>
+		</a>
+	</li><!-- #google-plus -->
+
+		<li id="google-plus" class="hidden">
+		<a href="?rel=author" title="Google Plus">
+			<i class="fa fa-google-plus fa-stack-1x"></i>
+		</a>
+	</li><!-- #google-plus -->
+
+		<li id="linkedin" class="hidden">
+		<a href="" title="LinkedIn">
+			<i class="fa fa-linkedin fa-stack-1x"></i>
+		</a>
+	</li><!-- #linkedin -->
+
+		<li id="email-address" class="">
+					<a href="mailto:healingruby@gmail.com" title="Email">
+				<i class="fa fa-envelope fa-stack-1x"></i>
+			</a>
+			</li><!-- #email-address -->
+
+</ul><!-- #social-icons -->						</div><!-- #social-icons-footer -->
+					</div><!-- #social-icons-footer -->
+								<div class="row">
+					<div class="col-lg-12">
+						<p>
+							<a href="https://wordpress.com/?ref=footer_custom_powered" rel="nofollow">Powered by WordPress.com</a>.
+							
+													</p>
+					</div><!-- .col-lg-12 -->
+				</div><!-- .row -->
+			</div><!-- .container -->
+		</div><!-- #credit -->
+
+		<!--  -->
+<script src='//0.gravatar.com/js/gprofiles.js?ver=202012y'></script>
+<script>
+var WPGroHo = {"my_hash":""};
+</script>
+<script type='text/javascript' src='https://s0.wp.com/wp-content/mu-plugins/gravatar-hovercards/wpgroho.js?m=1380573781h'></script>
+
+	<script>
+		//initialize and attach hovercards to all gravatars
+		jQuery( document ).ready( function( $ ) {
+
+			if (typeof Gravatar === "undefined"){
+				return;
+			}
+
+			if ( typeof Gravatar.init !== "function" ) {
+				return;
+			}			
+
+			Gravatar.profile_cb = function( hash, id ) {
+				WPGroHo.syncProfileData( hash, id );
+			};
+			Gravatar.my_hash = WPGroHo.my_hash;
+			Gravatar.init( 'body', '#wp-admin-bar-my-account' );
+		});
+	</script>
+
+		<div style="display:none">
+	</div>
+<script>
+var HighlanderComments = {"loggingInText":"Logging In\u2026","submittingText":"Posting Comment\u2026","postCommentText":"Post Comment","connectingToText":"Connecting to %s","commentingAsText":"%1$s: You are commenting using your %2$s account.","logoutText":"Log Out","loginText":"Log In","connectURL":"https:\/\/rubysreadings.wordpress.com\/public.api\/connect\/?action=request&domain=rubysreadings.com","logoutURL":"https:\/\/rubysreadings.wordpress.com\/wp-login.php?action=logout&_wpnonce=0df603df31","homeURL":"https:\/\/rubysreadings.com\/","postID":"4198","gravDefault":"retro","enterACommentError":"Please enter a comment","enterEmailError":"Please enter your email address here","invalidEmailError":"Invalid email address","enterAuthorError":"Please enter your name here","gravatarFromEmail":"This picture will show whenever you leave a comment. Click to customize it.","logInToExternalAccount":"Log in to use details from one of these accounts.","change":"Change","changeAccount":"Change Account","comment_registration":"1","userIsLoggedIn":"","isJetpack":"","text_direction":"ltr"};
+</script>
+<script type='text/javascript' src='https://s0.wp.com/_static/??/wp-content/js/jquery/jquery.autoresize.js,/wp-content/mu-plugins/highlander-comments/script.js?m=1573483029j'></script>
+
+	<div id="carousel-reblog-box">
+		<form action="#" name="carousel-reblog">
+			<textarea id="carousel-reblog-content" name="carousel-reblog-content" placeholder="Add your thoughts here... (optional)"></textarea>
+			<label for="carousel-reblog-to-blog-id" id="carousel-reblog-lblogid">Post to</label>
+			<select name="carousel-reblog-to-blog-id" id="carousel-reblog-to-blog-id">
+						</select>
+
+			<div class="submit">
+				<span class="canceltext"><a href="#" class="cancel">Cancel</a></span>
+				<input type="submit" name="carousel-reblog-submit" class="button" id="carousel-reblog-submit" value="Reblog Post" />
+				<input type="hidden" id="carousel-reblog-blog-id" value="32879796" />
+				<input type="hidden" id="carousel-reblog-blog-url" value="https://rubysreadings.com" />
+				<input type="hidden" id="carousel-reblog-blog-title" value="Rubys Readings" />
+				<input type="hidden" id="carousel-reblog-post-url" value="" />
+				<input type="hidden" id="carousel-reblog-post-title" value="" />
+			</div>
+
+			<input type="hidden" id="_wpnonce" name="_wpnonce" value="06b6345491" /><input type="hidden" name="_wp_http_referer" value="/2018/02/10/venus-enters-pisces/" />		</form>
+
+		<div class="arrow"></div>
+	</div>
+
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"https:\/\/rubysreadings.com\/2018\/02\/10\/venus-enters-pisces\/":4198};
+	</script>
+						<link rel='stylesheet' id='all-css-0-3' href='https://s0.wp.com/_static/??-eJx9jdsKwjAMQH/IGGQW5oP4LV0ba7feaFrG/t6Kbgji3pIczgnOCVQMhULB5KqxgdHUtg6UDQwuqolxpJKkmsDJJdYCJluNH3TPTT4q5gN+lXyFNaZkjpXJbZH1sCcZCpRtA3/GzbVBuaqpvWFGLfnxxt6GvTxbnxxBkotv5Gd/qTd/PYm+67vzRYjxCe6xbv4=?cssminify=yes' type='text/css' media='all' />
+<script>
+var comment_like_text = {"loading":"Loading..."};
+</script>
+<script>
+var actionbardata = {"siteID":"32879796","siteName":"Rubys Readings","siteURL":"https:\/\/rubysreadings.com","icon":"<img alt='' src='https:\/\/rubysreadings.files.wordpress.com\/2018\/01\/cropped-cropped-4e7279488156d5a911325aaf8546cae7.jpeg?w=50' class='avatar avatar-50' height='50' width='50' \/>","canManageOptions":"","canCustomizeSite":"","isFollowing":"","themeSlug":"premium\/mayer","signupURL":"https:\/\/wordpress.com\/start\/","loginURL":"https:\/\/wordpress.com\/log-in?redirect_to=https%3A%2F%2Frubysreadings.com%2F2018%2F02%2F10%2Fvenus-enters-pisces%2F&signup_flow=account&domain=rubysreadings.com","themeURL":"","xhrURL":"https:\/\/rubysreadings.com\/wp-admin\/admin-ajax.php","nonce":"1ea0455380","isSingular":"1","isFolded":"","isLoggedIn":"","isMobile":"","subscribeNonce":"<input type=\"hidden\" id=\"_wpnonce\" name=\"_wpnonce\" value=\"0ed5060e7e\" \/>","referer":"https:\/\/rubysreadings.com\/2018\/02\/10\/venus-enters-pisces\/","canFollow":"1","feedID":"52627237","statusMessage":"","customizeLink":"https:\/\/rubysreadings.wordpress.com\/wp-admin\/customize.php?url=https%3A%2F%2Frubysreadings.wordpress.com%2F2018%2F02%2F10%2Fvenus-enters-pisces%2F","postID":"4198","shortlink":"https:\/\/wp.me\/p2dXxi-15I","canEditPost":"","editLink":"https:\/\/wordpress.com\/post\/rubysreadings.com\/4198","statsLink":"https:\/\/wordpress.com\/stats\/post\/4198\/rubysreadings.com","i18n":{"view":"View site","follow":"Follow","following":"Following","edit":"Edit","login":"Log in","signup":"Sign up","customize":"Customize","report":"Report this content","themeInfo":"Get theme: Mayer","shortlink":"Copy shortlink","copied":"Copied","followedText":"New posts from this site will now appear in your <a href=\"https:\/\/wordpress.com\/read\">Reader<\/a>","foldBar":"Collapse this bar","unfoldBar":"Expand this bar","editSubs":"Manage subscriptions","viewReader":"View site in Reader","viewReadPost":"View post in Reader","subscribe":"Sign me up","enterEmail":"Enter your email address","followers":"Join 3,324 other followers","alreadyUser":"Already have a WordPress.com account? <a href=\"https:\/\/wordpress.com\/log-in?redirect_to=https%3A%2F%2Frubysreadings.com%2F2018%2F02%2F10%2Fvenus-enters-pisces%2F&signup_flow=account&domain=rubysreadings.com\">Log in now.<\/a>","stats":"Stats"}};
+</script>
+<script>
+var jetpackCarouselStrings = {"widths":[370,700,1000,1200,1400,2000],"is_logged_in":"","lang":"en","ajaxurl":"https:\/\/rubysreadings.com\/wp-admin\/admin-ajax.php","nonce":"ecbd4ce34e","display_exif":"1","display_geo":"1","single_image_gallery":"1","single_image_gallery_media_file":"","background_color":"black","comment":"Comment","post_comment":"Post Comment","write_comment":"Write a Comment...","loading_comments":"Loading Comments...","download_original":"View full size <span class=\"photo-size\">{0}<span class=\"photo-size-times\">\u00d7<\/span>{1}<\/span>","no_comment_text":"Please be sure to submit some text with your comment.","no_comment_email":"Please provide an email address to comment.","no_comment_author":"Please provide your name to comment.","comment_post_error":"Sorry, but there was an error posting your comment. Please try again later.","comment_approved":"Your comment was approved.","comment_unapproved":"Your comment is in moderation.","camera":"Camera","aperture":"Aperture","shutter_speed":"Shutter Speed","focal_length":"Focal Length","copyright":"Copyright","comment_registration":"1","require_name_email":"0","login_url":"https:\/\/rubysreadings.wordpress.com\/wp-login.php?redirect_to=https%3A%2F%2Frubysreadings.com%2F2018%2F02%2F10%2Fvenus-enters-pisces%2F","blog_id":"32879796","meta_data":["camera","aperture","shutter_speed","focal_length","copyright"],"local_comments_commenting_as":"<p id=\"jp-carousel-commenting-as\">You must be <a href=\"#\" class=\"jp-carousel-comment-login\">logged in<\/a> to post a comment.<\/p>","reblog":"Reblog","reblogged":"Reblogged","reblog_add_thoughts":"Add your thoughts here... (optional)","reblogging":"Reblogging...","post_reblog":"Post Reblog","stats_query_args":"blog=32879796&v=wpcom&tz=-5&user_id=0&subd=rubysreadings","is_public":"1","reblog_enabled":""};
+</script>
+<script type='text/javascript' src='https://s0.wp.com/_static/??-eJydUu1OwzAMfCHSbNAK9gPxKChNvOE2X8RJy3h6UminbouG4E9j3dlnn2s+eiadjWAj74grGFCC/6g6uuPnlHcUDRCJAxTY7j1BOM5PhXZAGH9N6yB6IXsWgPDzStUk5nU6oCWusQfiuSjBm7BKQ1iS0UqdVCan4ZEiH8AqFybKO33co9aVQXupvQjvk9aMMAIDhRHtYW7Jm3pX3zfNjrfaZTB7J5ZD2c9dCvZW80pnTIbYz9zdZKDlNKK/ZfKq6Az4vwMYJhHpko3KjXa28f2lS7K01mWMAF4fS8tceRAq86wVgRtBEUKOmBsgBJzETtgfFWLIV3K1gXWRjOjsVHSKSk7IY9Hh+VWus0q/SQSXCDRfrncBbs3XIxmI7KHa8Nfcme9dMDn/xTxvm6d6u9k+1k33BYntUlU='></script>
+<script type='text/javascript'>
+( 'fetch' in window ) || document.write( '<script src="https://s0.wp.com/wp-includes/js/dist/vendor/wp-polyfill-fetch.min.js?m=1573572739h&#038;ver=3.0.0"></scr' + 'ipt>' );( document.contains ) || document.write( '<script src="https://s0.wp.com/wp-includes/js/dist/vendor/wp-polyfill-node-contains.min.js?m=1540208548h&#038;ver=3.26.0-0"></scr' + 'ipt>' );( window.FormData && window.FormData.prototype.keys ) || document.write( '<script src="https://s0.wp.com/wp-includes/js/dist/vendor/wp-polyfill-formdata.min.js?m=1550600082h&#038;ver=3.0.12"></scr' + 'ipt>' );( Element.prototype.matches && Element.prototype.closest ) || document.write( '<script src="https://s0.wp.com/wp-includes/js/dist/vendor/wp-polyfill-element-closest.min.js?m=1540208548h&#038;ver=2.0.2"></scr' + 'ipt>' );
+</script>
+<script src='https://www.paypalobjects.com/api/checkout.js'></script>
+<script type='text/javascript' src='https://s0.wp.com/wp-content/mu-plugins/simple-payments/paypal-express-checkout.js?m=1564557884h'></script>
+<script type='text/javascript'>
+try{PaypalExpressCheckout.renderButton( '32879796', '5708', 'jetpack-simple-payments-5708_5e6edf3c5a8f01.74553812', '1' );}catch(e){}
+</script>
+<script>
+<!--//--><![CDATA[//><!--
+PDRTJS_settings_5573119_post_4198={"id":5573119,"unique_id":"wp-post-4198","title":"VENUS%20ENTERS%20PISCES","permalink":"https:\/\/rubysreadings.com\/2018\/02\/10\/venus-enters-pisces\/","item_id":"_post_4198"}; if ( typeof PDRTJS_RATING !== 'undefined' ){if ( typeof PDRTJS_5573119_post_4198 == 'undefined' ){PDRTJS_5573119_post_4198 = new PDRTJS_RATING( PDRTJS_settings_5573119_post_4198 );}}
+//--><!]]>
+</script>
+<script src='https://polldaddy.com/js/rating/rating.js?ver=wpcom'></script>
+<script>
+var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
+</script>
+<script type='text/javascript' src='https://s0.wp.com/wp-content/mu-plugins/post-flair/sharing/sharing.js?m=1564557884h'></script>
+<script type='text/javascript'>
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-facebook', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-twitter', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-telegram', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomtelegram', 'menubar=1,resizable=1,width=450,height=450' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-pocket', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcompocket', 'menubar=1,resizable=1,width=450,height=450' );
+				return false;
+			});
+</script>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script>		<iframe src='https://widgets.wp.com/likes/master.html?ver=20190321#ver=20190321' scrolling='no' id='likes-master' name='likes-master' style='display:none;'></iframe>
+		<div id='likes-other-gravatars'><div class="likes-text"><span>%d</span> bloggers like this:</div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
+<script src="//stats.wp.com/w.js?61" type="text/javascript" async defer></script>
+<script type="text/javascript">
+_tkq = window._tkq || [];
+_stq = window._stq || [];
+_tkq.push(['storeContext', {'blog_id':'32879796','blog_tz':'-5','user_lang':'en','blog_lang':'en','user_id':'0'}]);
+_stq.push(['view', {'blog':'32879796','v':'wpcom','tz':'-5','user_id':'0','post':'4198','subd':'rubysreadings'}]);
+_stq.push(['extra', {'crypt':'UE40eW5QN0p8M2Y/RE1TaVhzUzFMbjdWNHpwZGhTayxPSUFCMGNrd29+Smw0TDhnZmRTK0hlRi9QSGh6bi9GXVhBJWIlZlR5U1JMLU8/MkNtblkvY1d1S0RVcmdTLF9XckorVFRFSjZJfCVfY25PMFR8RkNGdkVWcFhIV09yTC5Mbl94aTN3OVlGemFla1IrR2VyPUNSNGRkPVNaRnpBZW5pQWV5MmZ4bnQuVW04X05iS05xcG4zNG9NclVFYnprTz95bVR4cmFkeixnfi50c0RZbE5yNV16YTB6WDc5akYwWmJiamJtcFo5R1ouTTRDTm5KLUFORDRMVE5URERFRSViJnlJRVY1bzQmeEFdVnN2VDIsa0s0WS9ENi8rfCtzRTgwWEs2Wkx8aWN1UCsvOS1Qek43ZkElb1RZJkNrUUF0alQ1RG16Jld3cUlNelEsci5fMHlmL3lySzRIV0FzT0F4UTJ5L000dlpRZl0ubiV3WHBNWExiSXdEYzgrb1pnMXI5M3NwbSwyWE5M'}]);
+_stq.push([ 'clickTrackerInit', '32879796', '4198' ]);
+	</script>
+<noscript><img src="https://pixel.wp.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /></noscript>
+<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+</script>	</body>
+</html>

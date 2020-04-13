@@ -1,0 +1,56 @@
+
+
+<title>Super Delicious</title>
+
+<body>
+     <p> Welcome come to food court </p>
+                             
+<h1> Food Court</h1>
+<img src="foodcourt.jpg" alt="Food Court Image">
+<br>
+<br>
+     <h2><p><a href="project1.html">Salad Vs. Burger?</a> </p></h2>
+
+<p>
+Do you think that ordering a salad means making a healthy choice? It certainly has to be better than a hamburger, right? The answer may not be as straightforward as you think. There are plenty of reasons to consider a hamburger superior to the usual salad. Let’s look at <a href="project1.html"<strong>some reasons</strong></a> to choose the tastier option.
+</p>
+<a href="project1.html">Read More</a>
+
+<br>
+     <h2><p><a href="project2.html">Yogurt Vs. Ice Cream?</a> </p></h2>
+<p>
+Is frozen yogurt really healthier than ice cream? A primary difference between ice cream and froyo is that while ice cream's main ingredient is, you guessed it, cream, frozen yogurt is made from cultured milk (aka yogurt, of course!) which is often viewed as a "health food."
+</P>
+<a href="project2.html">Read More</a>
+<br>
+     <h2><p><a href="project3.html">Cooking Vs. Eating out?</a> </p></h2>
+<p>
+It can’t be surprising that the number of people eating at home is declining. We’ve been eating out more frequently, reducing the amount of meals we’ve been cooking at home. Calories consumed fast food and restaurant has grown to be a bigger part of the calorie pie, while the percentage of calories from meals cooked at home has decreased.
+</P>
+<a href="project3.html">Read More</a>
+
+<br>
+<hr>
+<br>
+
+<table>
+    <thead>
+         <tr>
+              <th>Name</th>
+              <th>Email</th>
+         </tr>
+    </thead>
+    <tbody>
+         <tr>
+             	<td>Yixin Cao</td>
+    		<td>yixin.cao@sjsu.edu</td>
+         </tr>
+  
+    </tbody>
+</table>
+
+
+
+</body>
+
+
