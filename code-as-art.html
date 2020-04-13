@@ -3,6 +3,9 @@
 <head>
 <title>yc-code-as-art</title>
 <style>
+.body{
+	background-color: cornsilk;
+}
 		h1 {
 	  text-align: center;
 	  color: black;
@@ -12,25 +15,16 @@
   color: black;
   margin-left: 40px;
 } 
-.image {
-		 
-		 margin: auto;
+
+
+.container-fluid{
+	margin: auto;
 		 width: 50%;
 		  position: absolute;
-		 top: 50%;
-		 left: 65%;
+		 top: 30%;
+		 left: 79%;
 		 bottom: 50%;
 		transform: translate(-50%, -50%);
-		 } 
- .container-fluid{
-  margin: auto;
-  width: 60%;
-  border: 3px solid palevioletred;
-  padding: 10px;
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 			
@@ -49,7 +43,7 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
-<body>
+<div classbody>
 
 <nav class="navbar navbar-expand-sm bg-light navbar-light">
  <ul class="navbar-nav">
@@ -69,12 +63,13 @@
 <div class="container-fluid">
 
 	
-	<p> self portraits expression using coding </p>
+	<p> Self portraits expression using coding </p>
 
 	<iframe src="sketch/index.html" style="height:600px;width:600px;"></iframe>
-	<div class="text">
+	
+
  <pre>
-	    function setup() {
+                function setup() {
 		createCanvas(600,600);
 		noStroke();
 		}
