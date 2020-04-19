@@ -3,13 +3,17 @@ var initials ='yc'; // your initials
 var choice = '1'; // starting choice, so it is not empty
 var screenbg = 250; // off white background
 var lastscreenshot=61; // last screenshot never taken
+let angle = 0;
+
+
 
 function preload() {
 // preload() runs once, it may make you wait
 //img = loadImage('smile.png');  // cat.jpg needs to be next to this .js file
 // you can link to an image on your github account
-img1 = loadImage('https://super-delicious.github.io/images/11.png');
-//img1 = loadImage('11.png'); 
+//img1 = loadImage('https://super-delicious.github.io/images/11.png');
+img1 = loadImage('data/11.png'); 
+
 }
 
 function setup() {
@@ -52,18 +56,19 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
   } else if (toolChoice == '3') { // third tool- face
 
     stroke(0, 0);
-    fill(random(250), random(230), random(210),random(235));
+    fill(random(250), random(230), random(210),random(255));
     ellipse(mouseX, mouseY,160,160);
     
-  } else if (toolChoice == '4') { // fourth tool- mouth
+  } else if (toolChoice == '4') { // tool- eye
+    
+    
+    fill(random(100), random(0), random(40),random(43));
+    ellipse(mouseX, mouseY, 30, 35);
+   
+  } else if (key == '5') { // tool- smile mouth
     
     fill(random(250), random(230), random(210),random(235));
-    arc(mouseX, mouseY, 100, 100, 0, PI, CHORD);
-    
-  } else if (key == '5') { // eye
-    
-    fill(106, 74, 1);
-    ellipse(mouseX, mouseY, 33, 38);
+    arc(mouseX, mouseY, 80, 80, 0, PI);
     
   } else if (toolChoice == '6') { //pupil
  
@@ -72,30 +77,49 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
     ellipse(mouseX, mouseY,10,13);
      
     
-  } else if (toolChoice == '7') { //face 
+  } else if (toolChoice == '7') { // tool - face transparency
+    
+    stroke(0, 0);
+    fill(random(250), random(200), random(210),random(20));
+    ellipse(mouseX, mouseY,160,160);
 
     
-  } else if (toolChoice == '8') {
+  } else if (toolChoice == '8') { // tool- unsmile wouth
 
-    fill(106, 74, 1);
-    ellipse(mouseX, mouseY, 33, 38);
-  } else if (toolChoice == '9') {
+   fill(random(250), random(230), random(210),random(235));
+    arc(mouseX, mouseY, 80, 80, PI,0);
 
-    image(img1, mouseX, mouseY);
-  } else if (toolChoice == '0') {
+  } else if (toolChoice == '9') { // tool- flower
+  
+    stroke(0,0);
+    angle += 10;
+    let val = cos(radians(angle)) * 32.0;
+    for (let a = 0; a < 360; a += 75) {
+      let xoff = cos(radians(a)) * val;
+      let yoff = sin(radians(a)) * val;
+      fill(random(205), random(55), random(255), random(55));
+      ellipse(mouseX + xoff, mouseY + yoff, val, val);
+    }
+   
+  }else if (toolChoice == '0') { //suqare
+    
     stroke(0, 0);
-    fill(random(255), random(255), random(255), random(255));
-    arc(mouseX, mouseY, pmouseX, pmouseY,PI,0);
+    fill(random(255), random(150), random(255), random(255));
+    rect(mouseX, mouseY, 20,20);
+
+ 
   } else if (toolChoice == 'g' || toolChoice == 'G') { // g places the image we pre-loaded
     image(img1, mouseX, mouseY);
-    
-  } else if (toolChoice == 'e' || toolChoice == 'E') { // Erase
+  
+} else if (toolChoice == 'e' || toolChoice == 'E') { // Erase
     stroke(0, 0);
     fill(250);
     circle(mouseX, mouseY, 35);
     
   }
- }
+ } 
+ 
+ 
  
 function testbox(r, g, b) {
 // this is a test function that will show you how you can put your own functions into the sketch
@@ -124,5 +148,11 @@ function saveme(){
     saveCanvas(filename, 'jpg');
   }
   lastscreenshot=second(); // set this to the current second so no more than one per second
+  
+function variableEllipse(x, y, px, py) {
+  let speed = abs(x - px) + abs(y - py);
+  stroke(speed);
+  ellipse(x, y, speed, speed);
+}
   
 }
