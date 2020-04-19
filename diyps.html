@@ -119,7 +119,7 @@
        
        
         stroke(0);
-        var weight = dist(mouseX, mouseY, pmouseX, pmouseY);
+     var weight = dist(mouseX, mouseY, pmouseX, pmouseY);
         strokeWeight(weight);
         line(mouseX, mouseY, pmouseX, pmouseY);
         
@@ -127,7 +127,7 @@
       } else if (toolChoice == '2') { // second tool- shadow brush
     
         stroke(0,8);
-        var weight = dist(mouseX, mouseY, pmouseX, pmouseY);
+       var weight = dist(mouseX, mouseY, pmouseX, pmouseY);
         strokeWeight(weight);
         line(mouseX, mouseY, pmouseX, pmouseY);
         
@@ -162,7 +162,7 @@
         ellipse(mouseX, mouseY,160,160);
     
         
-      } else if (toolChoice == '8') { // tool- unsmile wouth
+      } else if (toolChoice == '8') { // tool- unsmile mouth
     
        fill(random(250), random(230), random(210),random(235));
         arc(mouseX, mouseY, 80, 80, PI,0);
@@ -194,8 +194,12 @@
         fill(250);
         circle(mouseX, mouseY, 35);
         
-      }
+      }else if (toolChoice == 'b' || toolChoice == 'B') { // blue
+    
+      stroke(19,97,21);
+      line(mouseX, mouseY, pmouseX, pmouseY);
      } 
+    }
      
      
      
