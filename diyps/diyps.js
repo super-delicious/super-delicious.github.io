@@ -6,9 +6,10 @@ var lastscreenshot=61; // last screenshot never taken
 
 function preload() {
 // preload() runs once, it may make you wait
- //img = loadImage('data/smile.png');  
+//img = loadImage('smile.png');  // cat.jpg needs to be next to this .js file
 // you can link to an image on your github account
-img = loadImage('https://dma-git.github.io/images/75.png');
+img1 = loadImage('https://super-delicious.github.io/images/11.png');
+//img1 = loadImage('11.png'); 
 }
 
 function setup() {
@@ -18,7 +19,6 @@ background(screenbg);   // use our background screen color
 }
 
 function draw() {
-   rectMode(CRNTYER);
   if (keyIsPressed) {
     choice = key; // set choice to the key that was pressed
     clear_print(); // check to see if it is clear screen or save image
@@ -33,78 +33,76 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
   // just make sure each key option has the a stroke or fill and then what type of 
   // graphic function
 
- if (toolChoice == '1' ) {  // first tool
+ if (toolChoice == '1' ) {  // first tool- black line
+   
    
     stroke(0);
     var weight = dist(mouseX, mouseY, pmouseX, pmouseY);
     strokeWeight(weight);
     line(mouseX, mouseY, pmouseX, pmouseY);
     
-  } else if (toolChoice == '2') { // second tool
- 
+    
+  } else if (toolChoice == '2') { // second tool- shadow brush
+
     stroke(0,8);
     var weight = dist(mouseX, mouseY, pmouseX, pmouseY);
     strokeWeight(weight);
     line(mouseX, mouseY, pmouseX, pmouseY);
-   
     
-  } else if (toolChoice == '3') { // third tool
+  } else if (toolChoice == '3') { // third tool- face
+
+    stroke(0, 0);
+    fill(random(250), random(230), random(210),random(235));
+    ellipse(mouseX, mouseY,160,160);
+    
+  } else if (toolChoice == '4') { // fourth tool- mouth
+    
+    fill(random(250), random(230), random(210),random(235));
+    arc(mouseX, mouseY, 100, 100, 0, PI, CHORD);
+    
+  } else if (key == '5') { // eye
+    
+    fill(106, 74, 1);
+    ellipse(mouseX, mouseY, 33, 38);
+    
+  } else if (toolChoice == '6') { //pupil
  
-    fill(300, 100, 0, 80);
-    circle(mouseX, mouseY, 20, 20);
+    stroke(0, 0);
+    fill(177, 206, 223,random(235));
+    ellipse(mouseX, mouseY,10,13);
+     
     
-  } else if (toolChoice == '4') { //fourth tool
+  } else if (toolChoice == '7') { //face 
 
-    stroke(0, 0, 255);
-    line(mouseX, mouseY, pmouseX, pmouseY);
-  } else if (key == '5') { // this tool calls a function
-    stroke(0, 0, 255);
-    testbox(20, 20, 200);
-    testbox(200, 20, 20);
     
-    
-    
-    
-    // make testbox do something!
- //   line(mouseX, mouseY, pmouseX, pmouseY);
-  } else if (toolChoice == '6') {
-
-    stroke(200);
-    line(mouseX, mouseY, pmouseX, pmouseY);
-  } else if (toolChoice == '7') {
-
-    fill(100, 200, 100);
-    rect(mouseX, mouseY, 20, 20);
   } else if (toolChoice == '8') {
 
-    fill(300, 100, 0, 80);
-    rect(mouseX, mouseY, 20, 20);
+    fill(106, 74, 1);
+    ellipse(mouseX, mouseY, 33, 38);
   } else if (toolChoice == '9') {
 
-    fill(300, 100, 0, 80);
-    rect(mouseX, mouseY, 40, 40);
+    image(img1, mouseX, mouseY);
   } else if (toolChoice == '0') {
     stroke(0, 0);
-    fill(random(235), random(255), random(255), random(255));
-    circle(mouseX, mouseY, 200);
+    fill(random(255), random(255), random(255), random(255));
+    arc(mouseX, mouseY, pmouseX, pmouseY,PI,0);
   } else if (toolChoice == 'g' || toolChoice == 'G') { // g places the image we pre-loaded
-    image(img, mouseX, mouseY);
+    image(img1, mouseX, mouseY);
     
-  
-  } else if (toolChoice == 'e' || toolChoice == 'E') { 
+  } else if (toolChoice == 'e' || toolChoice == 'E') { // Erase
     stroke(0, 0);
     fill(250);
-    circle(mouseX, mouseY, 40);
-   
+    circle(mouseX, mouseY, 35);
+    
   }
  }
  
-function testbox() {
+function testbox(r, g, b) {
 // this is a test function that will show you how you can put your own functions into the sketch
   x = mouseX;
   y = mouseY;
-  fill(r,g,b);
-  circle  (mouseX, mouseY, 20, 20);
+  fill(r, g, b);
+  rect(x-50, y-50, 100, 100);
 
 }
 
