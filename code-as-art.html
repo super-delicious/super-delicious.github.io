@@ -9,25 +9,40 @@
 		h1 {
 	  text-align: center;
 	  color: black;
+	  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 	} 
 
 	h1 {
   color: black;
   margin-left: 40px;
 } 
-
+.center {
+  margin: auto;
+  width: 40%;
+  border: 3px solid palevioletred;
+  padding: 5px;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 .container-fluid{
 	margin: auto;
 		 width: 50%;
 		  position: absolute;
-		 top: 30%;
+		 top: 40%;
 		 left: 79%;
 		 bottom: 50%;
 		transform: translate(-50%, -50%);
 }
 
-			
+.footer {
+	 background-color: transparent;
+	 padding: 10px;
+	 text-align: center;
+	 margin: 2200px 50px 75px 100px;
+   }			
 	</style>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Latest compiled and minified CSS -->
@@ -43,7 +58,8 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
-<div classbody>
+
+<div class="body">
 
 <nav class="navbar navbar-expand-sm bg-light navbar-light">
  <ul class="navbar-nav">
@@ -61,10 +77,13 @@
 
 
 <h1>Code as Art</h1>
+
+<div class="center"><p>Self portraits expression using coding </p>
+</div>
+
 <div class="container-fluid">
 
 	
-	<p> Self portraits expression using coding </p>
 
 	<iframe src="sketch/index.html" style="height:600px;width:600px;"></iframe>
 	
@@ -217,6 +236,10 @@
  </pre>
 </div>
 
+<div class="footer">
+	<p>copyright © 2020 Yixin Cao all rights reserved
+	</p>
+  </div>
 
 </body>
 </html>
