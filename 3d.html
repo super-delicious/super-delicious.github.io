@@ -4,25 +4,73 @@
 <title>yc-3d-art</title>
 
 <style>
-	h1 {
+.body{
+    padding-top: 10px;
+	background-color: rgb(250, 246, 235);
+	padding-bottom: 4000px;
+}
+
+
+.navbar
+    {
+    
+     font-family: "Courier New", Courier, monospace;
+     color: rgb(250, 246, 235);
+    }
+
+    ul {
+  list-style-type: none;
+  margin: 230px;
+  padding-top: 40px;
+ 
+  overflow: hidden;
+  background-color:  rgb(250, 246, 235);
+  border-radius: 2px;
+  
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration:none;
+  text-indent: 20px;
+  border-radius: 5px;
+}
+
+li a:hover {
+  
+  text-shadow: 1px 1px;
+  text-indent: 10px;
+}
+h1 {
+      padding-top: 60px;	
+      margin-bottom: 20px;
 	  text-align: center;
 	  color: black;
-	  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	  font-family: Lucida Console;
+      letter-spacing: 3px;
 	} 
 
-	h1 {
-  color: black;
-  margin-left: 40px;
-} 
-.center {
-  margin: auto;
-  width: 60%;
-  border: 3px solid palevioletred;
+
+	.center {
+  margin: 20px;
+  width: 42%;
+  border: 5px double rgba(228, 227, 227, 0.315);
+  border-radius: 4px;
   padding: 10px;
+  margin-bottom: 10px;
   position: absolute;
-  top: 30%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-size-adjust: 0.9;
+  
 }
 img {
    background-position: 900px;
@@ -62,19 +110,21 @@ img {
 </head>
 <body>
 
-<nav class="navbar navbar-expand-sm bg-light navbar-light">
- <ul class="navbar-nav">
- 	<li class="nav-item"><a class="nav-link" href="index.html">home</a></li>
-	<li class="nav-item"><a class="nav-link" href="glitch.html">glitch</a></li>
-	<li class="nav-item"><a class="nav-link" href="meme.html">meme</a></li>
-    <li class="nav-item"><a class="nav-link" href="minecraft.html">minecraft</a>      </li>
-	 <li class="nav-item"><a class="nav-link" href="3d.html">3d-print</a></li>
-    <li class="nav-item"><a class="nav-link" href="netart.html">net-art</a></li>
-	<li class="nav-item"><a class="nav-link" href="code-as-art.html">code art</a></li>
-	<li class="nav-item"><a class="nav-link" href="diyps.html">diy photoshop</a></li>
-	<li class="nav-item"><a class="nav-link" href="game.html">game</a></li>
-</ul> 
-</nav>
+	<div class="container-fluid"></div>
+	<nav class="navbar navbar-expand-sm bg-rgb(250, 246, 235); navbar-light">
+	 <ul class="navbar-nav">
+		 <li class="nav-home"><a class="nav-link" href="index.html">Home</a></li>
+		<li class="nav-glitch"><a class="nav-link" href="glitch.html">Glitch</a></li>
+		<li class="nav-meme"><a class="nav-link" href="meme.html">Meme</a></li>
+		<li class="nav-minecraft"><a class="nav-link" href="minecraft.html">Minecraft</a>      </li>
+		<li class="nav-3d-print"><a class="nav-link" href="3d.html">3d-Print</a></li>
+		<li class="nav-net-art"><a class="nav-link" href="netart.html">Net-Art</a></li>
+		<li class="nav-code-art"><a class="nav-link" href="code-as-art.html">Code Art</a></li>
+		<li class="nav-diyps"><a class="nav-link" href="diyps.html">Diy Photoshop</a></li>
+		<li class="nav-game"><a class="nav-link" href="game.html">Game</a></li>
+	</ul> 
+	</nav>
+	
 
 <h1>The Phone and its Stand</h1>
 <div class="center"><p> This is my first time 3D printing piece, the phone and it's stand.
