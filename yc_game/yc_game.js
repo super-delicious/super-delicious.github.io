@@ -3,15 +3,15 @@
 //var ballSize = 40;
  var imgX = 300;
  var imgY = 300;
- var imgSize = 40;
+ var imgSize = 30;
 var score =0;
 var gameState ="L1";
 
  function preload() {
-   img = loadImage('mole.png'); 
-   imgbg = loadImage('gameover.png'); 
- //  img = loadImage('https://super-delicious.github.io/images/mole.png');
-  // imgbg =loadImage('https://super-delicious.github.io/images/gameover.png');
+  // img = loadImage('mole.png'); 
+  //imgbg = loadImage('gameover.png'); 
+ img = loadImage('https://super-delicious.github.io/images/mole.png');
+ imgbg =loadImage('https://super-delicious.github.io/images/gameover.png');
             }
 
 function setup() {
@@ -27,7 +27,7 @@ function draw() {
   if(gameState =="L1"){
   levelOne();
   }
-   if(gameState =="L2"){
+  if(gameState =="L2"){
   levelTwo();
   }
   if(gameState =="L3"){
@@ -66,16 +66,17 @@ function levelOne(){
     gameState ="L2";
   }
     
-  line(imgX, imgY, mouseX, mouseY);
+ line(imgX, imgY, mouseX, mouseY);
   img(img, imgX, imgY, imgSize, imgSize);
+ // ellipse(ballx, bally, ballSize, ballSize);
 } // end level one ============================================
 
 
 function levelTwo(){
    background(251,221,225);
   text("Level 2", width/2, height-20);
-  var distToBall= dist(ballx, bally, mouseX, mouseY);
-  if (distToBall <ballSize/2){
+  var distToImg= dist(imgX, imgY, mouseX, mouseY);
+  if (distToImg <imgSize/2){
     ballx = random(width);
     bally= random(height);
     score= score +2;
@@ -85,52 +86,52 @@ function levelTwo(){
   }
     
   
-  ellipse(ballx, bally, ballSize, ballSize);
+  img(img, imgX, imgY, imgSize, imgSize);
 } // end level two =============================================
 
 function levelThree(){
   background(248,177,185);
   text("Level 3", width/2, height-20);
-  var distToBall= dist(ballx, bally, mouseX, mouseY);
-  if (distToBall <ballSize/2){
-    ballx = random(width);
-    bally= random(height);
+ var distToImg= dist(imgX, imgY, mouseX, mouseY);
+  if (distToImg <imgSize/2){
+    imgX = random(width);
+    imgY= random(height);
     score= score +3;
-    
   }
   if(score>= 30){
     gameState ="L4";
    
   }
-  ellipse(ballx, bally, ballSize, ballSize);
+ 
+  img(img, imgX, imgY, imgSize, imgSize);
 } // end level Three =============================================
 
 function levelFour(){
   background(234,116,130);
-  text("Level 4", width/2, height-20);
-  var distToBall= dist(ballx, bally, mouseX, mouseY);
-  if (distToBall <ballSize/3){
-    ballx = random(width);
-    bally= random(height);
-    score= score +4;
-    ballSize = ballSize - 4;
+   text("Level 4", width/2, height-20);
+  var distToImg= dist(imgX, imgY, mouseX, mouseY);
+  if (distToImg <imgSize/2){
+    imgX = random(width);
+    imgY= random(height);
+   score= score +4;
+    imgSize = imgSize - 4;
   }
   if(score>= 50){
     gameState ="L5";
    
   }
     
-    ellipse(ballx, bally, ballSize, ballSize);
+     img(img, imgX, imgY, imgSize, imgSize);
 } // end level Four =============================================
 
 
 function levelFive(){
   background(226,58,77);
   text("Level 5", width/2, height-20);
-  var distToBall= dist(ballx, bally, mouseX, mouseY);
-  if (distToBall <ballSize/4){
-    ballx = random(width);
-    bally= random(height);
+  var distToImg= dist(imgX, imgY, mouseX, mouseY);
+  if (distToImg <imgSize/2){
+    imgX = random(width);
+    imgY= random(height);
     score= score +5;
     ballSize = ballSize + 1;
   }
@@ -139,16 +140,16 @@ function levelFive(){
    
   }
     
-    ellipse(ballx, bally, ballSize, ballSize);
+    img(img, imgX, imgY, imgSize, imgSize);
 } // end level Five =============================================
 
 function levelSix(){
   background(189,9,29);
   text("Level 6", width/2, height-20);
-  var distToBall= dist(ballx, bally, mouseX, mouseY);
-  if (distToBall <ballSize/5){
-    ballx = random(width);
-    bally= random(height);
+  var distToImg= dist(imgX, imgY, mouseX, mouseY);
+  if (distToImg <imgSize/2){
+    imgX = random(width);
+    imgY= random(height);
     score= score +6;
     ballSize = ballSize - 5;
   }
@@ -157,19 +158,19 @@ function levelSix(){
    
   }
     
-    ellipse(ballx, bally, ballSize, ballSize);
+   img(img, imgX, imgY, imgSize, imgSize);
     
 } // end level Six =============================================
 
 function levelEnd(){
   background(0,0,0);
   text("Game Over", width/2, height-20);
-  var distToBall= dist(ballx, bally, mouseX, mouseY);
-  if (distToBall <ballSize/5){
-    ballx = random(width);
-    bally= random(height);
+  var distToImg= dist(imgX, imgY, mouseX, mouseY);
+  if (distToImg <imgSize/2){
+    imgX = random(width);
+    imgY= random(height);
     score= score +6;
-    ballSize = ballSize - 5;
+    imgSize = imgSize - 5;
   }
   if(score= 105){
     
