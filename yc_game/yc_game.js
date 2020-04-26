@@ -1,9 +1,6 @@
-//var ballx = 300;
-//var bally = 300;
-//var ballSize = 40;
- var imgX = 300;
- var imgY = 300;
- var imgSize = 80;
+var imgX = 300;
+var imgY = 300;
+var imgSize = 80;
 var score =0;
 var gameState ="L1";
 
