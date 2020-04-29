@@ -7,8 +7,10 @@ var gameState ="L1";
  function preload() {
   // img = loadImage('mole.png'); 
   //imgbg = loadImage('gameover.png'); 
+   //imgmouse = loadImage('whack.png'); 
  img = loadImage('https://super-delicious.github.io/images/mole.png');
  imgbg =loadImage('https://super-delicious.github.io/images/gameover.png');
+ img3 =loadImage('https://super-delicious.github.io/images/whack.png');
             }
 
 function setup() {
@@ -53,6 +55,7 @@ function draw() {
 function levelOne(){
    background(238,231,234);
   text("Level 1", width/2, height-20);
+  sight(); 
   var distToImg= dist(imgX, imgY, mouseX, mouseY);
   if (distToImg <imgSize/2){
     imgX = random(width);
@@ -71,6 +74,7 @@ function levelOne(){
 function levelTwo(){
    background(251,221,225);
   text("Level 2", width/2, height-20);
+  sight(); 
   var distToImg= dist(imgX, imgY, mouseX, mouseY);
   if (distToImg <imgSize/2){
     ballx = random(width);
@@ -88,6 +92,7 @@ function levelTwo(){
 function levelThree(){
   background(248,177,185);
   text("Level 3", width/2, height-20);
+  sight(); 
  var distToImg= dist(imgX, imgY, mouseX, mouseY);
   if (distToImg <imgSize/2){
     imgX = random(width);
@@ -106,6 +111,7 @@ function levelThree(){
 function levelFour(){
   background(234,116,130);
    text("Level 4", width/2, height-20);
+   sight(); 
   var distToImg= dist(imgX, imgY, mouseX, mouseY);
   if (distToImg <imgSize/2){
     imgX = random(width);
@@ -125,6 +131,7 @@ function levelFour(){
 function levelFive(){
   background(226,58,77);
   text("Level 5", width/2, height-20);
+  sight(); 
   var distToImg= dist(imgX, imgY, mouseX, mouseY);
   if (distToImg <imgSize/2){
     imgX = random(width);
@@ -143,6 +150,7 @@ function levelFive(){
 function levelSix(){
   background(189,9,29);
   text("Level 6", width/2, height-20);
+  sight(); 
   var distToImg= dist(imgX, imgY, mouseX, mouseY);
   if (distToImg <imgSize/2){
     imgX = random(width);
@@ -161,7 +169,7 @@ function levelSix(){
 
 function levelEnd(){
   background(0,0,0);
-  //text("Game Over", width*2, height);
+  sight(); 
   var distToImg= dist(imgX, imgY, mouseX, mouseY);
   if (distToImg <imgSize/2){
     imgX = random(width);
@@ -175,7 +183,10 @@ function levelEnd(){
    
   }
     
-   
-    
-   image(imgbg, 300, 300, 200, 200);
+    image(imgbg, 300, 300, 200, 200);
 } // end level End =============================================
+
+
+function sight(){
+ image(img3, mouseX-10, mouseY-10);
+}
