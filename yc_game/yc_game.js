@@ -169,7 +169,7 @@ function levelSix(){
 
 function levelEnd(){
   background(0,0,0);
-  sight(); 
+ 
   var distToImg= dist(imgX, imgY, mouseX, mouseY);
   if (distToImg <imgSize/2){
     imgX = random(width);
@@ -177,13 +177,13 @@ function levelEnd(){
     score= score +6;
     imgSize = imgSize - 5;
   }
-  if(score= 130){
+  if(score>= 130){
     
    // gameState ="Le";
    
   }
     
-    image(imgbg, 300, 300, 200, 200);
+    image(imgbg, 0, 0, 600, 600 );
 } // end level End =============================================
 
 
