@@ -10,15 +10,6 @@ function draw() {
   background(51);
   ship.show();
   
-  if(gameState =="L1"){
-  levelOne();
-  }
-   if(gameState =="L2"){
-  levelTwo();
-  }
-  if(gameState =="L3"){
-  levelThree();
-  }
   
 }
 function keyPressed() {
