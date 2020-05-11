@@ -1,8 +1,6 @@
-
+/*Neon*/
   
-  /*Neon*/
-  
-  #neon p {
+#neon p {
     font-family: Comic Sans, Comic Sans MS, cursive;
     font-style: inherit;
     font-size: 3em;
@@ -139,107 +137,52 @@ body {
     color: rgb(54, 27, 80);
   }
   
-  .active {
-    background-color: rgb(218, 210, 147);
-  }
-  .dropbtn {
-    background-color:transparent;
-     padding: 2px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    border-radius: 3px;
-    
-  }
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .dropdown-content {
-    display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  text-shadow: 1px 1px;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(206, 55, 55, 0.2);
-  z-index: 1;
-    font-family: "Courier New", Courier, monospace;
-  }
-  
-  .dropdown-content a {
-    color: rgb(3, 25, 31);
-    padding: 10px 8px;
-    text-decoration: none;
-    display: block;
-    background-color: rgba(241, 248, 248, 0.63);
-    border-radius: 2px;
-  }
-  
-  .dropdown-content a:hover {
-      background-color: #e9d4eb4f;
-     
-    }
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-  
-  .dropdown:hover .dropbtn {
-    background-color: transparent;
-  }
+  /*-----------------------*/
 
-
-
-
-	h4 {
-    padding-top: 20px;
+h1 {
+    o=position: absolute;
+    padding-top: 80px;	
+      margin-bottom: 20px;
 	  text-align: center;
 	  color: black;
-    font-family: "Courier New", Courier, monospace;
-    size: 6px;
-    text-align: left;
-    
-    
+	  font-family: Lucida Console;
+      letter-spacing: 3px;
 	} 
 
-	h1 {
-  color:teal;
-  font-family: "Courier New", Courier, monospace;
-  margin-left: 300px;
-  margin-bottom: 20px;
+
+	.center {
+  margin: 68px;
+  width: 42%;
+  border: 5px double rgba(228, 227, 227, 0.315);
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
   position: absolute;
-  text-shadow: 1px 1px;
-
-} 
+  top: 39%;
+  left: 46%;
+  transform: translate(-50%, -50%);
+  font-size-adjust: 0.9;
+  font-family: "Lucida Console", Courier, monospace;
   
-.container {
-  position: relative;
-  max-width: 1500px;
-  margin: 0 auto;
-  border-radius: 2px;
 }
-
-.container .content {
-  position: middle;
-  bottom: 100;
-  background: rgba(230, 231, 205, 0.5); 
-  border-radius: 2px;
-  width: 70%;
-  padding: 40px;
-  margin: 200px 70px 80px 200px;
-}
-* {
-  box-sizing: border-box;
- 
-}
+.image {
+	 
+	 margin: auto;
+	 width: 90%;
+	  position: absolute;
+	 top: 75%;
+	 left: 75%;
+	 bottom: 50%;
+	transform: translate(-50%, -50%);
+	 } 
 
 
+  
 
 .footer {
-  background-color: transparent;
-  padding: 10px;
-  text-align: center;
-  margin: 350px 50px 75px 100px;
-  font-family: "Courier New", Courier, monospace;
-}
+    background-color: transparent;
+    padding: 10px;
+    text-align: center;
+    margin: 350px 50px 75px 100px;
+    font-family: "Courier New", Courier, monospace;
+  }

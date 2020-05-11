@@ -221,7 +221,11 @@ body {
 }
 .project {
    column-count: 2;
-   
+   float: center;
+  padding: 128px;
+  width: 100%;
+  
+
   }
  
   

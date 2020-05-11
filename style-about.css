@@ -1,8 +1,6 @@
-
+/*Neon*/
   
-  /*Neon*/
-  
-  #neon p {
+#neon p {
     font-family: Comic Sans, Comic Sans MS, cursive;
     font-style: inherit;
     font-size: 3em;
@@ -189,10 +187,7 @@ body {
     background-color: transparent;
   }
 
-
-
-
-	h4 {
+  h4 {
     padding-top: 20px;
 	  text-align: center;
 	  color: black;
@@ -213,33 +208,35 @@ body {
 
 } 
   
+
+
+
 .container {
-  position: relative;
-  max-width: 1500px;
-  margin: 0 auto;
-  border-radius: 2px;
-}
-
-.container .content {
-  position: middle;
-  bottom: 100;
-  background: rgba(230, 231, 205, 0.5); 
-  border-radius: 2px;
-  width: 70%;
-  padding: 40px;
-  margin: 200px 70px 80px 200px;
-}
-* {
-  box-sizing: border-box;
- 
-}
-
-
+    position: relative;
+    max-width: 1500px;
+    margin: 0 auto;
+    border-radius: 2px;
+  }
+  
+  .container .content {
+    position: middle;
+    bottom: 100;
+    background: rgba(230, 231, 205, 0.5); 
+    border-radius: 2px;
+    width: 70%;
+    padding: 40px;
+    margin: 200px 70px 80px 200px;
+  }
+  * {
+    box-sizing: border-box;
+   
+  }
+  
 
 .footer {
-  background-color: transparent;
-  padding: 10px;
-  text-align: center;
-  margin: 350px 50px 75px 100px;
-  font-family: "Courier New", Courier, monospace;
-}
+    background-color: transparent;
+    padding: 10px;
+    text-align: center;
+    margin: 350px 50px 75px 100px;
+    font-family: "Courier New", Courier, monospace;
+  }
