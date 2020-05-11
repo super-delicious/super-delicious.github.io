@@ -1,0 +1,41 @@
+div#background {
+    width: 1200px;
+    height: 800px;
+    background-image: url('assets/background.png');
+    position: absolute;
+}
+
+div#potion {
+    width: 50px;
+    height: 50px;
+    background-image: url('assets/potion.png');
+    position: absolute;
+    left: 575px;
+    top: 700px; 
+
+
+div#drops {
+    width: 1200px;
+    height: 800px;
+    position: absolute;
+}
+
+div.drops1 {
+    width: 10px;
+    height: 28px;
+    background-image: url('assets/drops1.png');
+    position: absolute;
+}
+
+div#virus {
+    width: 1200px;
+    height: 800px;
+    position: absolute;
+}
+
+div.viruses {
+    width: 50px;
+    height: 50px;
+    background-image: url('assets/virses.png');
+    position: absolute;
+}

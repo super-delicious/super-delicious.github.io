@@ -10,6 +10,10 @@ function Drop(x,y) {
      ellipse(this.x, this.y, 16, 16);
    }
 
+   this.evaporate = function() {
+       
+   }
+
    this.hits = function(flower) {
        var d = dist(this.x, this.y, flower.x, flower.y);
        if (d < this.r * flower.r) {

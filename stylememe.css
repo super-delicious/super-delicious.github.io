@@ -1,0 +1,250 @@
+
+  
+  /*Neon*/
+  
+  #neon p {
+    font-family: Comic Sans, Comic Sans MS, cursive;
+    font-style: inherit;
+    font-size: 3em;
+    margin-top: 70px;
+    margin-left: 130px;
+    position: relative;
+  }
+  
+  #neon a {
+    text-decoration: none;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+  
+  p:nth-child(1) a {
+    color: #fff;
+    font-family:STFangsong';
+    -webkit-animation: neon1 2.5s ease-in-out infinite alternate;
+    -moz-animation: neon1 2.5s ease-in-out infinite alternate;
+    animation: neon1 2.5s ease-in-out infinite alternate;
+  }
+  
+  p:nth-child(1) a:hover {
+    color: rgb(240, 190, 143);
+    -webkit-animation: none;
+    -moz-animation: none;
+    animation: none;
+  }
+  
+  
+ p a:hover {
+    color: #f8f8f8;
+  }
+  /*glow for webkit*/
+  
+ 
+  
+  @-webkit-keyframes neon1 {
+    from {
+      text-shadow: 0 0 10px rgb(225, 240, 144), 0 0 20px rgb(193, 219, 98), 0 0 30px rgb(108, 206, 52), 0 0 40px rgb(180, 240, 83), 0 0 70px #FFDD1B, 0 0 80px #FFDD1B, 0 0 100px #FFDD1B, 0 0 150px #FFDD1B;
+    }
+    to {
+      text-shadow: 0 0 5px rgb(211, 191, 78), 0 0 10px rgb(226, 166, 53), 0 0 15px rgb(252, 165, 83), 0 0 20px rgb(241, 174, 143), 0 0 35px rgb(228, 177, 153), 0 0 40px rgb(247, 202, 168), 0 0 50px rgb(165, 157, 109), 0 0 75px #FFDD1B;
+    }
+  }
+  
+  
+  
+  @-moz-keyframes neon1 {
+    from {
+        text-shadow: 0 0 10px rgb(225, 240, 144), 0 0 20px rgb(193, 219, 98), 0 0 30px rgb(108, 206, 52), 0 0 40px rgb(180, 240, 83), 0 0 70px #FFDD1B, 0 0 80px #FFDD1B, 0 0 100px #FFDD1B, 0 0 150px #FFDD1B;
+      }
+      to {
+        text-shadow: 0 0 5px rgb(211, 191, 78), 0 0 10px rgb(226, 166, 53), 0 0 15px rgb(252, 165, 83), 0 0 20px rgb(241, 174, 143), 0 0 35px rgb(228, 177, 153), 0 0 40px rgb(247, 202, 168), 0 0 50px rgb(165, 157, 109), 0 0 75px #FFDD1B;
+      }
+    }
+    
+
+  
+  
+  /*glow*/
+  
+   @keyframes neon1 {
+    from {
+        text-shadow: 0 0 10px rgb(225, 240, 144), 0 0 20px rgb(193, 219, 98), 0 0 30px rgb(108, 206, 52), 0 0 40px rgb(180, 240, 83), 0 0 70px #FFDD1B, 0 0 80px #FFDD1B, 0 0 100px #FFDD1B, 0 0 150px #FFDD1B;
+      }
+      to {
+        text-shadow: 0 0 5px rgb(211, 191, 78), 0 0 10px rgb(226, 166, 53), 0 0 15px rgb(252, 165, 83), 0 0 20px rgb(241, 174, 143), 0 0 35px rgb(228, 177, 153), 0 0 40px rgb(247, 202, 168), 0 0 50px rgb(165, 157, 109), 0 0 75px #FFDD1B;
+      }
+    }
+    
+ /*background--------------------------------------*/   
+  
+body {
+	background: linear-gradient(-45deg, #e0754e91, #c6eff154,#ebd6e9c2,rgba(248, 244, 29, 0.705));
+	background-size: 200% 200%;
+    animation: gradient 15s ease infinite;
+    background-repeat: no-repeat;
+    
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+/*nav bar -----------------------------------------------*/
+.nav
+    {
+     font-family: "Courier New", Courier, monospace;
+     font-size: large;
+     position: absolute;
+     width: auto;
+     
+    }
+
+ ul {
+    list-style-type: none;
+    right: 40px;
+    border-radius: 2px;
+    
+  
+}
+
+ li {
+    float: right;
+    
+  }
+  
+  li a {
+    display: block;
+    border-radius: 2px;
+    color: rgb(13, 156, 175);
+   
+    padding: 10px 16px;
+    text-decoration: none;
+    margin-top: 0px;
+    border-top: thin;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: transparent);
+    text-shadow: 1px 1px;
+    text-indent: 2px;
+    text-decoration: none;
+    color: rgb(54, 27, 80);
+  }
+  
+  .active {
+    background-color: rgb(218, 210, 147);
+  }
+  .dropbtn {
+    background-color:transparent;
+     padding: 2px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    
+  }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  text-shadow: 1px 1px;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(206, 55, 55, 0.2);
+  z-index: 1;
+    font-family: "Courier New", Courier, monospace;
+  }
+  
+  .dropdown-content a {
+    color: rgb(3, 25, 31);
+    padding: 10px 8px;
+    text-decoration: none;
+    display: block;
+    background-color: rgba(241, 248, 248, 0.63);
+    border-radius: 2px;
+  }
+  
+  .dropdown-content a:hover {
+      background-color: #e9d4eb4f;
+     
+    }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    background-color: transparent;
+  }
+
+.sign  {
+    position: relative;
+    left:100px;
+    padding-top: 1px;	
+    margin-left: 10px;
+      margin-bottom: 0px;
+	  text-align: right;
+	  color: black;
+	  font-family: Lucida Console;
+      letter-spacing: 3px;
+      text-decoration: none;
+      
+	} 
+
+
+h1 {
+    o=position: absolute;
+    padding-top: 80px;	
+      margin-bottom: 20px;
+	  text-align: center;
+	  color: black;
+	  font-family: Lucida Console;
+      letter-spacing: 3px;
+	} 
+
+
+	.center {
+  margin: 68px;
+  width: 42%;
+  border: 5px double rgba(228, 227, 227, 0.315);
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+  position: absolute;
+  top: 39%;
+  left: 46%;
+  transform: translate(-50%, -50%);
+  font-size-adjust: 0.9;
+  font-family: "Lucida Console", Courier, monospace;
+  
+}
+.image {
+	 
+	 margin: auto;
+	 width: 90%;
+	  position: absolute;
+	 top: 65%;
+	 left: 75%;
+	 bottom: 50%;
+	transform: translate(-50%, -50%);
+	 } 
+		
+   .footer {
+	 background-color: transparent;
+	 padding: 10px;
+	 text-align: center;
+	 margin: 1400px 50px 75px 100px;
+   font-family: "Courier New", Courier, monospace;
+   }
