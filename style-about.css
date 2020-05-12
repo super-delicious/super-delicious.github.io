@@ -234,6 +234,12 @@ body {
   }
   
 
+  a {
+    color: rgb(184, 39, 189);
+    
+  }
+
+  
 .footer {
     background-color: transparent;
     padding: 10px;

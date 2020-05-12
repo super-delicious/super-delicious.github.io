@@ -1,3 +1,7 @@
+.body{
+    color: black;
+    
+}
 div#background {
     width: 1200px;
     height: 800px;
@@ -5,43 +9,39 @@ div#background {
     position: absolute;
 }
 
-div#potion {
-    width: 100px;
-    height: 100px;
-    background-image: url('assets/potion.png');
+div#hero {
+    width: 80px;
+    height: 80px;
+    background-image: url('assets/hero.png');
     position: absolute;
     left: 575px;
-    top: 640px; 
+    top: 700px; 
+}
 
-
-
-div#drops {
+div#missiles {
     width: 1200px;
     height: 800px;
     position: absolute;
 }
 
-div.drops1 {
-    width: 10px;
-    height: 28px;
-    background-image: url('assets/drops1.png');
+div.missile1 {
+    width: 15px;
+    height: 39px;
+    background-image: url('assets/missile1.png');
     position: absolute;
-    
 }
 
-div#virus {
+div#enemies {
     width: 1200px;
     height: 800px;
     position: absolute;
 }
 
-div.viruses {
+div.enemy {
     width: 50px;
     height: 50px;
-    background-image: url('assets/viruses.png');
+    background-image: url('assets/enemy.png');
     position: absolute;
 }
-
-
 
 
