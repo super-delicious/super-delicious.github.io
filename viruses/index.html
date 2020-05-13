@@ -63,8 +63,16 @@
         var missiles = [];
 
         var enemies = [
-            { left: 80, top: 5 },
-            { left: 150, top: 5 },
+        { left: 100, top: -80 },
+        { left: 370, top: -70 },
+        { left: 420, top: -80 },
+        { left: 630, top: -90 },
+        { left: 990, top: -80 },
+           { left: 130, top: -20 },
+           { left: 930, top: -20 },
+           { left: 630, top: -20 },
+           { left: 830, top: 1 },
+            
             { left: 250, top: 5 },
             { left: 370, top: 5 },
             { left: 870, top: 5 },
@@ -124,13 +132,13 @@
             if (e.keyCode === 32) {
                 // Spacebar (fire)
                 missiles.push({
-                    left: hero.left + 20,
-                    top: hero.top - 20 
+                    left: hero.left + 25,
+                    top: hero.top - 25 
                 });
                 drawMissiles()
             }
             drawHero();
-        }
+        } 
 
 
         function drawHero() {
@@ -147,7 +155,7 @@
 
         function moveMissiles() {
             for(var i = 0 ; i < missiles.length ; i++ ) {
-                missiles[i].top = missiles[i].top - 8
+                missiles[i].top = missiles[i].top - 20
             }
         }
 
@@ -160,7 +168,7 @@
 
         function moveEnemies() {
             for(var i = 0 ; i < enemies.length ; i++ ) {
-                enemies[i].top = enemies[i].top + 5;
+                enemies[i].top = enemies[i].top + 8;
             }
         }
 
@@ -173,7 +181,7 @@
                         missiles[missile].top <= (enemies[enemy].top + 50)  &&
                         missiles[missile].top >= enemies[enemy].top
                     ) {
-                        enemies.splice(enemy, 1);
+                        enemies.splice(enemy, 2);
                         missiles.splice(missile, 1);
                     }
                 }
@@ -181,7 +189,7 @@
         }
 
         function gameLoop() {
-            setTimeout(gameLoop, 1000)
+            setTimeout(gameLoop, 800)
             moveMissiles();
             drawMissiles();
             moveEnemies();
