@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="style-portfolio.css">
+<link rel="stylesheet" href="style.css">
 
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -22,12 +22,8 @@
 </head>
 <body>
 
-	<div id="neon">
-    <p><a href="index.html">
-      Yixin Cao
-    </a></p>
-    </div>
 
+<!-------------------------------
   <div class="container-fluid">
 
     <nav>
@@ -46,7 +42,7 @@
        
     </nav>
 </div>
-  
+---------------> 
     <title>Virus Invaders</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -67,45 +63,51 @@
         var missiles = [];
 
         var enemies = [
+            { left: 80, top: 5 },
+            { left: 150, top: 5 },
+            { left: 250, top: 5 },
+            { left: 370, top: 5 },
+            { left: 870, top: 5 },
+            { left: 550, top: 5 },
             { left: 100, top: 25 },
-            { left: 200, top: 25 },
+            
             { left: 300, top: 25 },
-            { left: 400, top: 25 },
+          
             { left: 500, top: 25 },
             { left: 600, top: 25 },
-            { left: 700, top: 25 },
+           
             { left: 800, top: 25 },
             { left: 900, top: 25 },
             { left: 1000, top: 25 },
             { left: 150, top: 100 },
-            { left: 250, top: 100 },
+            { left: 250, top: 60 },
             { left: 350, top: 100 },
-            { left: 450, top: 100 },
-            { left: 550, top: 100 },
+          
+            { left: 550, top: 70 },
             { left: 650, top: 100 },
             { left: 750, top: 100 },
-            { left: 850, top: 100 },
-            { left: 950, top: 100 },
+          
+            { left: 950, top: 90 },
             
             { left: 75, top: 175 },
             { left: 175, top: 175 },
             { left: 275, top: 175 },
-            { left: 375, top: 175 },
-            { left: 475, top: 175 },
+            
+            { left: 475, top: 195 },
             { left: 575, top: 175 },
-            { left: 675, top: 175 },
-            { left: 775, top: 175 },
+            
+            { left: 775, top: 165 },
             { left: 875, top: 175 },
-            { left: 975, top: 175 },
+           
             { left: 1075, top: 175 },
-            { left: 125, top: 250 },
+          
             { left: 225, top: 250 },
-            { left: 325, top: 250 },
-            { left: 425, top: 250 },
-            { left: 525, top: 250 },
+            { left: 335, top: 250 },
+          
+            { left: 565, top: 290 },
             { left: 625, top: 250 },
-            { left: 725, top: 250 },
-            { left: 825, top: 250 },
+          
+            { left: 805, top: 270 },
             { left: 925, top: 250 }
         ];
         
@@ -163,7 +165,7 @@
         }
 
         function collisionDetection() {
-            for (var enemy = 0; enemy < enemies.length; enemy++) {
+            for (var enemy = 1; enemy < enemies.length; enemy++) {
                 for (var missile = 0; missile < missiles.length; missile++) {
                     if ( 
                         missiles[missile].left >= enemies[enemy].left  &&
@@ -189,6 +191,15 @@
         
         gameLoop()
 
+
+        <!----------------------------------->
+
+        
+
     </script>
+
+
+
+  
 </div>
 </html>
