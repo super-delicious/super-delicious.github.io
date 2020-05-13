@@ -100,8 +100,9 @@ body {
     {
      font-family: "Courier New", Courier, monospace;
      font-size: large;
-     position: absolute;
+     position: fixed;
      width: auto;
+     z-index: 1;
      
     }
 
@@ -192,7 +193,7 @@ body {
 .project-img {
     opacity: 1;
     width: 50%;
-  height: 100px;
+    height: 100px;
   }
   
 .project-img:hover {
@@ -206,7 +207,7 @@ body {
     text-indent: 5px;
     text-shadow: 2px 2px 2px rgb(36, 45, 58);
     text-align: center;
-    text-align: center;
+    
     padding: 20px 0;
     font-size: 30px;
     display: block;
@@ -217,12 +218,22 @@ body {
 .project-title:hover{
     color: black;
     text-decoration: none;
+    text-decoration: none;
+   
+    text-indent: 5px;
+    text-shadow: 2px 2px 2px rgb(36, 45, 58);
+    text-align: center;
+
+    padding: 20px 0;
+    font-size: 30px;
+    display: block;
+    position: absolute;
   
 }
 .project {
    column-count: 2;
    float: center;
-  padding: 128px;
+  padding: 121px;
   width: 100%;
   
 

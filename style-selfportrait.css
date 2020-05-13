@@ -102,8 +102,9 @@ body {
     {
      font-family: "Courier New", Courier, monospace;
      font-size: large;
-     position: absolute;
+     position: fixed;
      width: auto;
+     z-index: 1;
      
     }
 
@@ -202,12 +203,15 @@ margin: auto;
     position: relative;
 }
 
-
+  a {
+    color: rgb(184, 39, 189);
+    
+  }
    .footer {
 	 background-color:transparent;
 	 padding: 50px;
 	 text-align: center;
-	 margin: 1000px 50px 75px 100px;
+	 margin: 500px 50px 75px 100px;
      font-family: "Courier New", Courier, monospace;
      
    }			

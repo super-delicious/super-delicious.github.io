@@ -102,8 +102,9 @@ body {
     {
      font-family: "Courier New", Courier, monospace;
      font-size: large;
-     position: absolute;
+     position: fixed;
      width: auto;
+     z-index: 1;
      
     }
 
@@ -181,6 +182,12 @@ body {
          bottom: 50%;
         transform: translate(-50%, -50%);
          } 
+
+
+         a {
+          color: rgb(184, 39, 189);
+          
+        }
             
        .footer {
          background-color: transparent;

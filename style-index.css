@@ -102,8 +102,9 @@ body {
     {
      font-family: "Courier New", Courier, monospace;
      font-size: large;
-     position: absolute;
+     position: fixed;
      width: auto;
+     z-index: 1;
      
     }
 
