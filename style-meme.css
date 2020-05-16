@@ -20,7 +20,7 @@
   
   p:nth-child(1) a {
     color: #fff;
-    font-family:STFangsong';
+    font-family:STFangsong;
     -webkit-animation: neon1 2.5s ease-in-out infinite alternate;
     -moz-animation: neon1 2.5s ease-in-out infinite alternate;
     animation: neon1 2.5s ease-in-out infinite alternate;
@@ -133,7 +133,7 @@ body {
   }
   
   li a:hover:not(.active) {
-    background-color: transparent);
+    background-color: transparent;
     text-shadow: 1px 1px;
     text-indent: 2px;
     text-decoration: none;
