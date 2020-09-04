@@ -14,7 +14,7 @@ var gameState ="L1";
             }
 
 function setup() {
-  createCanvas(600, 600);
+  createCanvas(600,1080);
   textAlign(CENTER);
   textSize(20);
   } // end setup
@@ -53,7 +53,7 @@ function draw() {
 
 
 function levelOne(){
-   background(238,231,234);
+  background(238,231,234);
   text("Level 1", width/2, height-20);
   sight(); 
   var distToImg= dist(imgX, imgY, mouseX, mouseY);
@@ -72,7 +72,7 @@ function levelOne(){
 
 
 function levelTwo(){
-   background(251,221,225);
+  background(251,221,225);
   text("Level 2", width/2, height-20);
   sight(); 
   var distToImg= dist(imgX, imgY, mouseX, mouseY);

@@ -9,6 +9,7 @@
     margin-top: 70px;
     margin-left: 130px;
     position: relative;
+   
   }
   
   #neon a {
@@ -16,6 +17,7 @@
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     transition: all 0.5s;
+    
   }
   
   p:nth-child(1) a {
@@ -80,8 +82,10 @@
 body {
 	background: linear-gradient(45deg, #e0754e91, #c6eff154,#ebd6e9c2,rgba(248, 244, 29, 0.705));
 	background-size: 200% 200%;
-    animation: gradient 10s ease infinite;
-    background-repeat: no-repeat;
+  animation: gradient 10s ease infinite;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: auto;
     
 }
 
@@ -105,6 +109,7 @@ body {
      position: fixed;
      width: auto;
      z-index: 1;
+    
      
     }
 
@@ -112,12 +117,14 @@ body {
     list-style-type: none;
     right: 40px;
     border-radius: 2px;
+  
     
   
 }
 
  li {
     float: right;
+  
     
   }
   
@@ -130,6 +137,7 @@ body {
     text-decoration: none;
     margin-top: 0px;
     border-top: thin;
+  
   }
   
   li a:hover:not(.active) {
@@ -138,6 +146,7 @@ body {
     text-indent: 2px;
     text-decoration: none;
     color: rgb(54, 27, 80);
+    
   }
   
   .active {
@@ -151,10 +160,12 @@ body {
     cursor: pointer;
     border-radius: 3px;
     
+    
   }
   .dropdown {
     position: relative;
     display: inline-block;
+    
   }
   
   .dropdown-content {
@@ -200,7 +211,8 @@ body {
     font-family: "Courier New", Courier, monospace;
     size: 6px;
     text-align: left;
-    
+    width: 100%;
+    height: auto;
     
 	} 
 
@@ -211,6 +223,8 @@ body {
   margin-bottom: 20px;
   position: absolute;
   text-shadow: 1px 1px;
+  width: 100%;
+  height: auto;
 
 } 
   
@@ -219,6 +233,8 @@ body {
   position: absolute;
   margin-left: 30%;
   margin-top: 60px;
+  width: 100%;
+  height: auto;
   
 }
 
