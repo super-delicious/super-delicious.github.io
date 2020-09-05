@@ -194,9 +194,9 @@ body {
 
 h1 {
     
-    padding-top: 80px;	
+    padding-top: 300px;	
     margin-bottom: 20px;
-	  text-align: center;
+	  text-align: left;
 	  color: black;
 	  font-family: Lucida Console;
    letter-spacing: 3px;
@@ -211,7 +211,7 @@ h1 {
   padding: 10px;
   margin-bottom: 10px;
   position: absolute;
-  top: 39%;
+  top: 150%;
   left: 46%;
   transform: translate(-50%, -50%);
   font-size-adjust: 0.9;
@@ -221,12 +221,11 @@ h1 {
 .image {
 	 
 	 margin: auto;
-	 width: 90%;
-	  position: absolute;
-	 top: 65%;
-	 left: 75%;
-	 bottom: 50%;
-	transform: translate(-50%, -50%);
+   width: 100%;
+   height: auto;
+	 position: absolute;
+	 top: 30%;
+	 
 	 } 
   
    a {
