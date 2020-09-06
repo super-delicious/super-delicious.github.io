@@ -111,6 +111,7 @@ body {
      border-radius: 2px;
      overflow: hidden;
      top: 85px;
+     max-width: 1400px;
      
      
     }
@@ -135,6 +136,7 @@ body {
     text-decoration: none;
     color: rgb(8, 31, 37);
   }
+
  
   /*Old Nav bar------------------------------------------------*/
   .active {
@@ -191,48 +193,46 @@ body {
 /*nav bar end----------------------------------------------------*/
 
 /*------------Project Image ---------------------------*/
-
-div.gallery{
-  border: none;
+.grid-container{
+  display: flex;
+  justify-items: space-around;
 }
-
-div.gallery:hover{
-  border: none;
+.grid{
+  height: 1100px;
+  width: 750px;
 }
-
-.gallery-container{
-   padding: 0 6px;
-   float: left;
-   width: 100%;
-}
-
-*{
-  box-sizing: border-box;
-}
-
-.gallery{
-  opacity: 1;
-}
-
-div.gallery img{
+.grid img{
   width: 100%;
-  height: auto;
-}
+  height: 100%;
+  display: flex;
+  justify-content: center;
+
+  border: 0em solid #fff;
+  border-bottom: 0em solid #fff;
+  border-radius: .25em;
+  box-shadow: 1em 1em 2em .25em rgba(0,0,0,.2);
+  margin: 2em auto;
+  width: 100%;
+  height:auto;
+  -webkit-transform: rotateZ(-0deg);
+          transform: rotateZ(-0deg);
+  width: 90%;
   
-.grid-img:hover {
-    opacity: 0.6;
-  }
+}
+
+
 
 .grid-title{
-    color: rgb(255, 255, 255);
-    padding: 15px;
-    text-decoration: none;
-    text-indent: 2px;
-    text-shadow: 2px 2px 2px rgb(138, 148, 161);
+    color:white;
+    display: flex;
+    justify-items: center;
     text-align: center;
-    font-size: 30px;
-    font-family: "Courier New", Courier, monospace;
-    padding: 15px;
+    position: flex;
+    top: 50%;
+    left:50%;
+    transform: translate(-59%, -50%);
+    z-index: 2;
+  }
     
 }
 
@@ -247,15 +247,20 @@ div.gallery img{
     padding: 2px 1px;
     font-size: 30px;
 }
-
-
- 
   
   a {
     color: rgb(184, 39, 189);
     
   }
  
+  .gallery-container{
+    
+      margin: 0 auto;
+      padding: 0 2rem;
+      max-width: 1280px;
+      width: 100%;
+ 
+  }
 
 
 .footer {
@@ -280,3 +285,5 @@ div.gallery img{
  
   }
 }
+
+/*------------------------------*/
