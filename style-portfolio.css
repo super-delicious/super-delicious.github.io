@@ -214,8 +214,8 @@ div.gallery:hover{
   opacity: 1;
 }
 
-.grid-img{
-  width:100%;
+div.gallery img{
+  width: 100%;
   height: auto;
 }
   
@@ -262,8 +262,21 @@ div.gallery:hover{
   background-color: transparent;
   padding: 10px;
   text-align: center;
-  margin: 350px 50px 75px 100px;
+  margin: 550px 50px 75px 100px;
   font-family: "Courier New", Courier, monospace;
 }
 
 
+@media only screen and (max-width: 700px){
+  .gallery{
+    width: 49.99%;
+    margin: 6px o;
+  }
+}
+
+@media only screen and (max-width: 500px){
+  .gallery{
+    width: 100%;
+ 
+  }
+}

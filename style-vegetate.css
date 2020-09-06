@@ -197,9 +197,9 @@ body {
   border: 5px double rgba(228, 227, 227, 0.315);
   border-radius: 4px;
   padding: 10px;
-  margin-bottom: 100px;
+  padding-bottom: 200px;
   position: absolute;
-  top: 2920px;
+  top: 2990px;
   left: 45.3%;
   transform: translate(-50%, -50%);
   font-size-adjust: 0.9;
