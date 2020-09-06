@@ -190,21 +190,32 @@ body {
 
 /*------------Project Image ---------------------------*/
 
-
-
-.grid-container{
-   padding: 0 6px;
-   float: left;
-   width: 33.33%;
+div.gallery{
+  border: none;
 }
 
+div.gallery:hover{
+  border: none;
+}
 
-.grid-img {
-    opacity: 1;
-    width: 100%;
-    height: auto;
-   
-  }
+.gallery-container{
+   padding: 0 6px;
+   float: left;
+   width: 100%;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+.gallery{
+  opacity: 1;
+}
+
+.grid-img{
+  width:100%;
+  height: auto;
+}
   
 .grid-img:hover {
     opacity: 0.6;
@@ -212,32 +223,29 @@ body {
 
 .grid-title{
     color: rgb(255, 255, 255);
+    padding: 15px;
     text-decoration: none;
-    text-indent: 5px;
-    text-shadow: 2px 2px 2px rgb(36, 45, 58);
+    text-indent: 2px;
+    text-shadow: 2px 2px 2px rgb(138, 148, 161);
     text-align: center;
     font-size: 30px;
-    display: block;
-    position: absolute;
+    font-family: "Courier New", Courier, monospace;
     padding: 15px;
     
 }
 
 .grid-title:hover{
     color: black;
+    padding: 15px;
     text-decoration: none;
-    text-decoration: none;
-   
-    text-indent: 5px;
-    text-shadow: 2px 2px 2px rgb(36, 45, 58);
+    text-indent: 2px;
+    text-shadow: 1px 1px 1px rgb(33, 38, 46);
+    font-family: "Courier New", Courier, monospace;
     text-align: center;
-
-    padding: 20px 0;
+    padding: 2px 1px;
     font-size: 30px;
-    display: block;
-    position: absolute;
-  
 }
+
 
  
   
@@ -257,20 +265,3 @@ body {
 }
 
 
-
-.gallery{
-  border: 1px solid #ccc;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0,
-}
-
-
-
-@media only screen and (max-width: 700px) {
-  .responsive {
-    width: 100%;
-  }
-}
-
-.clearfix:after {
-  content:
-}

@@ -211,11 +211,12 @@ body {
 } 
 
 .img{
-  position: absolute;
-  margin-left: 30%;
-  margin-top: 60px;
-  filter: saturate(2) contrast(100%) brightness(120%);
+  
+  
+  filter: saturate(2) contrast(80%) brightness(100%);
   opacity: 0.8;
+  width: 95%;
+  height: auto;
   
   
 }
