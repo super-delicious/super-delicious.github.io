@@ -192,49 +192,19 @@ body {
 
 
 
-	h4 {
-    padding-top: 20px;
-	  text-align: center;
-	  color: black;
-    font-family: "Courier New", Courier, monospace;
-    size: 6px;
-    text-align: left;
-    width: 100%;
-    height: auto;
-    
-	} 
 
-	h1 {
-  color:teal;
-  font-family: "Courier New", Courier, monospace;
-  margin-left: 300px;
-  margin-bottom: 20px;
-  position: absolute;
-  text-shadow: 1px 1px;
-  width: 100%;
-  height: auto;
 
-} 
-  
-
-.img{
-  position: absolute;
-  margin-left: 30%;
-  margin-top: 60px;
-  width: 100%;
-  height: auto;
-  
-}
 
 a {
-  color: rgb(184, 39, 189);
-  
-}
+    color: rgb(184, 39, 189);
+    
+  }
 
+  
 .footer {
-  background-color: transparent;
-  padding: 10px;
-  text-align: center;
-  margin: 1000px 50px 75px 100px;
-  font-family: "Courier New", Courier, monospace;
-}
+    background-color: transparent;
+    padding: 10px;
+    text-align: center;
+    margin: 1350px 50px 75px 100px;
+    font-family: "Courier New", Courier, monospace;
+  }

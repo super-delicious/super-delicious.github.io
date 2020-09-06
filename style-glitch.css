@@ -6,7 +6,7 @@
     font-family: Comic Sans, Comic Sans MS, cursive;
     font-style: inherit;
     font-size: 3em;
-    margin-top: 70px;
+    margin-top: 50px;
     margin-left: 130px;
     position: relative;
   }
@@ -20,7 +20,7 @@
   
   p:nth-child(1) a {
     color: #fff;
-    font-family:STFangsong';
+    font-family:STFangsong;
     -webkit-animation: neon1 2.5s ease-in-out infinite alternate;
     -moz-animation: neon1 2.5s ease-in-out infinite alternate;
     animation: neon1 2.5s ease-in-out infinite alternate;
@@ -103,42 +103,93 @@ body {
      font-family: "Courier New", Courier, monospace;
      font-size: large;
      position: fixed;
-     width: auto;
-     z-index: 1;
+     width: 60%;
+     height: auto;
+     z-index: 2;
+     list-style-type: none;
+     left: 60%;
+     border-radius: 2px;
+     overflow: hidden;
+     top: 85px;
+     
      
     }
 
- ul {
-    list-style-type: none;
-    right: 40px;
-    border-radius: 2px;
-    
-  
+.nav li{
+  display: inline block;
 }
-
- li {
-    float: right;
-    
-  }
   
   li a {
-    display: block;
+    display: inline block;
     border-radius: 2px;
-    color: rgb(13, 156, 175);
-   
-    padding: 10px 16px;
+    color: rgb(0, 11, 12);
+    padding: 10px 12px;
     text-decoration: none;
-    margin-top: 0px;
     border-top: thin;
   }
   
   li a:hover:not(.active) {
-    background-color: transparent);
-    text-shadow: 1px 1px;
-    text-indent: 2px;
+    background-color: transparent;
+    text-shadow: 0.2px 0.5px;
+    text-indent: 1px;
     text-decoration: none;
-    color: rgb(54, 27, 80);
+    color: rgb(8, 31, 37);
   }
+ 
+  /*Old Nav bar------------------------------------------------*/
+  .active {
+    background-color: rgb(218, 210, 147);
+  }
+  .dropbtn {
+    background-color:transparent;
+     padding: 2px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    
+  }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  text-shadow: 1px 1px;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(206, 55, 55, 0.2);
+  z-index: 1;
+    font-family: "Courier New", Courier, monospace;
+  }
+  
+  .dropdown-content a {
+    color: rgb(3, 25, 31);
+    padding: 10px 8px;
+    text-decoration: none;
+    display: block;
+    background-color: rgba(241, 248, 248, 0.63);
+    border-radius: 2px;
+  }
+  
+  .dropdown-content a:hover {
+      background-color: #e9d4eb4f;
+     
+    }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    background-color: transparent;
+  }
+
+
+/*nav bar end----------------------------------------------------*/
+
   
   /*-----------------------*/
 
