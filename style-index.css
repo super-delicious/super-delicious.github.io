@@ -218,11 +218,14 @@ body {
   
 
 .img{
-  position: absolute;
-  margin-left: 30%;
-  margin-top: 60px;
+  background-image:  linear-gradient(rgb(0,0,0,0.5),rgb(0,0,0,0.5)), img src="images/glitch-infinite.jpg";
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
   width: 100%;
   height: auto;
+  margin-top: 0%;
+  z-index: 2;
   
 }
 
@@ -235,6 +238,6 @@ a {
   background-color: transparent;
   padding: 10px;
   text-align: center;
-  margin: 1000px 50px 75px 100px;
+  margin: 60px 50px 75px 100px;
   font-family: "Courier New", Courier, monospace;
 }
