@@ -193,18 +193,19 @@ body {
   
     /*-------------------------------*/
  
-    h1 {
+   .grid-1 h1 {
           padding-top: 60px;	
           margin-bottom: 20px;
           text-align: center;
           color: black;
           font-family: Lucida Console;
           letter-spacing: 3px;
+          position: relative;
         } 
     
-    .center {
+    .grid-1 .center {
       margin: 20px;
-      width: 42%;
+      width: 50%;
       border: 5px double rgba(228, 227, 227, 0.315);
       border-radius: 4px;
       padding: 10px;
@@ -217,17 +218,13 @@ body {
       font-family: "Lucida Console", Courier, monospace;
       
     }
-    img {
-       background-position: 900px;
-    }
-    .image {
+   
+    .grid-1 image {
          
          margin: auto;
          width: 90%;
-          position: absolute;
+          position: fixed;
          top: 85%;
-         left: 80%;
-         bottom: 50%;
         transform: translate(-50%, -50%);
          } 
       
