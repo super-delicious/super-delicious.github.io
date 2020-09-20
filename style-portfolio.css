@@ -183,9 +183,7 @@ margin: 20px 0;
   height: auto;
   display: flex;
   justify-content: center;
-  margin: 2em auto;
-  width: 100%;
-  height:auto;
+  margin: 4em auto;
   -webkit-transform: rotateZ(-0deg);
           transform: rotateZ(-0deg);
   width: 90%;
@@ -194,45 +192,47 @@ margin: 20px 0;
 
 
 
-.grid-title{
-    color:white;
-    text-align: center;
-    position: center;
-   
-    
+.grid-title {
+  color: black;
+  padding: 2px;
+  text-decoration: none;
+  text-indent: 1px;
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+  padding: 2px 1px;
+  font-size: 14px;
+  position: center;
   }
     
 }
 
 .grid-title:hover{
     color: black;
-    padding: 15px;
+    padding: 2px;
     text-decoration: none;
     text-indent: 2px;
     text-shadow: 1px 1px 1px rgb(33, 38, 46);
     font-family: "Courier New", Courier, monospace;
     text-align: center;
     padding: 2px 1px;
-    font-size: 30px;
+    font-size: 14px;
     position: center;
 }
   
   a {
-    color: rgb(184, 39, 189);
+    color: rgb(122, 31, 134);
     
   }
  
   .gallery-container{
     
       margin: 0 auto;
-      padding: 0 2rem;
+      padding: 3em;
       max-width: 1280px;
       width: 100%;
  
   }
-* {
-  box-sizing: border-box;
-}
+
 
 .footer {
   background-color: transparent;
