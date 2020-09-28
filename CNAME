@@ -1,1 +1,5 @@
-www.yixin-cao.com
+$ dig WWW.EXAMPLE.COM +nostats +nocomments +nocmd
+    > ;www.yixin-cao.com.                     IN      A
+    > www.yixin-cao.com.              3592    IN      CNAME   SUPER-DELICIOUS.github.io.
+    > SUPER-DELICIOUS.github.io.      43192   IN      CNAME    GITHUB-PAGES-SERVER .
+    >  GITHUB-PAGES-SERVER .         22      IN      A       192.0.2.1
