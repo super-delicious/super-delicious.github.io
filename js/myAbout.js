@@ -7,4 +7,3 @@ $('.navTrigger').click(function () {
     });
     
     
-    
