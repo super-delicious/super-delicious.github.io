@@ -5,7 +5,7 @@ $ dig WWW.EXAMPLE.COM +nostats +nocomments +nocmd
     >  GITHUB-PAGES-SERVER .         22      IN      A       192.0.2.1
 
 $ dig EXAMPLE.COM +noall +answer
-> YIXIN-CAO.COM     3600    IN A     185.199.108.153
-> YIXIN-CAO.COM    3600    IN A     185.199.109.153
-> YIXIN-CAO.COM      3600    IN A     185.199.110.153
-> EYIXIN-CAO.COM      3600    IN A     185.199.111.153
+> YIXIN-CAO.COM     600    IN A     185.199.108.153
+> YIXIN-CAO.COM    600    IN A     185.199.109.153
+> YIXIN-CAO.COM      600    IN A     185.199.110.153
+> EYIXIN-CAO.COM      600    IN A     185.199.111.153
