@@ -132,7 +132,7 @@ body {
 
 .nav div.logo a {
     text-decoration: none;
-    color: rgb(0,0,6);
+    color: #eb1deb;
     font-size: 3.5rem;
     text-indent: 10%;
 }
@@ -166,7 +166,7 @@ body {
 
 .nav div.main_list ul li a {
     text-decoration: none;
-    color: rgb(0,0,0);
+    color: #19dbab;
     line-height: 75px;
     font-size: 2.4rem;
     font-weight: 550;
