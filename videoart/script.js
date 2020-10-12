@@ -1,46 +1,4 @@
 
-let img;
-
-let theta = 0;
-
-function setup() {
-  createCanvas(1450, 1080, WEBGL);
-
-  img1 = loadImage('assets/xiaozhen-12.jpg');
-  img2 = loadImage('assets/xiaozhen-29.jpg');
-  img3 = loadImage('assets/xiaozhen-23.jpg');
-  img4 = loadImage('assets/xiaozhen-1.jpg');
-  img5 = loadImage('assets/xiaozhen-27.jpg');
-  img6 = loadImage('assets/xiaozhen-20.jpg');
-  img7 = loadImage('assets/xiaozhen-8.jpg');
-  vid = createVideo(['project1.mp4']);
-  vid.elt.muted = true;
-  vid.loop();
-  vid.hide();
-}
-
-function draw() {
-  background(0);
-  translate(0, 0, 0);
-  push();
-  rotateZ(theta * mouseX * 0.001);
-  rotateX(theta * mouseX * 0.001);
-  rotateY(theta * mouseX * 0.001);
-
-  //pass image as texture
-  texture(vid);
-  sphere(150);
-  pop();
-  translate(440, 0, 0);
-  push();
-  rotateZ(theta * 0.1);
-  rotateX(theta * 0.1);
-  rotateY(theta * 0.1);
-  texture(img1);
-  sphere(150);
-  pop();
-  theta += 0.04;
-  
 
   
 /*----------------------------------------
@@ -122,3 +80,20 @@ function draw() {
   theta += 0.03;
 }
 ----------------------------------------*/
+
+$(document).ready(function() {
+  $("#navbar_icon").click(function() {
+    if($(".navbar").css("left") < "0px") {
+      $(".navbar").animate({left: "0px"}, 300);
+      $(this).animate({left: "0px"}, 200);
+      $('.content').css("margin-left", "200px");
+      $("body").css("overflow-x","hidden");
+            $(".navbar").css("overflow-y","hidden");
+    } else {
+      $(".navbar").animate({left: "-145px"}, 300);
+      $(this).animate({left: "75px"}, 100);
+      $('.content').css("margin-left", "50px");
+      $("body").css("overflow-x","hidden");
+    }
+  });
+})
