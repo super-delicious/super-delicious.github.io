@@ -456,11 +456,13 @@ body {
 
 .myH2 {
 	text-align:center;
-	font-size: 4rem;
+    font-size: 4rem;
+    font-weight: 550;
 }
 .myH3{
-  text-align:center;
-	font-size: 3rem;
+    text-align:center;
+    font-size: 3rem;
+    font-weight: 550;
 }
 .myP {
     text-align: left;
@@ -481,11 +483,6 @@ body {
 
   
 
-
-
-
-
-  
 .content {
    
     padding-left: 5%;
