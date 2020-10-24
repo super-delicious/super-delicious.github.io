@@ -45,26 +45,8 @@
     </div>
 </nav>
 
-<script>
-    $(window).scroll(function() {
-    if ($(document).scrollTop() > 50) {
-        $('.nav').addClass('affix');
-        console.log("OK");
-    } else {
-        $('.nav').removeClass('affix');
-    }
-});
-    $('.navTrigger').click(function () {
-    $(this).toggleClass('active');
-    console.log("Clicked menu");
-    $("#mainListDiv").toggleClass("show_list");
-    $("#mainListDiv").fadeIn();
-
-});
-</script>
-
 <div class="content">
-       <!--------------------Project-1---------------------->
+       <!--------------------Project-Video-block---------------------->
 <div class="gallery-container">
     <div class="grid">
      <a class="grid-img show-on-scroll" href="videoart/index.html">
@@ -85,7 +67,7 @@
       <!--------------------Project-3---------------------->
 <div class="gallery-container">
     <div class="grid">    
-       <a class="grid-img show-on-scroll" href="conveyor.html">
+       <a class="grid-img show-on-scroll" href="shelter.html">
             <!-- <h2 class="grid-title"><i>Conveyor Beam</i>, 3D Modeling</h2> ------>
            <img src="images/bg5.png">
        </a>
@@ -152,42 +134,26 @@
 <script src="show-on-scroll.js"></script>
 
 
-           <!--------------------Project-2-------------------
-      <div class="grid">
-        <a class="grid-img" href="netart.html">
-            <p class="grid-title"><i>Sign</i>, Net Art</p>
-            <img src="images/4.jpg" width="600" height="400">
-        </a>
-    </div>
-</div>
-------------->
-  
- <!------------------------------------------------     
-<div class="grid-container">
-    <br>
-    <div class="grid">
-        
-        <a class="grid-img" href="meme.html">
-            <p class="grid-title"><i>Vegetate</i>, 3D Modeling</p>
-            <img src="images/2.jpg" width="600" height="600">
-        </a>
-       
-        <a class="grid-img" href="netart.html">
-            <p class="grid-title"><i>Sign</i>, Net Art</p>
-            <img src="images/4.jpg" width="600" height="600">
-        </a>
+<script>
+    $(window).scroll(function() {
+    if ($(document).scrollTop() > 10) {
+        $('.nav').addClass('affix');
+        console.log("OK");
+    } else {
+        $('.nav').removeClass('affix');
+    }
+});
+    $('.navTrigger').click(function () {
+    $(this).toggleClass('active');
+    console.log("Clicked menu");
+    $("#mainListDiv").toggleClass("show_list");
+    $("#mainListDiv").fadeIn();
 
-        <a class="grid-img" href="3d.html">
-            <p class="grid-title"><i>3D-Printing</i>3D Sculpture</p>
-            <img src="images/5.jpg" width="600" height="600">
-        </a>
-        <
-    </div>
-</div>
------------->   
+});
+</script>
 
 
-    <!-- Footer -->
+ <!-- Footer -->
 <div class="footer">
 <a href="mailto:yc-studio@outlook.com" target="_blank"> <i class= "fa fa-envelope" style="font-size:24px;color:rgb(241, 15, 241)"></i></a>&nbsp;
 <a href="https://instagram.com/yixinsstudio" target="_blank"><i class="fa fa-instagram" style="font-size:24px;color:rgb(241, 15, 241)"></i></a>&nbsp;
