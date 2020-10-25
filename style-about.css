@@ -181,11 +181,13 @@ body {
 
 .home {
     width: 100%;
-    height: 30vh;
+    height: 740px;
     background-image: url("images/glitch-self.jpg" );
-    background-position: center top;
-    size: cover;
-    background-repeat: repeat;
+    background-position: center;
+    background-size: 470px 590px;
+    background-repeat: no-repeat;
+    background-position: 50% 120px;
+
 }
 
 .navTrigger {

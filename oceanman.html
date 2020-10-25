@@ -19,7 +19,25 @@
 <body>
 
  
-
+    <nav class="nav">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Yixin Cao</a>
+            </div>
+            <div id="mainListDiv" class="main_list">
+                <ul class="navlinks">
+                    <li><a href="index.html" >Home</a></li>
+                    <Li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">About</a></li>
+                   </ul>
+            </div>
+            <span class="navTrigger">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </div>
+    </nav>
 
 
 <section class="home">
@@ -29,9 +47,9 @@
         <h2 class="myH2">Ocean Man</h2><br>
         <p class="myP"> 
             Game Title: Ocean man<br>
-            Programmer name: Nick Pokidaylo<br>
+            Programmer name: ---<br>
             Artist name: Yixin Cao<br>
-            Producer: Nick Pokidaylo <br> 
+            Producer: --- <br> 
             Designer: Yixin Cao <br>
             Description: Ocean man was surfing on Malibu beach when he suddenly crashes and loses his surfboard and is now walking on the beach to find it. The game controls Ocean man as he jumps and moves toward, running across the sand and searching for his surfboard, finding the board and achieving his goal, and eventually, the Jump man can surf in the ocean. <br>
             Game Objects: (list them) Ocean man, crabs, surfboard <br>
@@ -55,13 +73,29 @@
                 <br><br><br>
                 <img src="images/tileset_om.png" style="width:30%" height="auto">
                 <br><br>
-                <img src="images/om_01.png" style="width:100%" height="auto">
-                
-         
- 
+               <!---- <img src="images/om_01.png" style="width:100%" height="auto"> ----> 
+             </div>   
+     </div>    
+ </div>
 
 
-</div>
+ <script>
+    $(window).scroll(function() {
+    if ($(document).scrollTop() > 50) {
+        $('.nav').addClass('affix');
+        console.log("OK");
+    } else {
+        $('.nav').removeClass('affix');
+    }
+});
+    $('.navTrigger').click(function () {
+    $(this).toggleClass('active');
+    console.log("Clicked menu");
+    $("#mainListDiv").toggleClass("show_list");
+    $("#mainListDiv").fadeIn();
+
+});
+</script>
 </body>
 </html>
 
