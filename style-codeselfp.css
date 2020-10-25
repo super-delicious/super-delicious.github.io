@@ -1,4 +1,52 @@
 
+ /*background--------------------------------------*/   
+  
+body {
+	background: linear-gradient(-45deg, #e0754e91, #c6eff154,#ebd6e9c2,rgba(146, 199, 241, 0.842));
+	background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
+  background-repeat: no-repeat;
+  text-align: center;
+    
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+  
+    /*-------------------------------*/
+
+  
+.sketch {
+     margin: auto;
+		 width: 50%;
+		 position: absolute;
+		 top: 1400px;
+		 left: 25%;
+		 bottom: 50%;
+		 transform: translate(-50%, -50%);
+
+}
+.block {
+     margin: auto;
+	 	 width: 50%;
+		 position: absolute;
+		 top: 17%;
+		 left: 130%;
+		 bottom: 50%;
+	 	 transform: translate(-50%, -50%);
+
+}
+
+
 /*nav bar start --------------------------------------------------------------------------------------------*/
 html,
 body {
@@ -80,7 +128,7 @@ body {
 .home {
     width: 100%;
     height: 775px;
-    background-image: url("images/bg3_nt.jpg" );
+    background-image: url("images/bg6_nt.jpg" );
     background-position: center top;
     size: cover;
     background-repeat: no-repeat;
@@ -130,6 +178,7 @@ body {
         left: 0;
         bottom: 0;
         background-color: #fff;
+        /*same background color of navbar*/
         background-position: center top;
     }
     .nav div.main_list ul li {
@@ -149,6 +198,7 @@ body {
 
 
 /* Animation */
+
 .navTrigger {
     cursor: pointer;
     width: 30px;
@@ -371,36 +421,30 @@ body {
 }
 /*-----------------------------------------------------------*/
 
-.content {
+
+  .content {
    
     padding-left: 5%;
     padding-right: 5%;
-    padding-top: 7%;
+    padding-top: 60%;
     padding-bottom: 2%;
-    background: white; 
+    background: transparent; 
     border-radius: 2px;
    
   }
 
-.gallery-img {
-  padding-left: 25%;
-}
-  
   a {
     color: rgb(184, 39, 189);
     
   }
 
   
-.footer {
-    background-color: transparent;
-    padding: 10px;
-    text-align: center;
-    margin: 250px 20px 15px 10px;
-    font-family: "Courier New", Courier, monospace;
-  }
+
+ 
+
+  
 
 
 
 
-   
+    

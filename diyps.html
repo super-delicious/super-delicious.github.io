@@ -9,66 +9,72 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link rel="icon" href="images/icon.png" type="image/png" sizes="16x16">
 <link rel="stylesheet" href="style-diyps.css">
 
 
 
+</head>
 <div class="body">
-    <nav class="navbar navbar-inverse navbar-fixed-top ">
-		<div class="container-fluid">
-            <ul class="nav navbar-right">
-                 <li><a href="index.html" >Home</a></li>
-				 <Li><a href="portfolio.html">Digital Media </a></li>
-					 <!------- <Li><a href="photography.html">photography</a></Li>
-					  <Li><a href="painting.html">Painting</a></Li> --------->
-				 <li><a href="about.html">About</a></li>   
-			</ul> 
-			<ul class="nav navbar-left"		
-				 ><div id="neon">
-						<p><a href="index.html">
-						  Yixin Cao
-						</a></p>
-					</div>
-			</ul> 
-		</div>			
-    </nav>  
-				
 
 
-<h1>DIY Photoshop</h1>
+	<nav class="nav">
+		<div class="container">
+			<div class="logo">
+				<a href="index.html">Yixin Cao</a>
+			</div>
+			<div id="mainListDiv" class="main_list">
+				<ul class="navlinks">
+					<li><a href="index.html" >Home</a></li>
+					<Li><a href="portfolio.html">Portfolio</a></li>
+					<li><a href="about.html">About</a></li>
+				   </ul>
+			</div>
+			<span class="navTrigger">
+				<i></i>
+				<i></i>
+				<i></i>
+			</span>
+		</div>
+	</nav> 
 
-<div class="center"> <p><br>I was inspired by the artist Takashi Murakami, A Smiling Flower and Emoji Art. These emoji each one seems to have its feelings, its personality. These characters are expressed in super flat aesthetics. I want people to use these tools to draw emoji expressions that represent their personalities and feeling.</p>
-<br>
-</div>
+	<section class="home">
+	</section>
+	<div style="height: 1100px">
+	<div class="content">
+		<h2 class="myH2">DIY Photoshop</h2><br>
+		<p class="myP">Coding, 2020</p> 
+		<h3 class="myH3">INSTRUTCTIONS</h3><br>
+		<p class="myP">Click and press mouse on canvas to draw.</P>
+		<p class="myP">Hit 's' to save image</p>
+		<p class="myP">Hit 'e' to erase image</p>
+		<p class="myP">Hit "1": black brush; "2": grey brush; "3": circle face; "4": eye; "5": smilling smouth; "6": pupil highlight; "7": light circle face; "8": unhappy mouth; "9":flower; "0":square; "b": green line</p> 
+		<h3 class="myH3">Description</h3><br>
+		<p class="myP">I was inspired by the artist Takashi Murakami, A Smiling Flower and Emoji Art. These emoji each one seems to have its feelings, its personality. These characters are expressed in super flat aesthetics. I want people to use these tools to draw emoji expressions that represent their personalities and feeling.</p> 
+	</div>
+	<div class="sketch">
+		<div style="text-align:right">
+	  <iframe src="diyps/index.html" style="height:610px;width:610px;border-color: rgb(0, 0, 0);border:double; border-width: thick;"></iframe>
+	</div>
 
-<div class="sketch">
-	<div style="text-align:right">
-  <iframe src="diyps/index.html" style="height:610px;width:610px;"></iframe>
+	<script>
+		$(window).scroll(function() {
+		if ($(document).scrollTop() > 50) {
+			$('.nav').addClass('affix');
+			console.log("OK");
+		} else {
+			$('.nav').removeClass('affix');
+		}
+	});
+		$('.navTrigger').click(function () {
+		$(this).toggleClass('active');
+		console.log("Clicked menu");
+		$("#mainListDiv").toggleClass("show_list");
+		$("#mainListDiv").fadeIn();
 	
- <!------------------------------------------
- </div>
-   <div class="content">
-   <iframe src="diyps.js" height="610"width="610"></iframe>
-</div>
--------------------------------------->
-
-
-
- </pre>
-</div>
-
-</div>
-
-
-      
-
-<!-- Footer -->
-<div class="footer">
-	<a href="yc-studio@outlook.com" target="_blank">yc-studio@outlook.com</a> &nbsp;
-	<a href="https://instagram.com/yixinsstudio" target="_blank"><i class="fa fa-instagram" style="font-size:24px;color:rgb(241, 15, 241)"></i></a>&nbsp;
-   
-	<p>copyright © 2020 Yixin Cao all rights reserved</p>
-  </div>
+	});
+</script>
 
 </body>
 </html>

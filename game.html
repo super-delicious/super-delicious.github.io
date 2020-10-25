@@ -9,64 +9,71 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link rel="icon" href="images/icon.png" type="image/png" sizes="16x16">
 <link rel="stylesheet" href="style-game.css">
 
-</head>
 
+
+</head>
 <div class="body">
 
 
+	<nav class="nav">
+		<div class="container">
+			<div class="logo">
+				<a href="index.html">Yixin Cao</a>
+			</div>
+			<div id="mainListDiv" class="main_list">
+				<ul class="navlinks">
+					<li><a href="index.html" >Home</a></li>
+					<Li><a href="portfolio.html">Portfolio</a></li>
+					<li><a href="about.html">About</a></li>
+				   </ul>
+			</div>
+			<span class="navTrigger">
+				<i></i>
+				<i></i>
+				<i></i>
+			</span>
+		</div>
+	</nav> 
 
-	<div class="body">
-		<nav class="navbar navbar-inverse navbar-fixed-top ">
-			<div class="container-fluid">
-				<ul class="nav navbar-right">
-					 <li><a href="index.html" >Home</a></li>
-					 <Li><a href="portfolio.html">Digital Media </a></li>
-						 <!------- <Li><a href="photography.html">photography</a></Li>
-						  <Li><a href="painting.html">Painting</a></Li> --------->
-					 <li><a href="about.html">About</a></li>   
-				</ul> 
-				<ul class="nav navbar-left"		
-					 ><div id="neon">
-							<p><a href="index.html">
-							  Yixin Cao
-							</a></p>
-						</div>
-				</ul> 
-			</div>			
-		</nav>  
+	<section class="home">
+	</section>
+	<div style="height: 1100px">
+	<div class="content">
+		<h2 class="myH2">Mini Game: Whack-A-Mole</h2><br>
+		<p class="myP">Coding, 2020</p> 
+		<p class="myP">It's a stress relief game, "whack-a-mole". My game was inspired by the Japanese whack-a-mole arcade game,  you need to move the mouse to hit it. Once the highest score is reached, the game is over.  And as the level increases, the color of the monochromatic background intensifies.</p> 
+	</div>
+	<div class="sketch">
+		<div style="text-align:right">
+	  <iframe src="yc_game/index.html" style="height:610px;width:610px;border-color: rgb(0, 0, 0);border:double; border-width: thick;"></iframe>
+	</div>
+
+	<script>
+		$(window).scroll(function() {
+		if ($(document).scrollTop() > 50) {
+			$('.nav').addClass('affix');
+			console.log("OK");
+		} else {
+			$('.nav').removeClass('affix');
+		}
+	});
+		$('.navTrigger').click(function () {
+		$(this).toggleClass('active');
+		console.log("Clicked menu");
+		$("#mainListDiv").toggleClass("show_list");
+		$("#mainListDiv").fadeIn();
+	
+	});
+</script>
+
+</body>
+</html>
 							
 
 
-<h1>Mini Game</h1>
-
-<div class="center"><p> It's a stress relief game, "whack-a-mole". My game was inspired by the Japanese whack-a-mole arcade game,  you need to move the mouse to hit it. Once the highest score is reached, the game is over.  And as the level increases, the color of the monochromatic background intensifies.</p>
-		</div>
 		
 		
-<div class="sketch">
-	<div style="text-align:right">
- <iframe src="yc_game/index.html" style="height:610px;width:610px;"></iframe>
-</div>
-
- </div>
- <!------------------------------------------
-   <div class="content">
-   <iframe src="yc_game.js" height="610"width="610"></iframe>
-</div>
-----------------------------------------------!>
-<br>
-
-
-<!-- Footer -->
-<div class="footer">
-  <a href="yc-studio@outlook.com" target="_blank">yc-studio@outlook.com</a> &nbsp;
-  <a href="https://instagram.com/yixinsstudio" target="_blank"><i class="fa fa-instagram" style="font-size:24px;color:rgb(241, 15, 241)"></i></a>&nbsp;
- 
-  <p>copyright © 2020 Yixin Cao all rights reserved</p>
-</div>
-
-</div>
-</body>
-</html>

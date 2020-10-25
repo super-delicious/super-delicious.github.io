@@ -68,5 +68,52 @@ div.enemy {
     background-image: url('assets/enemy.png');
     position: absolute;
 }
+/*--------------------------------------------*/
 
 
+.myH2 {
+  text-align:center;
+  font-size: 4rem;
+  font-weight: 600;
+  color: #fff;
+}
+.myH3{
+    text-align:left;
+    font-size: 3rem;
+    font-weight: 600;
+    padding-left:15%;
+    padding-right:15%;
+    color: #fff;
+}
+.myP {
+    text-align: left;
+    line-height: 1.7;
+	padding-left:15%;
+	padding-right:15%;
+    font-size: 17px;
+    font-family: "arial";
+    color: #fff;
+    
+}
+@media all and (max-width:700px){
+	.myP {
+		padding:1%;
+	}
+}
+/*-----------------------------------------------------------*/
+
+.content {
+   
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 70%;
+    padding-bottom: 2%;
+    background: transparent; 
+    border-radius: 2px;
+   
+  }
+
+
+
+
+   
