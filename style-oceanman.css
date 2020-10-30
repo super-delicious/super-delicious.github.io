@@ -425,6 +425,17 @@
       border-radius: 2px;
      
     }
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    height: auto;
+}
+.row:after {
+    display: table;
+    clear: both;
+}
     
     a {
       color: rgb(184, 39, 189);
@@ -436,7 +447,7 @@
       background-color: transparent;
       padding: 10px;
       text-align: center;
-      margin: 1250px 20px 15px 10px;
+      margin: 1700px 20px 15px 10px;
       font-family: "Courier New", Courier, monospace;
     }
   

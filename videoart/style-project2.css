@@ -1,5 +1,8 @@
 /*project2-page2*/
-
+* {
+  margin: 0px;
+  padding: 0px;
+}
 body{
     background-color: black;
   }
@@ -14,6 +17,7 @@ body{
     width: 100%;
     z-index: 0;
     position: absolute;
+    margin-top: 0;
   }
   .video1 {
     top: 350px;
