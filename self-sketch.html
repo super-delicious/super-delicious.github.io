@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>yc-code-as-art</title>
+	<title>yc-code-as-art</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="style-selfportrait.css">
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style-selfportrait.css">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-<!-- Popper JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 
 
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
+
 <body>
 
 	<div class="body">
 
 		<div id="neon">
 			<p><a href="index.html">
-			  Yixin Cao
-			</a></p>
-			</div>
-			
-		
-		  
-			 <!----- <nav>
-					 
-		  
+					Yixin Cao
+				</a></p>
+		</div>
+
+
+
+		<!----- <nav>
+
+
 					<nav class="navbar navbar-expand-sm bg-rgb(250, 246, 235); navbar-light">
 					  <ul class="nav">
 								<li><a href="index.html" >Home</a></li>
@@ -41,93 +43,93 @@
 								<li><a href="netart.html">Net-Art</a></li>
 								<li><a href="3d.html">3D-Printing</a></li>
 								  <div class="dropdown">
-								  
-							
+
+
 									<div class="dropdown">
 									  <button class="dropbtn"><li><a href="#">Code Art
 									  </button>
-									
+
 									  <div class="dropdown-content">
 										<a href="code-as-art.html">Self-Portrait</a>
 										<a href="diyps.html">DIY Photoshop</a>
 										<a href="game.html">Game</a>
 									  </div>
 									</div>
-								<li><a href="video.html">Video</a></li>   
+								<li><a href="video.html">Video</a></li>
 								</li>
-							  </ul> 
-							</nav>  
-		  
+							  </ul>
+							</nav>
+
 						  </ul>
 					</div>
 			  </nav>
 		  </div>
-		   
+
 		  ---->
-		  <div class="container-fluid">
-		  
+		<div class="container-fluid">
+
 			<nav>
-				   
-		  
-				  <nav class="navbar navbar-expand-sm bg-rgb(250, 246, 235); navbar-light">
+
+
+				<nav class="navbar navbar-expand-sm bg-rgb(250, 246, 235); navbar-light">
 					<ul class="nav">
-							  <li><a href="index.html" >Home</a></li>
-							  <Li><a href="portfolio.html">Portfolio </a></li>
-							  <li><a href="about.html">About</a></li>   
-							  </li>
-							</ul> 
-						  </nav>  
-		  
-				
-			   
+						<li><a href="index.html">Home</a></li>
+						<Li><a href="portfolio.html">Portfolio </a></li>
+						<li><a href="about.html">About</a></li>
+						</li>
+					</ul>
+				</nav>
+
+
+
 			</nav>
-		  </div>
+		</div>
 
 
 
-<h1>Code as Art</h1>
-<div class="container-fluid">
+		<h1>Code as Art</h1>
+		<div class="container-fluid">
 
-	
-	<p> self portraits expression  </p>
 
-	<iframe src="sketch/index.html" style="height:600px;width:600px;"></iframe>
-	<div class="text">
- <pre>
+			<p> self portraits expression </p>
+
+			<iframe src="sketch/index.html" style="height:600px;width:600px;"></iframe>
+			<div class="text">
+				<pre>
 	      function setup() {
 		createCanvas(600,600);
 		noStroke();
 		}
-		
+
 		function draw() {
 		background(245, 207, 217);
 		 if(mouseIsPressed) {
 		  console.log(mouseX,mouseY);
 		 }
-		
-		
+
+
 		//hair
 		fill(45,27,11);
 		rect(135, 75, 330, 400, 200, 200, 20, 20);
-		
-		//shirt  
+
+		//shirt
 		fill(217,230,232);
 		rect(210, 454, 180, 200);
 		ellipse(207, 554, 100, 200);
-		ellipse(392, 554, 100, 200); 
+		ellipse(392, 554, 100, 200);
 		fill(189,216,220);
 		ellipse(213, 548, 3, 100);
 		ellipse(388, 548, 3, 100);
-		
-		
+
+
 		//neck
 		fill(249,213,185);
 		rect(272, 388, 59, 98, 100, 100, 50, 40);
-		
+
 		//skinshadow
 		fill(233,185,156);
 		ellipse(301, 390, 75, 80);
-		
+
 		//ear//
 		fill(249,213,185);
 		ellipse(412, 289, 55, 60);
@@ -135,12 +137,12 @@
 		fill(246,201,166);
 		ellipse(420, 289, 25, 25);
 		ellipse(180, 289, 25, 25);
-		
-		
+
+
 		//face
 		fill(249,213,185);
 		ellipse(300, 260, 255, 320);
-		
+
 		 //eyes
 		fill(246,187,166);
 		ellipse(250, 278, 58, 50);
@@ -156,7 +158,7 @@
 		triangle(232,262,225, 257, 236,261);
 		triangle(373,266,387,261,376,272);
 		triangle(368,260,375, 255, 370,261);
-		
+
 		//pupil
 		fill(251,236,226);
 		ellipse(250, 290, 48, 55);
@@ -175,8 +177,8 @@
 		circle(262, 288, 7);
 		circle(255, 300, 3);
 		circle(361, 300, 3);
-		
-		
+
+
 		//bang
 		fill(246,201,166);
 		rect(175, 104, 250, 140, 180, 180, 5, 5);
@@ -201,22 +203,22 @@
 		triangle(297, 295, 300, 165,295,290);
 		triangle(314, 310, 310, 150,325,290);
 		triangle(335, 340, 312, 150,325,290);
-		
+
 		//eyebrows
 		fill(38,35,30);
 		arc(246, 245, 65, 10, PI, TWO_PI);
 		arc(355, 245, 65, 10, PI, TWO_PI);
-		
+
 		//mouth
 		fill(244,79,89);
 		arc(302, 362, 55, 48, 0, PI, CHORD);
-		
+
 		//noise
 		fill(246,187,166);
 		ellipse(300, 330, 6, 9);
 		fill(129,90,56);
 		ellipse(302, 330, 2, 6);
-		
+
 		//cheek
 		fill(246,187,166);
 		ellipse(235, 340, 32, 20);
@@ -226,7 +228,7 @@
 		circle(363, 341, 4);
 		circle(239, 341, 4);
 		circle(373, 337, 5);
-		
+
 		//earring-flower
 		fill(244,243,213);
 		translate(428, 313);
@@ -234,13 +236,14 @@
 			ellipse(0, 2, 8, 15);
 			rotate(PI/5);
 		  }
-		
+
 		}
-	</div>		
+	</div>
 
  </pre>
-</div>
+			</div>
 
 
 </body>
+
 </html>

@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Yixin Cao</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<link rel="icon" href="images/icon.png" type="image/png" sizes="16x16">
-<link rel="stylesheet" href="style-glitch.css">
+<head>
+	<title>Yixin Cao</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<link rel="icon" href="images/icon.png" type="image/png" sizes="16x16">
+	<link rel="stylesheet" href="style-glitch.css">
 
 
 </head>
@@ -25,10 +26,10 @@
 			</div>
 			<div id="mainListDiv" class="main_list">
 				<ul class="navlinks">
-					<li><a href="index.html" >Home</a></li>
+					<li><a href="index.html">Home</a></li>
 					<Li><a href="portfolio.html">Portfolio</a></li>
 					<li><a href="about.html">About</a></li>
-				   </ul>
+				</ul>
 			</div>
 			<span class="navTrigger">
 				<i></i>
@@ -37,57 +38,56 @@
 			</span>
 		</div>
 	</nav>
-				
+
 	<section class="home">
 	</section>
 	<div style="height: 1000px">
 		<div class="content">
-		<h2 class="myH2">Glitchs</h2><br>
-		<p class="myP">Photoshop, 2020</p> 
-		<p class="myP">I was deeply impressed by the animation of the artist Hayao Miyazaki. I chose the main characters' image in a series of works and created a series of works with an abstract visual effect by corrupting the original image. </p><br><br>
-	
-    <div class="gallery-img">
-   <img src="images/g1.jpg" class="image" style="width:100%" height="auto">
-   <br><br><br>
-   <img src="images/bg10_nt.jpg" class="image" style="width:100%" height="auto">
-   <br><br><br>
-   <img src="images/g3.jpg" class="image" style="width:100%"height="auto">
-   <br><br><br>
-    </div>
+			<h2 class="myH2">Glitchs</h2><br>
+			<p class="myP">Photoshop, 2020</p>
+			<p class="myP">I was deeply impressed by the animation of the artist Hayao Miyazaki. I chose the main characters' image in a series of works and created a series of works with an abstract visual effect by corrupting the original image. </p>
+			<br><br>
+
+			<div class="gallery-img">
+				<img src="images/g1.jpg" class="image" style="width:100%" height="auto">
+				<br><br><br>
+				<img src="images/bg10_nt.jpg" class="image" style="width:100%" height="auto">
+				<br><br><br>
+				<img src="images/g3.jpg" class="image" style="width:100%" height="auto">
+				<br><br><br>
+			</div>
 
 
-	
-    <!-- Footer -->
-	<div class="footer">
-		<a href="mailto:yc-studio@outlook.com" target="_blank"> <i class= "fa fa-envelope" style="font-size:24px;color:rgb(241, 15, 241)"></i></a>&nbsp;
-		<a href="https://instagram.com/yixinsstudio" target="_blank"><i class="fa fa-instagram" style="font-size:24px;color:rgb(241, 15, 241)"></i></a>&nbsp;
-	    <p>copyright © 2020 Yixin Cao all rights reserved</p>
-	  </div>
-	  
+
+			<!-- Footer -->
+			<div class="footer">
+				<a href="mailto:yc-studio@outlook.com" target="_blank"> <i class="fa fa-envelope" style="font-size:24px;color:rgb(241, 15, 241)"></i></a>&nbsp;
+				<a href="https://instagram.com/yixinsstudio" target="_blank"><i class="fa fa-instagram" style="font-size:24px;color:rgb(241, 15, 241)"></i></a>&nbsp;
+				<p>copyright © 2020 Yixin Cao all rights reserved</p>
+			</div>
+
 		</div>
-	<br>
-	
-	<script>
-		$(window).scroll(function() {
-		if ($(document).scrollTop() > 50) {
-			$('.nav').addClass('affix');
-			console.log("OK");
-		} else {
-			$('.nav').removeClass('affix');
-		}
-	});
-		$('.navTrigger').click(function () {
-		$(this).toggleClass('active');
-		console.log("Clicked menu");
-		$("#mainListDiv").toggleClass("show_list");
-		$("#mainListDiv").fadeIn();
-	
-	});
-	</script>
+		<br>
 
-</div>
-</body>
-</html>       
-	  
-	
-				 
+		<script>
+			$(window).scroll(function() {
+				if ($(document).scrollTop() > 50) {
+					$('.nav').addClass('affix');
+					console.log("OK");
+				} else {
+					$('.nav').removeClass('affix');
+				}
+			});
+			$('.navTrigger').click(function() {
+				$(this).toggleClass('active');
+				console.log("Clicked menu");
+				$("#mainListDiv").toggleClass("show_list");
+				$("#mainListDiv").fadeIn();
+
+			});
+		</script>
+
+	</div>
+	</body>
+
+</html>
