@@ -15,49 +15,49 @@ var enemies = [
    { left: 930, top: -20 },
    { left: 630, top: -20 },
    { left: 830, top: 1 },
-    
+
     { left: 250, top: 5 },
     { left: 370, top: 5 },
     { left: 870, top: 5 },
     { left: 550, top: 5 },
     { left: 100, top: 25 },
-    
+
     { left: 300, top: 25 },
-  
+
     { left: 500, top: 25 },
     { left: 600, top: 25 },
-   
+
     { left: 800, top: 25 },
     { left: 900, top: 25 },
     { left: 1000, top: 25 },
     { left: 150, top: 100 },
     { left: 250, top: 60 },
     { left: 350, top: 100 },
-  
+
     { left: 550, top: 70 },
     { left: 650, top: 100 },
     { left: 750, top: 100 },
-  
+
     { left: 950, top: 90 },
-    
+
     { left: 75, top: 175 },
     { left: 175, top: 175 },
     { left: 275, top: 175 },
-    
+
     { left: 475, top: 195 },
     { left: 575, top: 175 },
-    
+
     { left: 775, top: 165 },
     { left: 875, top: 175 },
-   
+
     { left: 1075, top: 175 },
-  
+
     { left: 225, top: 250 },
     { left: 335, top: 250 },
-  
+
     { left: 565, top: 290 },
     { left: 625, top: 250 },
-  
+
     { left: 805, top: 270 },
     { left: 925, top: 250 }
 ];
@@ -80,12 +80,12 @@ document.onkeydown = function(e) {
         // Spacebar (fire)
         missiles.push({
             left: hero.left + 25,
-            top: hero.top - 25 
+            top: hero.top - 25
         });
         drawMissiles()
     }
     drawHero();
-} 
+}
 
 
 function drawHero() {
@@ -122,7 +122,7 @@ function moveEnemies() {
 function collisionDetection() {
     for (var enemy = 1; enemy < enemies.length; enemy++) {
         for (var missile = 0; missile < missiles.length; missile++) {
-            if ( 
+            if (
                 missiles[missile].left >= enemies[enemy].left  &&
                 missiles[missile].left <= (enemies[enemy].left + 50)  &&
                 missiles[missile].top <= (enemies[enemy].top + 50)  &&

@@ -19,25 +19,65 @@
 
 
 </head>
-<div style="height: 1100px">
+
+<nav class="nav">
+  <div class="container">
+    <div class="logo">
+      <a href="../index.html">Yixin Cao</a>
+    </div>
+    <div id="mainListDiv" class="main_list">
+      <ul class="navlinks">
+        <li><a href="../index.html">Home</a></li>
+        <Li><a href="../portfolio.html">Portfolio</a></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+    </div>
+    <span class="navTrigger">
+      <i></i>
+      <i></i>
+      <i></i>
+    </span>
+  </div>
+</nav>
+
+
+
 <div class="body">
     <div id="background">
         <div id="hero"></div>
         <div id="missiles"></div>
         <div id="enemies"></div>
-    
-        <div class="content">
+
+      <!----  <div class="content">
             <h2 class="myH2">Virus Invaders</h2><br>
-            <p class="myP">Web Game, 2020</p> 
+            <p class="myP">Web Game, 2020</p>
             <h3 class="myH3">INSTRUTCTIONS</h3><br>
-            <p class="myP">Press the left and right arrow key to move the magical bottle</p> 
+            <p class="myP">Press the left and right arrow key to move the magical bottle</p>
             <p class="myP">Press the space button to shot viruses</p><br>
             <h3 class="myH3">Description</h3><br>
-            <p class="myP">It's a web version game, inspired by space invader, an arcade video game developed by Tomohiro Nishikado and released in 1978. I made my artistic style resonating with themes that are relevant to real life. </p> 
+            <p class="myP">It's a web version game, inspired by space invader, an arcade video game developed by Tomohiro Nishikado and released in 1978. I made my artistic style resonating with themes that are relevant to real life. </p>
         </div>
-     </div>
+     </div> -------------->
 </div>
 </div>
+
+<script>
+  $(window).scroll(function() {
+  if ($(document).scrollTop() > 50) {
+  $('.nav').addClass('affix');
+  console.log("OK");
+  } else {
+  $('.nav').removeClass('affix');
+  }
+  });
+  $('.navTrigger').click(function() {
+  $(this).toggleClass('active');
+  console.log("Clicked menu");
+  $("#mainListDiv").toggleClass("show_list");
+  $("#mainListDiv").fadeIn();
+
+  });
+</script>
+
 </body>
 </html>
-		
