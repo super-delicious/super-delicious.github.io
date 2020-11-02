@@ -1,26 +1,22 @@
-
-
-
-</body></html>
 <!DOCTYPE html>
 <html>
 
 <head>
-	<title>Yixin Cao</title>
+  <title>Yixin Cao</title>
   <script src="p5.js"></script>
   <script src="p5.sound.min.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
   <meta charset="utf-8">
 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<link rel="icon" href="images/icon.png" type="image/png" sizes="16x16">
-	<link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <link rel="icon" href="images/icon.png" type="image/png" sizes="16x16">
+  <link rel="stylesheet" href="style.css">
   <script src="sketch.js"></script>
   <script src="mount.js"></script>
 
@@ -29,62 +25,62 @@
 <div class="body">
 
 
-	<nav class="nav">
-		<div class="container">
-			<div class="logo">
-				<a href="index.html">Yixin Cao</a>
-			</div>
-			<div id="mainListDiv" class="main_list">
-				<ul class="navlinks">
-					<li><a href="../index.html">Home</a></li>
-					<Li><a href="../portfolio.html">Portfolio</a></li>
-					<li><a href="../about.html">About</a></li>
-				</ul>
-			</div>
-			<span class="navTrigger">
-				<i></i>
-				<i></i>
-				<i></i>
-			</span>
-		</div>
-	</nav>
+  <nav class="nav">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">Yixin Cao</a>
+      </div>
+      <div id="mainListDiv" class="main_list">
+        <ul class="navlinks">
+          <li><a href="../index.html">Home</a></li>
+          <Li><a href="../portfolio.html">Portfolio</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+      </div>
+      <span class="navTrigger">
+        <i></i>
+        <i></i>
+        <i></i>
+      </span>
+    </div>
+  </nav>
 
-	<section class="home">
-	</section>
-	<div style="height: 1100px">
-		<div class="content">
-			<h2 class="myH2">Animation</h2>
-			<p class="myP">Coding, 2020</p>
-			<h3 class="myH3">Description</h3>
-			<p class="myP"> This animation is based on my insight to create something that symbolizes my avatar is pursuing freedom and focus to see the light. The bird is flying freely in the sky, and under-eye its remarkable mountain scenery. Despite the
-				rainy, she went ahead bravely and could see the light on ahead.</p>
-			<p class="myP"> Mouse click the sky, the sun will show up, and the background color will change.</p>
-		</div>
+  <section class="home">
+  </section>
+  <div style="height: 1100px">
+    <div class="content">
+      <h2 class="myH2">Animation</h2>
+      <p class="myP">Coding, 2020</p>
+      <h3 class="myH3">Description</h3>
+      <p class="myP"> This animation is based on my insight to create something that symbolizes my avatar is pursuing freedom and focus to see the light. The bird is flying freely in the sky, and under-eye its remarkable mountain scenery. Despite the
+        rainy, she went ahead bravely and could see the light on ahead.</p>
+      <p class="myP"> Mouse click the sky, the sun will show up, and the background color will change.</p>
+    </div>
 
 
-			<script>
-				$(window).scroll(function() {
-					if ($(document).scrollTop() > 50) {
-						$('.nav').addClass('affix');
-						console.log("OK");
-					} else {
-						$('.nav').removeClass('affix');
-					}
-				});
-				$('.navTrigger').click(function() {
-					$(this).toggleClass('active');
-					console.log("Clicked menu");
-					$("#mainListDiv").toggleClass("show_list");
-					$("#mainListDiv").fadeIn();
+    <script>
+      $(window).scroll(function() {
+        if ($(document).scrollTop() > 50) {
+          $('.nav').addClass('affix');
+          console.log("OK");
+        } else {
+          $('.nav').removeClass('affix');
+        }
+      });
+      $('.navTrigger').click(function() {
+        $(this).toggleClass('active');
+        console.log("Clicked menu");
+        $("#mainListDiv").toggleClass("show_list");
+        $("#mainListDiv").fadeIn();
 
-				});
-			</script>
-			<!-- Footer -->
-			<div class="footer">
-				<a href="mailto:yc-studio@outlook.com" target="_blank"> <i class="fa fa-envelope" style="font-size:24px;color:rgb(241, 15, 241)"></i></a>&nbsp;
-				<a href="https://instagram.com/yixinsstudio" target="_blank"><i class="fa fa-instagram" style="font-size:24px;color:rgb(241, 15, 241)"></i></a>&nbsp;
-				<p>copyright © 2020 Yixin Cao all rights reserved</p>
-			</div>
-			</body>
+      });
+    </script>
+    <!-- Footer -->
+    <div class="footer">
+      <a href="mailto:yc-studio@outlook.com" target="_blank"> <i class="fa fa-envelope" style="font-size:24px;color:rgb(241, 15, 241)"></i></a>&nbsp;
+      <a href="https://instagram.com/yixinsstudio" target="_blank"><i class="fa fa-instagram" style="font-size:24px;color:rgb(241, 15, 241)"></i></a>&nbsp;
+      <p>copyright © 2020 Yixin Cao all rights reserved</p>
+    </div>
+    </body>
 
 </html>
