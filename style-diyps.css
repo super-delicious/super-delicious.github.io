@@ -411,6 +411,8 @@ body {
   text-align: center;
   font-size: 4rem;
   font-weight: 600;
+  line-height: 140px;
+
 }
 
 .myH3 {
@@ -419,6 +421,8 @@ body {
   font-weight: 600;
   padding-left: 15%;
   padding-right: 15%;
+  line-height: 50px;
+
 }
 
 .myP {
@@ -448,4 +452,14 @@ body {
 
 a {
   color: rgb(184, 39, 189);
+}
+
+
+
+.footer {
+  background-color: transparent;
+  padding: 10px;
+  text-align: center;
+  margin: 1050px 20px 15px 10px;
+  font-family: "Courier New", Courier, monospace;
 }

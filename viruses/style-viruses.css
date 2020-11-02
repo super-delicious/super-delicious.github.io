@@ -1,9 +1,6 @@
 /*background--------------------------------------*/
 body {
-  background: linear-gradient(-45deg, #6b0692, #000000, #058091, rgb(8, 4, 245));
-  background-size: 200% 200%;
-  animation: gradient 15s ease infinite;
-  background-repeat: no-repeat;
+
 }
 
 @keyframes gradient {
@@ -23,7 +20,7 @@ body {
 div#background {
   width: 1500px;
   height: 900px;
-  margin-top: 80px;
+  margin-top: 0px;
   background-image: url('assets/background.png');
   background-position: center;
   background-repeat: no-repeat;
@@ -39,8 +36,9 @@ div#hero {
 }
 
 div#missiles {
-  width: 1200px;
-  height: 800px;
+  width: 1500px;
+  height: 900px;
+  padding-left: 150px;
   position: absolute;
 }
 
@@ -54,7 +52,7 @@ div.missile1 {
 div#enemies {
   width: 1200px;
   height: 800px;
-  position: absolute;
+  margin-left: 20%;
 }
 
 div.enemy {
@@ -182,7 +180,6 @@ body {
 }
 
 /* Home section */
-
 .navTrigger {
   display: none;
 }

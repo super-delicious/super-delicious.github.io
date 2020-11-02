@@ -388,19 +388,27 @@ body {
   padding: 0;
   background-color: rgb(255, 255, 255);
 }
-
-.myH2 {
+.myH1 {
   text-align: center;
   font-size: 4rem;
   font-weight: 550;
   line-height: 200%;
+  line-height: 140px;
+}
+.myH2 {
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 550;
+  line-height: 200%;
+  line-height: 180px;
 }
 
 .myH3 {
-  text-align: center;
-  font-size: 3rem;
+  text-align: left;
+  padding-left: 15%;
+  font-size: 2.5rem;
   font-weight: 550;
-  line-height: 200%;
+
 }
 
 .myP {

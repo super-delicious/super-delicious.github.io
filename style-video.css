@@ -367,12 +367,14 @@ body {
   font-size: 4rem;
   font-weight: 600;
   color: #eb1deb;
+  line-height: 140px;
 }
 
 .myH3 {
   text-align: center;
   font-size: 3rem;
   font-weight: 600;
+  line-height: 140px;
 }
 
 .myP {

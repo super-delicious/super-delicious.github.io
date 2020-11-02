@@ -362,15 +362,18 @@ body {
   background-color: rgb(255, 255, 255);
 }
 
-.myH2 {
+.myH1 {
   text-align: center;
   font-size: 4rem;
   font-weight: 600;
+  line-height: 50px;
 }
 
 .myH3 {
   text-align: center;
-  font-size: 1rem;
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 180px;
 }
 
 .myP {
