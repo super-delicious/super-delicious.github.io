@@ -2,8 +2,18 @@ html, body {
   margin: 0;
   padding: 0;
 }
+
 canvas {
-  display: block;
+  margin: auto;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: -1;
+  border-style: solid;
+  border-color: rgb(25, 250, 90);
+  /*---  display: block;
+  border-radius: 0.8;
+  border: 5px solid rgb(32, 238, 251);----*/
 }
 
 /*background--------------------------------------*/
