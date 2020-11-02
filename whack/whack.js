@@ -5,9 +5,9 @@ var score =0;
 var gameState ="L1";
 
  function preload() {
-  // img = loadImage('mole.png'); 
-  //imgbg = loadImage('gameover.png'); 
-   //imgmouse = loadImage('whack.png'); 
+  // img = loadImage('mole.png');
+  //imgbg = loadImage('gameover.png');
+   //imgmouse = loadImage('whack.png');
  img = loadImage('https://super-delicious.github.io/images/mole.png');
  imgbg =loadImage('https://super-delicious.github.io/images/gameover.png');
  img3 =loadImage('https://super-delicious.github.io/images/whack.png');
@@ -44,10 +44,10 @@ function draw() {
   if(gameState =="Le"){
   levelEnd();
   }
-  
-  
+
+
   text(("Score: " + score), width/2, 40);
-  
+
 
 } // end draw
 
@@ -55,7 +55,7 @@ function draw() {
 function levelOne(){
    background(238,231,234);
   text("Level 1", width/2, height-20);
-  sight(); 
+  sight();
   var distToImg= dist(imgX, imgY, mouseX, mouseY);
   if (distToImg <imgSize/2){
     imgX = random(width);
@@ -65,7 +65,7 @@ function levelOne(){
   if(score>= 5){
     gameState ="L2";
   }
-    
+
   image(img,imgX,imgY,imgSize,imgSize);
 
 } // end level one ============================================
@@ -74,7 +74,7 @@ function levelOne(){
 function levelTwo(){
    background(251,221,225);
   text("Level 2", width/2, height-20);
-  sight(); 
+  sight();
   var distToImg= dist(imgX, imgY, mouseX, mouseY);
   if (distToImg <imgSize/2){
     ballx = random(width);
@@ -84,15 +84,15 @@ function levelTwo(){
   if(score>= 20){
      gameState ="L3";
   }
-    
-  
+
+
   image(img, imgX, imgY, imgSize, imgSize);
 } // end level two =============================================
 
 function levelThree(){
   background(248,177,185);
   text("Level 3", width/2, height-20);
-  sight(); 
+  sight();
  var distToImg= dist(imgX, imgY, mouseX, mouseY);
   if (distToImg <imgSize/2){
     imgX = random(width);
@@ -102,16 +102,16 @@ function levelThree(){
   }
   if(score>= 45){
     gameState ="L4";
-   
+
   }
- 
+
   image(img, imgX, imgY, imgSize, imgSize);
 } // end level Three =============================================
 
 function levelFour(){
   background(234,116,130);
    text("Level 4", width/2, height-20);
-   sight(); 
+   sight();
   var distToImg= dist(imgX, imgY, mouseX, mouseY);
   if (distToImg <imgSize/2){
     imgX = random(width);
@@ -121,9 +121,9 @@ function levelFour(){
   }
   if(score>= 70){
     gameState ="L5";
-   
+
   }
-    
+
      image(img, imgX, imgY, imgSize, imgSize);
 } // end level Four =============================================
 
@@ -131,7 +131,7 @@ function levelFour(){
 function levelFive(){
   background(226,58,77);
   text("Level 5", width/2, height-20);
-  sight(); 
+  sight();
   var distToImg= dist(imgX, imgY, mouseX, mouseY);
   if (distToImg <imgSize/2){
     imgX = random(width);
@@ -141,16 +141,16 @@ function levelFive(){
   }
   if(score>= 95){
     gameState ="L6";
-   
+
   }
-    
+
     image(img, imgX, imgY, imgSize, imgSize);
 } // end level Five =============================================
 
 function levelSix(){
   background(189,9,29);
   text("Level 6", width/2, height-20);
-  sight(); 
+  sight();
   var distToImg= dist(imgX, imgY, mouseX, mouseY);
   if (distToImg <imgSize/2){
     imgX = random(width);
@@ -160,16 +160,16 @@ function levelSix(){
   }
   if(score>= 130){
     gameState ="Le";
-   
+
   }
-    
+
    image(img, imgX, imgY, imgSize, imgSize);
-    
+
 } // end level Six =============================================
 
 function levelEnd(){
   background(0,0,0);
- 
+
   var distToImg= dist(imgX, imgY, mouseX, mouseY);
   if (distToImg <imgSize/2){
     imgX = random(width);
@@ -178,11 +178,11 @@ function levelEnd(){
     imgSize = imgSize - 5;
   }
   if(score>= 130){
-    
+
    // gameState ="Le";
-   
+
   }
-    
+
     image(imgbg, 0, 0, 600, 600 );
 } // end level End =============================================
 
