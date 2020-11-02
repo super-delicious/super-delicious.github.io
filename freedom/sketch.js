@@ -35,10 +35,10 @@ function draw() {
     circle( 384, 20, 50, 50);
   }else if (bamYes != true) {
     background(0,0,5);
-    
+
   }
 
-  
+
   // draw back mountain
   fill(149, 156, 163);
   bezier(a + 30, b + 390, a + 20, a + 379, b + 30, a + 70, a + 210, b + 390, a + 290);
@@ -55,7 +55,7 @@ function draw() {
   }
 
   // variable increment
-  //rain 
+  //rain
   stroke(151, 151, 169);
 
   line(x, y, x, y + 15);
@@ -183,6 +183,3 @@ function drawWing(angle) {
   endShape(CLOSE);
   push();
 }
-
-
-
