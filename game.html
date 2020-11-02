@@ -13,7 +13,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<link rel="icon" href="images/icon.png" type="image/png" sizes="16x16">
 	<link rel="stylesheet" href="style-game.css">
-	<script src="yc_game/yc_game.js"></script>
+
 
 
 </head>
@@ -55,21 +55,7 @@
 			</div>
 
 			<script>
-				$(window).scroll(function() {
-					if ($(document).scrollTop() > 50) {
-						$('.nav').addClass('affix');
-						console.log("OK");
-					} else {
-						$('.nav').removeClass('affix');
-					}
-				});
-				$('.navTrigger').click(function() {
-					$(this).toggleClass('active');
-					console.log("Clicked menu");
-					$("#mainListDiv").toggleClass("show_list");
-					$("#mainListDiv").fadeIn();
 
-				});
 
 				var imgX = 300;
 				var imgY = 300;
@@ -263,6 +249,22 @@
 				function sight() {
 					image(img3, mouseX - 10, mouseY - 10);
 				}
+
+				$(window).scroll(function() {
+					if ($(document).scrollTop() > 50) {
+						$('.nav').addClass('affix');
+						console.log("OK");
+					} else {
+						$('.nav').removeClass('affix');
+					}
+				});
+				$('.navTrigger').click(function() {
+					$(this).toggleClass('active');
+					console.log("Clicked menu");
+					$("#mainListDiv").toggleClass("show_list");
+					$("#mainListDiv").fadeIn();
+
+				});
 			</script>
 			<!-- Footer -->
 			<div class="footer">
