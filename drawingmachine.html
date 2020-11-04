@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Yixin Cao</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<link rel="icon" href="images/icon.png" type="image/png" sizes="16x16">
+	<link rel="stylesheet" href="style-dm.css">
+
+
+
+</head>
+<div class="body">
+
+
+	<nav class="nav">
+		<div class="container">
+			<div class="logo">
+				<a href="index.html">Yixin Cao</a>
+			</div>
+			<div id="mainListDiv" class="main_list">
+				<ul class="navlinks">
+					<li><a href="index.html">Home</a></li>
+					<Li><a href="portfolio.html">Portfolio</a></li>
+					<li><a href="about.html">About</a></li>
+				</ul>
+			</div>
+			<span class="navTrigger">
+				<i></i>
+				<i></i>
+				<i></i>
+			</span>
+		</div>
+	</nav>
+
+	<section class="home">
+	</section>
+	<div style="height: 1100px">
+		<div class="content">
+			<h2 class="myH2">Morden Abstract Drawing Machine</h2><br>
+			<p class="myP">Coding, 2020</p>
+			<h3 class="myH3">INSTRUTCTIONS</h3><br>
+			<p class="myP"> Click and move the mouse on canvas to choose the best composition for your abstract painting </P>
+			<p class="myP"> Hit 'S' to save image</p>
+			<h3 class="myH3"> Description</h3><br>
+			<p class="myP"> The Modern Abstract Art Drawing Machine. To convey that an individual is a creator and artist and can easily create and save their abstract paintings from the drawing machine. I was deeply inspired by artist Piet Mondrian
+				utilizing primary colors, and the patterns are diverse in my drawing machine.</p>
+		</div>
+		<div class="sketch">
+			<div style="text-align:right">
+				<iframe src="dm/index.html" style="height:540px;width:960px;border-color: rgb(0, 0, 0);border:double; border-width: thick;"></iframe>
+			</div>
+
+			<script>
+				$(window).scroll(function() {
+					if ($(document).scrollTop() > 50) {
+						$('.nav').addClass('affix');
+						console.log("OK");
+					} else {
+						$('.nav').removeClass('affix');
+					}
+				});
+				$('.navTrigger').click(function() {
+					$(this).toggleClass('active');
+					console.log("Clicked menu");
+					$("#mainListDiv").toggleClass("show_list");
+					$("#mainListDiv").fadeIn();
+
+				});
+			</script>
+			<!-- Footer -->
+			<div class="footer">
+				<a href="mailto:yc-studio@outlook.com" target="_blank"> <i class="fa fa-envelope" style="font-size:24px;color:rgb(241, 15, 241)"></i></a>&nbsp;
+				<a href="https://instagram.com/yixinsstudio" target="_blank"><i class="fa fa-instagram" style="font-size:24px;color:rgb(241, 15, 241)"></i></a>&nbsp;
+				<p>copyright © 2020 Yixin Cao all rights reserved</p>
+			</div>
+			</body>
+
+</html>
