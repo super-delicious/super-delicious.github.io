@@ -6,7 +6,7 @@ body {
   box-sizing: border-box;
   font-family: "Courier New", Courier, monospace;
   font-size: 62.5%;
-  font-size: 10px;
+  font-size: 20px;
 }
 
 /* Navbar section */
@@ -402,9 +402,22 @@ body {
   padding-left: 10%;
   padding-right: 10%;
 }
+a:link {
+  background-color: blue;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
 
+}
+
+
+}
 a {
   color: rgb(184, 39, 189);
+
+
 }
 
 .footer {

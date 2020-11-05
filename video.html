@@ -112,40 +112,56 @@
 					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 				</iframe>
 			</div>
+
+			<!----------------------- webpage-5-------------------------------->
+
+			<h3 class="myH3"> Critical Interactivity </h3><br>
+			<p class="myP">Date: 2020</p>
+			<p class="myP">Medium: HTML, CSS, PHOTOSHOP </p>
+			<p class="myP">Description: Presenting my video work, "Exist," through the Html page. To allow the audience to empathize with environmental pollution, and to promote eco-awareness, Utilized the city as the background, stimulate public art to
+				attach the video and images on the buildings.</p>
+
+			<div class="gallery">
+
+					<a href="https://www.yixin-cao.com/videoart/project2.html"style="text-decoration:none"> See Work</a>
+
+				<img src="images/c1.jpg" style="width:100%" height="auto"><br>
+
+
+			</div>
+
+
+
+			<!-- Footer -->
+
+			<div class="footer">
+				<a href="mailto:yc-studio@outlook.com" target="_blank"> <i class="fa fa-envelope" style="font-size:24px;color:rgb(241, 15, 241)"></i></a>&nbsp;
+				<a href="https://instagram.com/yixinsstudio" target="_blank"><i class="fa fa-instagram" style="font-size:24px;color:rgb(241, 15, 241)"></i></a>&nbsp;
+				<p>copyright © 2020 Yixin Cao all rights reserved</p>
+			</div>
+
 		</div>
+		<br>
 
+		<script>
+			$(window).scroll(function() {
+				if ($(document).scrollTop() > 50) {
+					$('.nav').addClass('affix');
+					console.log("OK");
+				} else {
+					$('.nav').removeClass('affix');
+				}
+			});
+			$('.navTrigger').click(function() {
+				$(this).toggleClass('active');
+				console.log("Clicked menu");
+				$("#mainListDiv").toggleClass("show_list");
+				$("#mainListDiv").fadeIn();
 
-
-		<!-- Footer -->
-
-		<div class="footer">
-			<a href="mailto:yc-studio@outlook.com" target="_blank"> <i class="fa fa-envelope" style="font-size:24px;color:rgb(241, 15, 241)"></i></a>&nbsp;
-			<a href="https://instagram.com/yixinsstudio" target="_blank"><i class="fa fa-instagram" style="font-size:24px;color:rgb(241, 15, 241)"></i></a>&nbsp;
-			<p>copyright © 2020 Yixin Cao all rights reserved</p>
-		</div>
+			});
+		</script>
 
 	</div>
-	<br>
-
-	<script>
-		$(window).scroll(function() {
-			if ($(document).scrollTop() > 50) {
-				$('.nav').addClass('affix');
-				console.log("OK");
-			} else {
-				$('.nav').removeClass('affix');
-			}
-		});
-		$('.navTrigger').click(function() {
-			$(this).toggleClass('active');
-			console.log("Clicked menu");
-			$("#mainListDiv").toggleClass("show_list");
-			$("#mainListDiv").fadeIn();
-
-		});
-	</script>
-
-</div>
-</body>
+	</body>
 
 </html>
