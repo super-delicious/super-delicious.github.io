@@ -407,10 +407,17 @@ body {
   background-color: rgb(255, 255, 255);
 }
 
+.myH1 {
+  text-align: center;
+  font-size: 5rem;
+  font-weight: 580;
+  line-height: 30px;
+
+}
 .myH2 {
   text-align: center;
   font-size: 4rem;
-  font-weight: 600;
+  font-weight: 570;
   line-height: 140px;
 
 }
