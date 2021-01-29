@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Yixin Cao</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<link rel="icon" href="images/icon.png" type="image/png" sizes="16x16">
+	<link rel="stylesheet" href="style-tatsou.css">
+
+
+
+
+</head>
+<div class="body">
+
+
+	<nav class="nav">
+		<div class="container">
+			<div class="logo">
+				<a href="index.html">Yixin Cao</a>
+			</div>
+			<div id="mainListDiv" class="main_list">
+				<ul class="navlinks">
+					<li><a href="index.html">Home</a></li>
+					<Li><a href="portfolio.html">Portfolio</a></li>
+					<li><a href="about.html">About</a></li>
+				</ul>
+			</div>
+			<span class="navTrigger">
+				<i></i>
+				<i></i>
+				<i></i>
+			</span>
+		</div>
+	</nav>
+
+	<section class="home">
+	</section>
+	<div style="height: 1100px">
+		<div class="content">
+			<h2 class="myH2">Tatsuo: Wipeout</h2><br>
+			<p class="myP">Video Game, 2020</p>
+			<h3 class="myH3"> Programmer name</h3>
+			<p class="myP">Camila Avina Garcia , Cheng Cheng</p>
+			<h3 class="myH3">Artist name</h3>
+			<p class="myP">Yixin Cao, Jason Nguyen</p>
+			<h3 class="myH3">Producer</h3>
+			<p class="myP">Jason Nguyen</p>
+			<h3 class="myH3">Designer</h3>
+			<p class="myP">Cheng Cheng</p>
+			<h3 class="myH3">Description</h3>
+			<p class="myP">Tatsuo, a dragon child, is the master of the skies and now wants to master the sea. Help Tatsuo as he surfs through the Bahamas and avoid the rocks and pigs along the way.</p>
+		</div>
+
+		<div class="gallery-img">
+			<img src="images/bg14_01.jpg" style="width:100%" height="auto"><br>
+			<a href="https://athiecheng.itch.io/tatsuo-on-the-beach"style="text-decoration:none"> See Work Full Screen</a>
+		</div>
+
+
+
+
+
+			<script>
+				$(window).scroll(function() {
+					if ($(document).scrollTop() > 50) {
+						$('.nav').addClass('affix');
+						console.log("OK");
+					} else {
+						$('.nav').removeClass('affix');
+					}
+				});
+				$('.navTrigger').click(function() {
+					$(this).toggleClass('active');
+					console.log("Clicked menu");
+					$("#mainListDiv").toggleClass("show_list");
+					$("#mainListDiv").fadeIn();
+
+				});
+			</script>
+			<!-- Footer -->
+			<div class="footer">
+				<a href="mailto:yc-studio@outlook.com" target="_blank"> <i class="fa fa-envelope" style="font-size:24px;color:rgb(241, 15, 241)"></i></a>&nbsp;
+				<a href="https://instagram.com/yixinsstudio" target="_blank"><i class="fa fa-instagram" style="font-size:24px;color:rgb(241, 15, 241)"></i></a>&nbsp;
+				<p>copyright © 2020 Yixin Cao all rights reserved</p>
+			</div>
+			</body>
+
+</html>

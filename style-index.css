@@ -115,8 +115,8 @@ body {
   float: left;
   width: auto;
   height: auto;
-  padding-left: 3rem;
-  font-weight: 620;
+  padding-left: 3%;
+  font-weight: 560;
 }
 
 .nav div.logo a {
@@ -168,6 +168,7 @@ body {
   width: 100%;
   height: 875px;
   background-image: url("images/glitch-infinite.jpg");
+  display: flex;
   background-position: center top;
   size: cover;
   background-repeat: no-repeat;
@@ -197,13 +198,15 @@ body {
   }
 
   .nav div.logo {
-    margin-left: 50px;
+    margin-left: 20%;
+    margin-top: 1%;
   }
 
   .nav div.main_list {
     width: 100%;
     height: 0;
     overflow: hidden;
+    z-index: +2;
   }
 
   .nav div.show_list {
@@ -241,15 +244,14 @@ body {
 }
 
 /* Animation */
-/* Inspiration taken from Dicson https://codemyui.com/simple-hamburger-menu-x-mark-animation/ */
 .navTrigger {
   cursor: pointer;
-  width: 30px;
-  height: 25px;
+  width: 20px;
+  height: 15px;
   margin: auto;
   position: absolute;
-  right: 30px;
-  top: 2px;
+  right: 5%;
+  top: 5%;
   bottom: 0;
 }
 
@@ -259,7 +261,7 @@ body {
   content: '';
   display: block;
   width: 100%;
-  height: 4px;
+  height: 3px;
 }
 
 .navTrigger i:nth-child(1) {
@@ -454,6 +456,7 @@ body {
 .affix {
   padding: 0;
   background-color: rgb(255, 255, 255);
+  z-index: +2;
 }
 
 .myH2 {
@@ -487,6 +490,6 @@ a {
 .footer {
   background-color: transparent;
   text-align: center;
-  margin: 20px 20px 15px 10px;
+  margin: 10px 20px 15px 10px;
   font-family: "Courier New", Courier, monospace;
 }

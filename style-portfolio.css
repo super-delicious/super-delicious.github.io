@@ -133,6 +133,7 @@ body {
 .nav div.main_list {
   height: 75px;
   float: right;
+    z-index: +2;
 }
 
 .nav div.main_list ul {
@@ -166,6 +167,7 @@ body {
 /* Home section */
 .navTrigger {
   display: none;
+  z-index: +2;
 }
 
 .nav {
@@ -185,6 +187,7 @@ body {
 @media screen and (max-width:768px) {
   .navTrigger {
     display: block;
+    z-index: +2;
   }
 
   .nav div.logo {
@@ -195,11 +198,14 @@ body {
     width: 100%;
     height: 0;
     overflow: hidden;
+
+
   }
 
   .nav div.show_list {
     height: auto;
     display: none;
+
   }
 
   .nav div.main_list ul {
@@ -212,6 +218,7 @@ body {
     background-color: #fff;
     /*same background color of navbar*/
     background-position: center top;
+    z-index: +2;
   }
 
   .nav div.main_list ul li {
@@ -249,7 +256,7 @@ body {
   content: '';
   display: block;
   width: 100%;
-  height: 4px;
+  height: 3px;
 }
 
 .navTrigger i:nth-child(1) {
@@ -474,6 +481,7 @@ body {
   padding-right: 6%;
   padding-top: 5%;
   padding-bottom: 5%;
+  z-index: -1;
 }
 
 a {
@@ -507,6 +515,7 @@ IMG {
   margin: 8.5%;
   vertical-align: middle;
   transition: all 1.8s, transform.5s, box-shadow .5s;
+    z-index: -1;
 }
 
 img:hover {
@@ -532,20 +541,20 @@ img:focus {
   img:focus {
     width: 60%;
     margin-top: 0;
-    z-index: 0;
+    z-index: -1;
   }
 }
 
 @media only screen and (max-width 622px) {
   img {
     width: 100%;
-    z-index: 0;
+    z-index: -1;
   }
 
   img: focus {
     width: 100%;
     margin: 2px 0;
-    z-index: 0;
+    z-index: -1;
   }
 
   .grid {
@@ -561,7 +570,7 @@ img:focus {
     margin: 4em auto;
     -webkit-transform: rotateZ(-0deg);
     transform: rotateZ(-0deg);
-    z-index: 0;
+    z-index: -1;
   }
 
   .gallery-container {
