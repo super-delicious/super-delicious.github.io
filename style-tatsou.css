@@ -22,15 +22,13 @@ body {
   float: left;
   width: auto;
   height: auto;
-  padding-left: 3rem;
-  font-weight: 620;
+  font-weight: 560;
 }
 
 .nav div.logo a {
   text-decoration: none;
   color: rgb(0, 0, 6);
-  font-size: 3.5rem;
-  text-indent: 10%;
+  font-size: 2.5rem;
 }
 
 .nav div.logo a:hover {
@@ -73,11 +71,10 @@ body {
 /* Home section */
 .home {
   width: 100%;
-  height: 775px;
+  height: 100vh;
   background-image: url("images/bg14_nt.jpg");
   background-position: center top;
-  size: cover;
-  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .navTrigger {
@@ -104,7 +101,7 @@ body {
   }
 
   .nav div.logo {
-    margin-left: 50px;
+    margin-left: 15px;
   }
 
   .nav div.main_list {
@@ -121,12 +118,11 @@ body {
   .nav div.main_list ul {
     flex-direction: column;
     width: 100%;
-    height: 700px;
+    height: 100vh;
     right: 0;
     left: 0;
     bottom: 0;
     background-color: #fff;
-    z-index: 2;
     /*same background color of navbar*/
     background-position: center top;
   }
@@ -139,12 +135,17 @@ body {
   .nav div.main_list ul li a {
     text-align: center;
     width: 100%;
-    font-size: 2rem;
+    font-size: 2.8rem;
     padding: 20px;
   }
 
   .nav div.media_button {
     display: block;
+  }
+
+  .gallery-img {
+    padding-left: 0%;
+    padding-right: 0%;
   }
 }
 
@@ -161,7 +162,7 @@ body {
 }
 
 .navTrigger i {
-  background-color: rgb(255, 2, 255);
+  background-color: rgb(0, 0, 0);
   border-radius: 2px;
   content: '';
   display: block;
@@ -365,18 +366,17 @@ body {
 
 .myH2 {
   text-align: center;
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 600;
-  line-height: 100px;
-
+  line-height: 45px;
 }
 
 .myH3 {
   text-align: left;
   padding-left: 15%;
+  padding-right: 15%;
   font-size: 2.5rem;
-  font-weight: 550;
-
+  font-weight: 600;
 }
 
 .myP {
@@ -390,7 +390,17 @@ body {
 
 @media all and (max-width:700px) {
   .myP {
-    padding: 1%;
+    padding:1%;
+  }
+  .myH3 {
+    text-align: left;
+    padding-left: 1%;
+    padding-right: 1%;
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
+  .gallery-img {
+   width: 100%;
   }
 }
 
@@ -403,6 +413,13 @@ body {
   background: white;
   border-radius: 2px;
 }
+
+.gallery-img {
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+/*-----------------------------------------------------------*/
 .sketch {
   margin: auto;
   width: 50%;
@@ -413,11 +430,6 @@ body {
   bottom: 50%;
   transform: translate(-45%, -50%);
 }
-.gallery-img {
-  padding-left: 10%;
-  padding-right: 10%;
-}
-
 a {
   color: rgb(184, 39, 189);
 }

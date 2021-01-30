@@ -68,8 +68,6 @@
 						on <a href="https://sketchfab.com?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
 					</p>
 				</div>
-
-
 			</div>
 
 
@@ -80,29 +78,28 @@
 				<a href="https://instagram.com/yixinsstudio" target="_blank"><i class="fa fa-instagram" style="font-size:24px;color:rgb(241, 15, 241)"></i></a>&nbsp;
 				<p>copyright © 2020 Yixin Cao all rights reserved</p>
 			</div>
-
 		</div>
 		<br>
-
-		<script>
-			$(window).scroll(function() {
-				if ($(document).scrollTop() > 50) {
-					$('.nav').addClass('affix');
-					console.log("OK");
-				} else {
-					$('.nav').removeClass('affix');
-				}
-			});
-			$('.navTrigger').click(function() {
-				$(this).toggleClass('active');
-				console.log("Clicked menu");
-				$("#mainListDiv").toggleClass("show_list");
-				$("#mainListDiv").fadeIn();
-
-			});
-		</script>
-
 	</div>
 	</body>
 
 </html>
+
+<script>
+	$(window).scroll(function() {
+		if ($(document).scrollTop() > 50) {
+			$('.nav').addClass('affix');
+			console.log("OK");
+		} else {
+			$('.nav').removeClass('affix');
+		}
+	});
+
+	$('.navTrigger').click(function() {
+		$(this).toggleClass('active');
+		console.log("Clicked menu");
+		$("#mainListDiv").toggleClass("show_list");
+		$("#mainListDiv").fadeIn();
+
+	});
+</script>
