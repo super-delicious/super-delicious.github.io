@@ -137,6 +137,7 @@ body {
     width: 100%;
     font-size: 2.8rem;
     padding: 20px;
+    font-weight: 520;
   }
 
   .nav div.media_button {
@@ -365,10 +366,10 @@ body {
 }
 
 .myH1 {
-    text-align: center;
+  text-align: center;
   font-size: 4rem;
-    font-weight: 600;
-      line-height: 45px;
+  font-weight: 600;
+  line-height: 45px;
 }
 
 .myH2 {
@@ -376,7 +377,6 @@ body {
   font-size: 3rem;
   font-weight: 600;
   line-height: 45px;
-
 }
 
 .myH3 {
@@ -395,9 +395,10 @@ body {
 
 @media all and (max-width:700px) {
   .myP {
-    padding:1%;
+    padding: 1%;
   }
 }
+
 /*-----------------------------------------------------------*/
 .content {
   padding-left: 5%;
@@ -414,7 +415,6 @@ body {
 }
 
 /*-----------------------------------------------------------*/
-
 a {
   color: rgb(184, 39, 189);
 }

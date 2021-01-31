@@ -137,6 +137,7 @@ body {
     width: 100%;
     font-size: 2.8rem;
     padding: 20px;
+    font-weight: 520;
   }
 
   .nav div.media_button {
@@ -390,8 +391,9 @@ body {
 
 @media all and (max-width:700px) {
   .myP {
-    padding:1%;
+    padding: 1%;
   }
+
   .myH3 {
     text-align: left;
     padding-left: 1%;
@@ -399,8 +401,9 @@ body {
     font-size: 2.5rem;
     font-weight: 600;
   }
+
   .gallery-img {
-   width: 100%;
+    width: 100%;
   }
 }
 
@@ -430,6 +433,7 @@ body {
   bottom: 50%;
   transform: translate(-45%, -50%);
 }
+
 a {
   color: rgb(184, 39, 189);
 }

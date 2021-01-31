@@ -137,6 +137,7 @@ body {
     width: 100%;
     font-size: 2.8rem;
     padding: 20px;
+    font-weight: 520;
   }
 
   .nav div.media_button {
@@ -363,13 +364,14 @@ body {
   padding: 0;
   background-color: rgb(255, 255, 255);
 }
+
 .myH1 {
   text-align: center;
   font-size: 5rem;
   font-weight: 580;
   line-height: 45px;
-
 }
+
 .myH2 {
   text-align: center;
   font-size: 3rem;
@@ -397,8 +399,9 @@ body {
 
 @media all and (max-width:700px) {
   .myP {
-    padding:1%;
+    padding: 1%;
   }
+
   .myH3 {
     text-align: left;
     padding-left: 1%;
@@ -406,16 +409,17 @@ body {
     font-size: 2.5rem;
     font-weight: 600;
   }
+
   .gallery-img {
-   width: 100%;
+    width: 100%;
   }
+
   .sketch {
-
-  padding-left: 1%;
-  padding-right: 1%;
-    color: rgb(216, 212, 222);s
+    padding-left: 1%;
+    padding-right: 1%;
+    color: rgb(216, 212, 222);
+    s
   }
-
 }
 
 /*-----------------------------------------------------------*/
@@ -449,8 +453,6 @@ body {
 a {
   color: rgb(184, 39, 189);
 }
-
-
 
 .footer {
   background-color: transparent;
