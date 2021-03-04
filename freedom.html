@@ -12,11 +12,28 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<link rel="icon" href="images/icon.png" type="image/png" sizes="16x16">
-	<link rel="stylesheet" href="style-freedom.css">
+	<link rel="stylesheet" href="style-sketch.css">
 
 
 
 </head>
+<style>
+	.home {
+
+		background-image: url("images/bgf_nt.jpg");
+
+	}
+
+	.sketch {
+		margin: auto;
+		position: absolute;
+		top: 320%;
+		left: 38%;
+		right: 40%;
+		bottom: 50%;
+		transform: translate(-40%, -50%);
+	}
+</style>
 <div class="body">
 
 
@@ -52,28 +69,14 @@
 				rainy, she went ahead bravely and could see the light on ahead.</p>
 			<p class="myP"> Mouse click the sky, the sun will show up, and the background color will change.</p>
 
-		<div class="sketch">
-			<div style="text-align:right">
-				<iframe src="freedom/index.html" style="height:610px;width:610px;border-color: rgb(0, 0, 0);border:none; border-width: thick;"></iframe>
+			<div class="sketch">
+				<div style="text-align:right">
+					<iframe src="freedom/index.html" style="height:610px;width:610px;border-color: rgb(0, 0, 0);border:none; border-width: thick;"></iframe>
+				</div>
 			</div>
-	</div>
-			<script>
-				$(window).scroll(function() {
-					if ($(document).scrollTop() > 50) {
-						$('.nav').addClass('affix');
-						console.log("OK");
-					} else {
-						$('.nav').removeClass('affix');
-					}
-				});
-				$('.navTrigger').click(function() {
-					$(this).toggleClass('active');
-					console.log("Clicked menu");
-					$("#mainListDiv").toggleClass("show_list");
-					$("#mainListDiv").fadeIn();
 
-				});
-			</script>
+			<script src="js-toggle.js"></script>
+
 			<!-- Footer -->
 			<div class="footer">
 				<a href="mailto:yc-studio@outlook.com" target="_blank"> <i class="fa fa-envelope" style="font-size:24px;color:rgb(241, 15, 241)"></i></a>&nbsp;

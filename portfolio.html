@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="style-portfolio.css">
   <link href="scroll.css" rel="stylesheet">
 
+
 </head>
 
 <body>
@@ -160,7 +161,7 @@
       </div>
     </div>
 ----------------------------------------------------------------------------->
-<!--------------------Project-12------------------->
+    <!--------------------Project-12------------------->
     <div class="gallery-container">
       <div class="grid">
         <a class="grid-img show-on-scroll" href="tatsou.html">
@@ -170,26 +171,9 @@
     </div>
   </div>
 
+
   <script src="show-on-scroll.js"></script>
-
-
-  <script>
-    $(window).scroll(function() {
-      if ($(document).scrollTop() > 10) {
-        $('.nav').addClass('affix');
-        console.log("OK");
-      } else {
-        $('.nav').removeClass('affix');
-      }
-    });
-    $('.navTrigger').click(function() {
-      $(this).toggleClass('active');
-      console.log("Clicked menu");
-      $("#mainListDiv").toggleClass("show_list");
-      $("#mainListDiv").fadeIn();
-
-    });
-  </script>
+  <script src="js-toggle.js"></script>
 
 
   <!-- Footer -->

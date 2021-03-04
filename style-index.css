@@ -1,71 +1,5 @@
-/*Neon*/
-#neon p {
-  font-family: "Courier New", Courier, monospace;
-  float: left;
-  width: auto;
-  height: auto;
-  padding-left: 3rem;
-}
-
-#neon a {
-  text-decoration: none;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
-p:nth-child(1) a {
-  color: rgb(236, 177, 177);
-  font-family: STFangsong;
-  -webkit-animation: neon1 2.5s ease-in-out infinite alternate;
-  -moz-animation: neon1 2.5s ease-in-out infinite alternate;
-  animation: neon1 2.5s ease-in-out infinite alternate;
-}
-
-p:nth-child(1) a:hover {
-  color: rgb(233, 130, 207);
-  -webkit-animation: none;
-  -moz-animation: none;
-  animation: none;
-}
-
-p a:hover {
-  color: #b4e6d7;
-}
-
-/*glow for webkit*/
-@-webkit-keyframes neon1 {
-  from {
-    text-shadow: 0 0 10px rgb(163, 224, 216), 0 0 20px rgb(208, 219, 168), 0 0 30px rgb(151, 172, 241), 0 0 40px rgb(164, 233, 218), 0 0 70px #dfcc60, 0 0 80px #b399db, 0 0 100px #6d49ee, 0 0 150px #eb69b0;
-  }
-
-  to {
-    text-shadow: 0 0 5px rgb(212, 113, 122), 0 0 10px rgb(105, 188, 221), 0 0 15px rgb(252, 165, 83), 0 0 20px rgb(241, 174, 143), 0 0 35px rgb(228, 177, 153), 0 0 40px rgb(247, 202, 168), 0 0 50px rgb(165, 157, 109), 0 0 75px #e7b08b;
-  }
-}
-
-@-moz-keyframes neon1 {
-  from {
-    text-shadow: 0 0 10px rgb(163, 224, 216), 0 0 20px rgb(208, 219, 168), 0 0 30px rgb(151, 172, 241), 0 0 40px rgb(164, 233, 218), 0 0 70px #dfcc60, 0 0 80px #b399db, 0 0 100px #6d49ee, 0 0 150px #eb69b0;
-  }
-
-  to {
-    text-shadow: 0 0 5px rgb(212, 113, 122), 0 0 10px rgb(105, 188, 221), 0 0 15px rgb(252, 165, 83), 0 0 20px rgb(241, 174, 143), 0 0 35px rgb(228, 177, 153), 0 0 40px rgb(247, 202, 168), 0 0 50px rgb(165, 157, 109), 0 0 75px #e7b08b;
-  }
-}
-
-/*glow*/
-@keyframes neon1 {
-  from {
-    text-shadow: 0 0 10px rgb(163, 224, 216), 0 0 20px rgb(208, 219, 168), 0 0 30px rgb(151, 172, 241), 0 0 40px rgb(164, 233, 218), 0 0 70px #dfcc60, 0 0 80px #b399db, 0 0 100px #6d49ee, 0 0 150px #eb69b0;
-  }
-
-  to {
-    text-shadow: 0 0 5px rgb(212, 113, 122), 0 0 10px rgb(105, 188, 221), 0 0 15px rgb(252, 165, 83), 0 0 20px rgb(241, 174, 143), 0 0 35px rgb(228, 177, 153), 0 0 40px rgb(247, 202, 168), 0 0 50px rgb(165, 157, 109), 0 0 75px #e7b08b;
-  }
-}
-
 /*background--------------------------------------*/
+html,
 body {
   background: linear-gradient(-45deg, #e0754e91, #c6eff154, #ebd6e9c2, rgba(146, 199, 241, 0.842));
   background-size: 200% 200%;
@@ -74,7 +8,9 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "nimbus-sans", sans-serif;
+  font-size: 62.5%;
+  font-size: 10px;
 }
 
 @keyframes gradient {
@@ -91,7 +27,6 @@ body {
   }
 }
 
-
 /* Home section */
 .home {
   width: 100%;
@@ -104,50 +39,45 @@ body {
 }
 
 /*nav bar start --------------------------------------------------------------------------------------------*/
-html,
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 62.5%;
-  font-size: 10px;
-}
-
-/* Navbar section */
 .nav {
   width: 100%;
-  height: 75px;
+  height: 65px;
   position: fixed;
-  line-height: 75px;
+  line-height: 65px;
   text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 
 .nav div.logo {
   float: left;
   width: auto;
   height: auto;
-  font-weight: 560;
+  font-weight: 600;
+  font-family: "ff-meta-serif-web-pro", serif;
+  text-transform: uppercase;
 }
 
 .nav div.logo a {
   text-decoration: none;
   color: #eb1deb;
-  font-size: 2.5rem;
+  font-size: 1.8rem;
 }
 
 .nav div.logo a:hover {
-  color: #eb1deb;
+  color: #575757;
 }
 
 .nav div.main_list {
-  height: 75px;
+  height: 65px;
   float: right;
 }
 
 .nav div.main_list ul {
   width: 100%;
-  height: 75px;
+  height: 65px;
   display: flex;
   list-style: none;
   margin: 0;
@@ -156,32 +86,29 @@ body {
 
 .nav div.main_list ul li {
   width: auto;
-  height: 75px;
+  height: 65px;
   padding: 0;
-  padding-right: 3rem;
+  padding-right: 1.8rem;
 }
 
 .nav div.main_list ul li a {
   text-decoration: none;
   color: #19dbab;
-  line-height: 75px;
-  font-size: 2.4rem;
-  font-weight: 550;
+  line-height: 65px;
+  font-family: "nimbus-sans", sans-serif;
+  letter-spacing: .0875rem;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1.4px;
+  transition: all 0.3s cubic-bezier(.05, .69, .14, 1);
 }
 
 .nav div.main_list ul li a:hover {
-  color: #19dbab;
+  color: #6d6c6c;
 }
 
 .navTrigger {
   display: none;
-}
-
-.nav {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
 }
 
 /* Media qurey section */
@@ -461,7 +388,6 @@ body {
   font-size: 3rem;
   font-weight: 600;
   line-height: 45px;
-
 }
 
 .myH3 {
@@ -480,12 +406,11 @@ body {
 
 @media all and (max-width:700px) {
   .myP {
-    padding:1%;
+    padding: 1%;
   }
 }
 
 /*-----------------------------------------*/
-
 /*nav bar end-----------------------------------------------------------*/
 a {
   color: rgb(184, 39, 189);

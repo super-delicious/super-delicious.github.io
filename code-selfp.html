@@ -13,9 +13,34 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<link rel="icon" href="images/icon.png" type="image/png" sizes="16x16">
-	<link rel="stylesheet" href="style-codeselfp.css">
+	<link rel="stylesheet" href="style-sketch.css">
 
 </head>
+<style>
+.home {
+  background-image: url("images/bg6_nt.jpg");
+}
+.sketch {
+  margin: auto;
+  width: 50%;
+  position: absolute;
+  top: 230%;
+  left: 25%;
+  bottom: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(216, 212, 222);
+}
+
+.block {
+  margin: auto;
+  width: 50%;
+  position: absolute;
+  top: 17%;
+  left: 130%;
+  bottom: 50%;
+  transform: translate(-50%, -50%);
+}
+</style>
 <div class="body">
 
 
@@ -41,7 +66,7 @@
 
 	<section class="home">
 	</section>
-	<div style="height: 1100px">
+	<div style="height: 400px">
 		<div class="content">
 			<h2 class="myH2">Code as Art</h2><br>
 			<p class="myP">Coding, 2020</p>
@@ -57,23 +82,8 @@
 			</div>
 		</div>
 
-		<script>
-			$(window).scroll(function() {
-				if ($(document).scrollTop() > 50) {
-					$('.nav').addClass('affix');
-					console.log("OK");
-				} else {
-					$('.nav').removeClass('affix');
-				}
-			});
-			$('.navTrigger').click(function() {
-				$(this).toggleClass('active');
-				console.log("Clicked menu");
-				$("#mainListDiv").toggleClass("show_list");
-				$("#mainListDiv").fadeIn();
+		<script src="js-toggle.js"></script>
 
-			});
-		</script>
 
 	</div>
 	<!-- Footer -->

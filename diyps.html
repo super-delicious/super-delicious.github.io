@@ -12,11 +12,27 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<link rel="icon" href="images/icon.png" type="image/png" sizes="16x16">
-	<link rel="stylesheet" href="style-diyps.css">
+	<link rel="stylesheet" href="style-sketch.css">
 
 
 
 </head>
+<style>
+.home {
+  background-image: url("images/bg7_nt.jpg");
+}
+.sketch {
+  margin: auto;
+  width: 50%;
+  position: absolute;
+  top: 370%;
+  left: 45%;
+  right: 40%;
+  bottom: 50%;
+  transform: translate(-45%, -50%);
+  color: rgb(216, 212, 222);
+}
+</style>
 <div class="body">
 
 
@@ -61,23 +77,9 @@
 				</div>
 			</div>
 
-			<script>
-				$(window).scroll(function() {
-					if ($(document).scrollTop() > 50) {
-						$('.nav').addClass('affix');
-						console.log("OK");
-					} else {
-						$('.nav').removeClass('affix');
-					}
-				});
-				$('.navTrigger').click(function() {
-					$(this).toggleClass('active');
-					console.log("Clicked menu");
-					$("#mainListDiv").toggleClass("show_list");
-					$("#mainListDiv").fadeIn();
+			<script src="js-toggle.js"></script>
 
-				});
-			</script>
+
 			<!-- Footer -->
 			<div class="footer">
 				<a href="mailto:yc-studio@outlook.com" target="_blank"> <i class="fa fa-envelope" style="font-size:24px;color:rgb(241, 15, 241)"></i></a>&nbsp;

@@ -1,80 +1,16 @@
-/*Neon*/
-#neon p {
-  font-family: "Courier New", Courier, monospace;
-  float: left;
-  width: auto;
-  height: auto;
-  padding-left: 3rem;
-}
-
-#neon a {
-  text-decoration: none;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
-p:nth-child(1) a {
-  color: rgb(236, 177, 177);
-  font-family: STFangsong;
-  -webkit-animation: neon1 2.5s ease-in-out infinite alternate;
-  -moz-animation: neon1 2.5s ease-in-out infinite alternate;
-  animation: neon1 2.5s ease-in-out infinite alternate;
-}
-
-p:nth-child(1) a:hover {
-  color: rgb(233, 130, 207);
-  -webkit-animation: none;
-  -moz-animation: none;
-  animation: none;
-}
-
-p a:hover {
-  color: #b4e6d7;
-}
-
-/*glow for webkit*/
-@-webkit-keyframes neon1 {
-  from {
-    text-shadow: 0 0 10px rgb(163, 224, 216), 0 0 20px rgb(208, 219, 168), 0 0 30px rgb(151, 172, 241), 0 0 40px rgb(164, 233, 218), 0 0 70px #dfcc60, 0 0 80px #b399db, 0 0 100px #6d49ee, 0 0 150px #eb69b0;
-  }
-
-  to {
-    text-shadow: 0 0 5px rgb(212, 113, 122), 0 0 10px rgb(105, 188, 221), 0 0 15px rgb(252, 165, 83), 0 0 20px rgb(241, 174, 143), 0 0 35px rgb(228, 177, 153), 0 0 40px rgb(247, 202, 168), 0 0 50px rgb(165, 157, 109), 0 0 75px #e7b08b;
-  }
-}
-
-@-moz-keyframes neon1 {
-  from {
-    text-shadow: 0 0 10px rgb(163, 224, 216), 0 0 20px rgb(208, 219, 168), 0 0 30px rgb(151, 172, 241), 0 0 40px rgb(164, 233, 218), 0 0 70px #dfcc60, 0 0 80px #b399db, 0 0 100px #6d49ee, 0 0 150px #eb69b0;
-  }
-
-  to {
-    text-shadow: 0 0 5px rgb(212, 113, 122), 0 0 10px rgb(105, 188, 221), 0 0 15px rgb(252, 165, 83), 0 0 20px rgb(241, 174, 143), 0 0 35px rgb(228, 177, 153), 0 0 40px rgb(247, 202, 168), 0 0 50px rgb(165, 157, 109), 0 0 75px #e7b08b;
-  }
-}
-
-/*glow*/
-@keyframes neon1 {
-  from {
-    text-shadow: 0 0 10px rgb(163, 224, 216), 0 0 20px rgb(208, 219, 168), 0 0 30px rgb(151, 172, 241), 0 0 40px rgb(164, 233, 218), 0 0 70px #dfcc60, 0 0 80px #b399db, 0 0 100px #6d49ee, 0 0 150px #eb69b0;
-  }
-
-  to {
-    text-shadow: 0 0 5px rgb(212, 113, 122), 0 0 10px rgb(105, 188, 221), 0 0 15px rgb(252, 165, 83), 0 0 20px rgb(241, 174, 143), 0 0 35px rgb(228, 177, 153), 0 0 40px rgb(247, 202, 168), 0 0 50px rgb(165, 157, 109), 0 0 75px #e7b08b;
-  }
-}
-
 /*background--------------------------------------*/
+html,
 body {
-  background: linear-gradient(-45deg, #050116, #05051d);
+  background: linear-gradient(-45deg, #e0754e91, #c6eff154, #ebd6e9c2, rgba(146, 199, 241, 0.842));
   background-size: 200% 200%;
   animation: gradient 15s ease infinite;
   background-repeat: no-repeat;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "nimbus-sans", sans-serif;
+  font-size: 62.5%;
+  font-size: 10px;
 }
 
 @keyframes gradient {
@@ -91,51 +27,56 @@ body {
   }
 }
 
-/*nav bar start --------------------------------------------------------------------------------------------*/
-html,
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 62.5%;
-  font-size: 10px;
+/* Home section */
+.home {
+  width: 100%;
+  height: 875px;
+  display: flex;
+  background-position: center top;
+  size: cover;
+  background-repeat: no-repeat;
 }
 
-/* Navbar section */
+/*nav bar start --------------------------------------------------------------------------------------------*/
 .nav {
   width: 100%;
-  height: 75px;
+  height: 65px;
   position: fixed;
-  line-height: 75px;
+  line-height: 65px;
   text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 
 .nav div.logo {
   float: left;
   width: auto;
   height: auto;
-  font-weight: 560;
+  font-weight: 600;
+  font-family: "ff-meta-serif-web-pro", serif;
+  text-transform: uppercase;
 }
 
 .nav div.logo a {
   text-decoration: none;
-  color: rgb(0, 0, 6);
-  font-size: 2.5rem;
+  color: black;
+  font-size: 1.8rem;
 }
 
 .nav div.logo a:hover {
-  color: #eb1deb;
+  color: #575757;
 }
 
 .nav div.main_list {
-  height: 75px;
+  height: 65px;
   float: right;
 }
 
 .nav div.main_list ul {
   width: 100%;
-  height: 75px;
+  height: 65px;
   display: flex;
   list-style: none;
   margin: 0;
@@ -144,41 +85,29 @@ body {
 
 .nav div.main_list ul li {
   width: auto;
-  height: 75px;
+  height: 65px;
   padding: 0;
-  padding-right: 3rem;
+  padding-right: 1.8rem;
 }
 
 .nav div.main_list ul li a {
   text-decoration: none;
-  color: rgb(0, 0, 0);
-  line-height: 75px;
-  font-size: 2.4rem;
-  font-weight: 550;
+  color: black;
+  line-height: 65px;
+  font-family: "nimbus-sans", sans-serif;
+  letter-spacing: .0875rem;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1.4px;
+  transition: all 0.3s cubic-bezier(.05, .69, .14, 1);
 }
 
 .nav div.main_list ul li a:hover {
-  color: #19dbab;
-}
-
-/* Home section */
-.home {
-  width: 100%;
-  height: 100vh;
-  background-image: url("images/shelter_00.png");
-  background-position: center top;
-  background-size: cover;
+  color: #6d6c6c;
 }
 
 .navTrigger {
   display: none;
-}
-
-.nav {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
 }
 
 /* Media qurey section */
@@ -230,7 +159,7 @@ body {
     width: 100%;
     font-size: 2.8rem;
     padding: 20px;
-    font-weight: 520;
+    font-weight: 500;
   }
 
   .nav div.media_button {
@@ -514,11 +443,10 @@ a :hover {
 
 /* 3 nav end--------------------------------*/
 /*------------Project Image ---------------------------*/
-IMG {
-  width: 92%;
+img {
+  width: 68%;
   height: auto;
-  margin: 2% 2%;
-  vertical-align: middle;
+  margin: 3% 15%;
   transition: all 1.3s, transform.5s, box-shadow .5s;
   z-index: -1;
 }
@@ -526,14 +454,14 @@ IMG {
 img:hover {
   box-shadow: 6px 6px 20px rgba(65, 64, 64, 0.6);
   transform: scale(0.9);
-  width: 100%;
+  width: 70%;
   height: auto;
   transform: none;
 }
 
 img:focus {
   box-shadow: 12px 12px 25px rgba(71, 71, 71, 0.7);
-  width: 91%;
+  width: 81%;
   height: auto;
   transform: none;
 }
@@ -600,4 +528,8 @@ img:focus {
     }
   }
 
-  /*------------------------------*/
+  @media screen and (max-width: 1200px) {
+    .cursor, .cursor2, .cursor3 {
+      display: none
+    }
+  }

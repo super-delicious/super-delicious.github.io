@@ -1,48 +1,79 @@
-/*nav bar start --------------------------------------------------------------------------------------------*/
+/*background--------------------------------------*/
 html,
 body {
+  background-repeat: no-repeat;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "nimbus-sans", sans-serif;
   font-size: 62.5%;
   font-size: 10px;
 }
 
-/* Navbar section */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Home section */
+.home {
+  width: 100%;
+  height: 800px;
+  display: flex;
+  background-position: center top;
+  size: cover;
+  background-repeat: no-repeat;
+}
+
+/*nav bar start --------------------------------------------------------------------------------------------*/
 .nav {
   width: 100%;
-  height: 75px;
+  height: 65px;
   position: fixed;
-  line-height: 75px;
+  line-height: 65px;
   text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 
 .nav div.logo {
   float: left;
   width: auto;
   height: auto;
-  font-weight: 560;
+  font-weight: 600;
+  font-family: "ff-meta-serif-web-pro", serif;
+  text-transform: uppercase;
 }
 
 .nav div.logo a {
   text-decoration: none;
-  color: rgb(0, 0, 6);
-  font-size: 2.5rem;
+  color: black;
+  font-size: 1.8rem;
 }
 
 .nav div.logo a:hover {
-  color: #eb1deb;
+  color: #575757;
 }
 
 .nav div.main_list {
-  height: 75px;
+  height: 65px;
   float: right;
 }
 
 .nav div.main_list ul {
   width: 100%;
-  height: 75px;
+  height: 65px;
   display: flex;
   list-style: none;
   margin: 0;
@@ -51,42 +82,31 @@ body {
 
 .nav div.main_list ul li {
   width: auto;
-  height: 75px;
+  height: 65px;
   padding: 0;
-  padding-right: 3rem;
+  padding-right: 1.8rem;
 }
 
 .nav div.main_list ul li a {
   text-decoration: none;
-  color: rgb(0, 0, 0);
-  line-height: 75px;
-  font-size: 2.4rem;
-  font-weight: 550;
+  color: black;
+  line-height: 65px;
+  font-family: "nimbus-sans", sans-serif;
+  letter-spacing: .0875rem;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1.4px;
+  transition: all 0.3s cubic-bezier(.05, .69, .14, 1);
 }
 
 .nav div.main_list ul li a:hover {
-  color: #19dbab;
-}
-
-/* Home section */
-.home {
-  width: 100%;
-  height: 100vh;
-  background-image: url("images/shelter_00.png");
-  background-position: center top;
-  background-size: cover;
+  color: #6d6c6c;
 }
 
 .navTrigger {
   display: none;
 }
 
-.nav {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-}
 
 /* Media qurey section */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -364,7 +384,12 @@ body {
   padding: 0;
   background-color: rgb(255, 255, 255);
 }
-
+.myH1 {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 45px;
+}
 .myH2 {
   text-align: center;
   font-size: 3rem;
@@ -373,16 +398,18 @@ body {
 }
 
 .myH3 {
-  text-align: center;
-  font-size: 1rem;
+  text-align: left;
+  font-size: 2.3rem;
+  padding-left: 17%;
+  padding-right: 17%;
 }
 
 .myP {
   text-align: left;
   line-height: 1.7;
-  padding-left: 15%;
-  padding-right: 15%;
-  font-size: 17px;
+  padding-left: 17%;
+  padding-right: 17%;
+  font-size: 16px;
   font-family: "arial";
 }
 
@@ -394,8 +421,8 @@ body {
 
 /*-----------------------------------------------------------*/
 .content {
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
   padding-top: 7%;
   padding-bottom: 2%;
   background: white;
@@ -403,8 +430,8 @@ body {
 }
 
 .gallery-img {
-  padding-left: 15%;
-  padding-right: 15%;
+  padding-left: 17%;
+  padding-right: 17%;
 }
 
 /*-----------------------------------------------------------*/
