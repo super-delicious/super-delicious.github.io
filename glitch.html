@@ -17,9 +17,9 @@
 
 </head>
 <style>
-.home {
-  background-image: url("images/bg10_nt.jpg");
-}
+	.home {
+		background-image: url("images/bg10_nt.jpg");
+	}
 </style>
 <div class="body">
 
@@ -50,58 +50,43 @@
 		<div class="content">
 			<h1 class="myH1">Glitch Art</h1>
 			<h3 class="myH2">Reminiscent</h2>
-			<p class="myP">Photoshop, 2020</p>
-			<p class="myP">I was deeply impressed by the animation of the artist Hayao Miyazaki. I chose the main characters' image in a series of his works and created a series of glitch works with an abstract visual effect by corrupting the original image. </p>
-			<br><br>
-			<div class="gallery-img">
-				<img src="images/g1.jpg" class="image" style="width:100%" height="auto">
-				<br><br><br>
-				<img src="images/bg10_nt.jpg" class="image" style="width:100%" height="auto">
-				<br><br><br>
-				<img src="images/g3.jpg" class="image" style="width:100%" height="auto">
-				<br><br><br>
-			</div>
-				<h3 class="myH2">Untitled</h2>
 				<p class="myP">Photoshop, 2020</p>
-				<p class="myP"> I used my Maya rendering images to create the glitch effect.</p>
-							<div class="gallery-img">
-				<img src="images/g4.jpg" class="image" style="width:100%" height="auto">
-				<br><br><br>
-				<img src="images/g5.jpg" class="image" style="width:100%" height="auto">
-				<br><br><br>
-				<img src="images/g6.jpg" class="image" style="width:100%" height="auto">
-				<br><br><br>
-			</div>
+				<p class="myP">I was deeply impressed by the animation of the artist Hayao Miyazaki. I chose the main characters' image in a series of his works and created a series of glitch works with an abstract visual effect by corrupting the original
+					image. </p>
+				<br><br>
+				<div class="gallery-img">
+					<img src="images/g1.jpg" class="image" style="width:100%" height="auto">
+					<br><br><br>
+					<img src="images/bg10_nt.jpg" class="image" style="width:100%" height="auto">
+					<br><br><br>
+					<img src="images/g3.jpg" class="image" style="width:100%" height="auto">
+					<br><br><br>
+				</div>
+				<h3 class="myH2">Untitled</h2>
+					<p class="myP">Photoshop, 2020</p>
+					<p class="myP"> I used my Maya rendering images to create the glitch effect.</p>
+					<div class="gallery-img">
+						<img src="images/g4.jpg" class="image" style="width:100%" height="auto">
+						<br><br><br>
+						<img src="images/g5.jpg" class="image" style="width:100%" height="auto">
+						<br><br><br>
+						<img src="images/g6.jpg" class="image" style="width:100%" height="auto">
+						<br><br><br>
+					</div>
 
 
 
-			<!-- Footer -->
-			<div class="footer">
-				<a href="mailto:yc-studio@outlook.com" target="_blank"> <i class="fa fa-envelope" style="font-size:24px;color:rgb(241, 15, 241)"></i></a>&nbsp;
-				<a href="https://instagram.com/yixinsstudio" target="_blank"><i class="fa fa-instagram" style="font-size:24px;color:rgb(241, 15, 241)"></i></a>&nbsp;
-				<p>copyright © 2020 Yixin Cao all rights reserved</p>
-			</div>
+					<!-- Footer -->
+					<div class="footer">
+						<a href="mailto:yc-studio@outlook.com" target="_blank"> <i class="fa fa-envelope" style="font-size:24px;color:rgb(241, 15, 241)"></i></a>&nbsp;
+						<a href="https://instagram.com/yixinsstudio" target="_blank"><i class="fa fa-instagram" style="font-size:24px;color:rgb(241, 15, 241)"></i></a>&nbsp;
+						<p>copyright © 2020 Yixin Cao all rights reserved</p>
+					</div>
 
 		</div>
 		<br>
 
-		<script>
-			$(window).scroll(function() {
-				if ($(document).scrollTop() > 50) {
-					$('.nav').addClass('affix');
-					console.log("OK");
-				} else {
-					$('.nav').removeClass('affix');
-				}
-			});
-			$('.navTrigger').click(function() {
-				$(this).toggleClass('active');
-				console.log("Clicked menu");
-				$("#mainListDiv").toggleClass("show_list");
-				$("#mainListDiv").fadeIn();
-
-			});
-		</script>
+		<script src="js-toggle.js"></script>
 
 	</div>
 	</body>
