@@ -36,6 +36,11 @@ body {
   background-size: 470px 590px;
   background-repeat: no-repeat;
   background-position: 50% 120px;
+  display: block;
+  -webkit-box-sizing: initial;
+  -moz-box-sizing: initial;
+  box-sizing: initial;
+  box-shadow: 6px 3px 27px 1px rgba(0, 0, 0, 0.19);
 }
 
 /*nav bar start --------------------------------------------------------------------------------------------*/
@@ -160,7 +165,7 @@ body {
     width: 100%;
     font-size: 2.5rem;
     padding: 20px;
-    font-weight: 520;
+    font-weight: 500;
   }
 
   .nav div.media_button {
