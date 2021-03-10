@@ -30,13 +30,11 @@ body {
 /* Home section */
 .home {
   width: 100%;
-  height: 740px;
-  background-image: url("images/glitch-self.jpg");
-  background-position: center;
-  background-size: 470px 590px;
-  background-repeat: no-repeat;
-  background-position: 50% 120px;
-  display: block;
+  height: 263px;
+  background-color: #fff;
+  background-repeat: no-repeat bottom center;
+  background-size: cover;
+  background-attachment: fixed;
   -webkit-box-sizing: initial;
   -moz-box-sizing: initial;
   box-sizing: initial;
@@ -124,6 +122,16 @@ body {
 }
 
 @media screen and (max-width:768px) {
+  .gallery-img.img {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .myH1 {
+    padding-top: 10%;
+  }
+
   .navTrigger {
     display: block;
   }
@@ -388,6 +396,16 @@ body {
   background-color: rgb(255, 255, 255);
 }
 
+.myH1 {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 45px;
+  font-family: "nimbus-sans", sans-serif;
+  letter-spacing: .0875rem;
+  text-transform: uppercase;
+}
+
 .myH2 {
   text-align: center;
   font-size: 3rem;
@@ -418,14 +436,29 @@ body {
 
 /*-----------------------------------------------------------*/
 /*nav bar end-----------------------------------------------------------*/
+.content-top {
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 8%;
+  padding-bottom: 3%;
+  background: white;
+  border-radius: 2px;
+}
+
 .content {
   padding-left: 10%;
   padding-right: 10%;
   padding-top: 7%;
-  padding-bottom: 15%;
-  background: rgba(235, 236, 211, 0.5);
+  padding-bottom: 2%;
   border-radius: 2px;
 }
+
+.gallery-img img {
+  margin: 0 10%;
+  padding-left: 21%;
+  padding-right: 21%;
+}
+
 
 a {
   color: rgb(184, 39, 189);
@@ -435,6 +468,6 @@ a {
   background-color: transparent;
   padding: 10px;
   text-align: center;
-  margin: 250px 20px 15px 10px;
+  margin: 150px 20px 15px 10px;
   font-family: "Courier New", Courier, monospace;
 }

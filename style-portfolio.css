@@ -26,16 +26,6 @@ body {
   }
 }
 
-/* Home section */
-.home {
-  width: 100%;
-  height: 875px;
-  display: flex;
-  background-position: center top;
-  size: cover;
-  background-repeat: no-repeat;
-}
-
 /*nav bar start --------------------------------------------------------------------------------------------*/
 .nav {
   width: 100%;
@@ -585,7 +575,7 @@ img:hover {
 }
 
 .grid-image-top.minecraft {
-  background-image: url("images/g7.jpg");
+  background-image: url("images/3d2.png");
 }
 
 .grid-image-top.diyps {
@@ -616,6 +606,13 @@ img:hover {
   background-image: url("images/bg13_nt.jpg");
 }
 
+.grid-image-top.vanish {
+  background-image: url("images/bg_vanish.jpg");
+}
+
+.grid-image-top.dr {
+  background-image: url("images/title.PNG");
+}
 .grid-item-content {
   padding: 0 20px 20px 20px;
 }
@@ -628,7 +625,7 @@ img:hover {
   font-family: "nimbus-sans", sans-serif;
   letter-spacing: .0875rem;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .grid-item:hover .grid-item-wrapper {
