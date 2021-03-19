@@ -393,7 +393,7 @@ body {
 
 .affix {
   padding: 0;
-  background-color: rgb(255, 255, 255);
+  background-color: #fff;
 }
 
 .myH1 {
@@ -460,14 +460,21 @@ body {
 }
 
 
-a {
-  color: rgb(184, 39, 189);
-}
 
 .footer {
-  background-color: transparent;
-  padding: 10px;
+  background: #fff;
   text-align: center;
-  margin: 150px 20px 15px 10px;
   font-family: "Courier New", Courier, monospace;
+  margin-top: 300px;
+  margin-bottom: 0;
+  padding-bottom: 10px;
+  padding-top: 120px;
+  width: 100%;
+}
+
+
+.copyright {
+  margin: 20px 0;
+  font-size: 12px;
+  text-transform: uppercase;
 }
