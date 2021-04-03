@@ -18,20 +18,21 @@
 
 </head>
 <style>
-.home {
-  background-image: url("images/bg7_nt.jpg");
-}
-.sketch {
-  margin: auto;
-  width: 50%;
-  position: absolute;
-  top: 370%;
-  left: 45%;
-  right: 40%;
-  bottom: 70%;
-  transform: translate(-45%, -50%);
-  color: rgb(216, 212, 222);
-}
+	.home {
+		background-image: url("images/bg7_nt.jpg");
+	}
+
+	.sketch {
+		margin: auto;
+		width: 50%;
+		position: absolute;
+		top: 225%;
+		left: 45%;
+		right: 40%;
+		bottom: 70%;
+		transform: translate(-45%, -50%);
+		color: rgb(216, 212, 222);
+	}
 </style>
 <div class="body">
 
@@ -58,7 +59,7 @@
 
 	<section class="home">
 	</section>
-	<div style="height: 1100px">
+	<div style="height: 1000px">
 		<div class="content">
 			<h2 class="myH2">DIY Photoshop</h2><br>
 			<p class="myP">Coding, 2020</p>
@@ -73,18 +74,24 @@
 
 			<div class="sketch">
 				<div style="text-align:right">
-					<iframe src="diyps/index.html" style="height:610px;width:610px;border:solid; border-width: thick;"></iframe>
+					<div class="container-js">
+						<div class="responsive-iframe">
+							<iframe src="diyps/index.html" style="height:610px;width:610px;border:solid; border-width: thick;"></iframe>
+						</div>
+					</div>
+
 				</div>
 			</div>
+		</div>
+	</div>
+	<script src="js-toggle.js"></script>
 
-			<script src="js-toggle.js"></script>
 
+	<!-- Footer -->
+	<div class="footer">
+		<p>copyright © 2020 Yixin Cao all rights reserved</p>
+	</div>
 
-			<!-- Footer -->
-			<div class="footer">
-				<p>copyright © 2020 Yixin Cao all rights reserved</p>
-			</div>
-
-			</body>
+	</body>
 
 </html>
