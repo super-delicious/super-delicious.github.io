@@ -449,13 +449,30 @@ a :hover {
   font-size: 10px;
 }
 
+/* 3 nav end--------------------------------*/
+/*------------Project Image ---------------------------
+img {
+  width: 68%;
+  height: auto;
+  margin: 3% 15%;
+  transition: all 1.3s, transform.5s, box-shadow .5s;
+  z-index: -1;
+}
 
+img:hover {
+  box-shadow: 6px 6px 20px rgba(65, 64, 64, 0.6);
+  transform: scale(0.9);
+  width: 70%;
+  height: auto;
+  transform: none;
+}
+/*------------Project Image ---------------------------*/
 /*--------------GRID GALLERY-------------------*/
 .grid-container {
   max-width: 1230px;
   margin: 0 auto;
   padding-top: 2%;
-  padding-bottom: 14%;
+  padding-bottom: 24%;
 }
 
 .grid-row {
@@ -465,10 +482,10 @@ a :hover {
 }
 
 .grid-item {
-  height: 345px;
-  flex-basis: 33.33%;
+  height: 245px;
+  flex-basis: 24%;
   -ms-flex: auto;
-  width: 395px;
+  width: 295px;
   position: relative;
   padding: 15px;
   box-sizing: border-box;
@@ -535,18 +552,94 @@ a :hover {
 }
 
 .grid-image-top.dmart {
-    background-image: url("images/bg_vanish.JPG");
+  background-image: url("images/shelter_00.png");
 }
 
 .grid-image-top.design {
-  background-image: url("images/bg_serein.jpg");
+  background-image: url("images/bg_serein.png");
 }
 
 .grid-image-top.photography {
-  background-image: url("images/glitch-infinite.jpg");
+  background-image: url("images/shelter_00.png");
 }
 
+.grid-image-top.aqualung {
+  background-image: url("images/artifact/bg_aqua.png");
+}
 
+.grid-image-top.shelter {
+  background-image: url("images/shelter_00.png");
+}
+
+.shelter-img {}
+
+.grid-image-top.vitality {
+  background-image: url("images/bg12_nt.jpg");
+}
+
+.grid-image-top.vegetate {
+  background-image: url("images/vegetate2.jpg");
+}
+
+.grid-image-top.video {
+  background-image: url("images/bg1_nt.jpg");
+}
+
+.grid-image-top.code-selfp {
+  background-image: url("images/bg6_nt.jpg");
+}
+
+.grid-image-top.minecraft {
+  background-image: url("images/3d2.png");
+}
+
+.grid-image-top.diyps {
+  background-image: url("images/bg7_nt.jpg");
+}
+
+.grid-image-top.whack {
+  background-image: url("images/bg8_nt.jpg");
+}
+
+.grid-image-top.viruses {
+  background-image: url("images/background.png");
+}
+
+.grid-image-top.glitch {
+  background-image: url("images/bg10_nt.jpg");
+}
+
+.grid-image-top.freedom {
+  background-image: url("images/bgf_nt.jpg");
+}
+
+.grid-image-top.tatsou {
+  background-image: url("images/bg14_nt.jpg");
+}
+
+.grid-image-top.dm {
+  background-image: url("images/bg13_nt.jpg");
+}
+
+.grid-image-top.vanish {
+  background-image: url("images/bg_vanish.JPG");
+}
+
+/*---------Design------------*/
+.grid-image-top.serein {
+  background-image: url("images/bg_serein.jpg");
+}
+
+/*---------Photography------------*/
+
+.grid-image-top.oahu {
+  background-image: url("images/photography/oahu/phot_01.jpg");
+}
+
+/*---------Photography END------------*/
+.grid-image-top.dr {
+  background-image: url("images/title.PNG");
+}
 .grid-item-content {
   padding: 0 20px 20px 20px;
 }
@@ -558,7 +651,7 @@ a :hover {
   color: #000;
   font-family: "nimbus-sans", sans-serif;
   letter-spacing: .0875rem;
-  font-size: 16px;
+  font-size: 12px;
 }
 
 .grid-item:hover .grid-item-wrapper {
