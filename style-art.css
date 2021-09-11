@@ -559,6 +559,10 @@ img:hover {
   background-image: url("images/bg_serein.JPG");
 }
 
+.grid-image-top.serein {
+  background-image: url("images/bg_serein.JPG");
+}
+
 .grid-image-top.photography {
   background-image: url("images/shelter_00.png");
 }
